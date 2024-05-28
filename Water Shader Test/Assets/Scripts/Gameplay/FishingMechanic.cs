@@ -45,9 +45,11 @@ public class FishingMechanic : MonoBehaviour
     private Vector3 hookTargetPosition;
     private float currentThrowDistance = 0f;
     private Camera mainCamera;
-    private Transform fish; // Reference to the fish caught
+    private Fish fish;// Reference to the fish caught
     private BoatMovement boatMovement;
     private Animator tensionSliderAnimator;
+    private UIManager uiManager;
+
     private float modeChangeDelay = 0.5f;
     private float lastModeChangeTime;
     public enum Modes
@@ -60,6 +62,8 @@ public class FishingMechanic : MonoBehaviour
     void Start()
     {
         boatMovement = GetComponent<BoatMovement>();
+        uiManager = GetComponent<UIManager>();
+
 
         throwLineRenderer.positionCount = 2;
         throwLineRenderer.enabled = false; // Initially disable the throw line renderer
@@ -133,11 +137,13 @@ public class FishingMechanic : MonoBehaviour
 
             if (hookInstance)
             {
+                canCheckCatch = false;
                 Destroy(hookInstance);
                 if (fish)
                 {
                     // Release the fish
-                    fish.SetParent(null);
+                    fish.Released();
+                    fish.transform.SetParent(null);
                     fish = null;
                 }
                 vCam.Follow = player.transform;
@@ -358,10 +364,13 @@ public class FishingMechanic : MonoBehaviour
         vCam.Follow = player.transform;
         vCam.m_Lens.OrthographicSize = originalCameraSize;
         canCheckCatch = false;
+        uiManager.ShowFishCaughtUI(fish.fishImage, fish.fishName);
+
         if (fishingLineRenderer)
         {
             fishingLineRenderer.enabled = false; // Disable the fishing line renderer
         }
+
         Destroy(hookInstance); // Destroy the hook instance
 
         if (fish)
@@ -370,7 +379,7 @@ public class FishingMechanic : MonoBehaviour
         }
     }
 
-    public void StartFishing(Transform fishTransform)
+    public void StartFishing(Fish fishTransform)
     {
         isFishing = true;
         fishCaught = false;

@@ -10,7 +10,9 @@ public class Fish : MonoBehaviour
     public float rotationSpeed = 2f;
     public float detectionRange = 5f;
     public float biteChance = 0.5f; // 50% chance to bite the hook
-    public Transform fishSprite;
+    public Sprite fishImage;
+    public string fishName;
+    public Transform fishSpriteGameObject;
     public Transform bitePoint;
 
     private Vector3 destination;
@@ -36,6 +38,7 @@ public class Fish : MonoBehaviour
             if (!isCaught)
             {
                 MoveTowardsHook();
+                Debug.Log(hook);
             }
             else
             {
@@ -53,7 +56,7 @@ public class Fish : MonoBehaviour
 
     void Move()
     {
-        if (Vector3.Distance(transform.position, destination) < 1f)
+        if (Vector3.Distance(transform.position, destination) < 2.5f)
         {
             SetNewDestination();
         }
@@ -89,7 +92,7 @@ public class Fish : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * rotationSpeed);
         transform.position += transform.forward * swimSpeed * Time.deltaTime;
 
-        if (Vector3.Distance(bitePoint.position, hook.position) < 2f)
+        if (Vector3.Distance(bitePoint.position, hook.position) < 3f)
         {
             if (Random.value < biteChance)
             {
@@ -104,7 +107,7 @@ public class Fish : MonoBehaviour
 
     void BiteHook()
     {
-        fishingMechanic.StartFishing(transform);
+        fishingMechanic.StartFishing(this);
         transform.SetParent(hook);
         Vector3 target = hook.position;
         target.y = transform.position.y;
@@ -118,5 +121,10 @@ public class Fish : MonoBehaviour
         fishingMechanic = null;
         isCaught = false;
         SetNewDestination();
+    }
+
+    public void Released()
+    {
+
     }
 }
