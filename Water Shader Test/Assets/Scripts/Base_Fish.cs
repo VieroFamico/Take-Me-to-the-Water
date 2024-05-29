@@ -38,7 +38,6 @@ public class Fish : MonoBehaviour
             if (!isCaught)
             {
                 MoveTowardsHook();
-                Debug.Log(hook);
             }
             else
             {
@@ -92,7 +91,7 @@ public class Fish : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * rotationSpeed);
         transform.position += transform.forward * swimSpeed * Time.deltaTime;
 
-        if (Vector3.Distance(bitePoint.position, hook.position) < 3f)
+        if (Vector3.Distance(bitePoint.position, hook.position) < 2.7f)
         {
             if (Random.value < biteChance)
             {

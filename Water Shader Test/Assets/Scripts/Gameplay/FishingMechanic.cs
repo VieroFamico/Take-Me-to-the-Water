@@ -149,8 +149,9 @@ public class FishingMechanic : MonoBehaviour
                 vCam.Follow = player.transform;
                 vCam.m_Lens.OrthographicSize = originalCameraSize;
             }
-
-            throwLineRenderer.enabled = false; // Disable the throw line renderer
+            throwLineRenderer.SetPosition(0, player.position);
+            throwLineRenderer.SetPosition(1, player.position);
+            throwLineRenderer.enabled = false;
         }
         else
         {
@@ -331,6 +332,7 @@ public class FishingMechanic : MonoBehaviour
     {
         Debug.Log("The line broke! The fish escaped.");
         isFishing = false;
+        canThrowHook = true;
         tensionSlider.value = startingTension;
         vCam.Follow = player.transform;
         vCam.m_Lens.OrthographicSize = originalCameraSize;
@@ -370,13 +372,18 @@ public class FishingMechanic : MonoBehaviour
         {
             fishingLineRenderer.enabled = false; // Disable the fishing line renderer
         }
-
+        
         Destroy(hookInstance); // Destroy the hook instance
 
         if (fish)
         {
             Destroy(fish.gameObject);
         }
+    }
+
+    public void EnableThrowHook()
+    {
+        canThrowHook = true;
     }
 
     public void StartFishing(Fish fishTransform)

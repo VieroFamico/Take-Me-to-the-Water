@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swimSpeed: 3
-  rotationSpeed: 2
+  rotationSpeed: 3
   detectionRange: 10
   biteChance: 0.5
   fishImage: {fileID: -1703686198, guid: e74bcb30d80aabc488225786bfa33e24, type: 3}

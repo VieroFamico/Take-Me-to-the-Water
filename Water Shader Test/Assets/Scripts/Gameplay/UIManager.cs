@@ -12,9 +12,11 @@ public class UIManager : MonoBehaviour
     public string leaveTrigger = "Leave"; // Trigger name to end the animation
 
     private bool isUIActive = false;
+    private FishingMechanic fishingMechanic;
 
     void Start()
     {
+        fishingMechanic = GetComponent<FishingMechanic>();
         // Ensure the UI is disabled at start
         fishCaughtUI.SetActive(false);
     }
@@ -42,9 +44,9 @@ public class UIManager : MonoBehaviour
         // Start the leave animation
         fishCaughtAnimator.SetTrigger(leaveTrigger);
         isUIActive = false;
-
+        fishingMechanic.EnableThrowHook();
         // Wait for the animation to finish
-        yield return new WaitForSeconds(GetAnimationClipLength(leaveTrigger));
+        yield return new WaitForSeconds(5f);
 
         // Disable the UI
         fishCaughtUI.SetActive(false);
