@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class FishingMechanic : MonoBehaviour
 {
+    [Header("Dependencies")]
+    public UIManager uiManager;
+
     [Header("Fishing Hook")]
     public LineRenderer throwLineRenderer;
     public float maxThrowDistance = 30f;
@@ -51,7 +54,6 @@ public class FishingMechanic : MonoBehaviour
     private Fish fish;// Reference to the fish caught
     private BoatMovement boatMovement;
     private Animator tensionSliderAnimator;
-    private UIManager uiManager;
 
     private float modeChangeDelay = 0.5f;
     private float lastModeChangeTime;
@@ -65,7 +67,6 @@ public class FishingMechanic : MonoBehaviour
     void Start()
     {
         boatMovement = GetComponent<BoatMovement>();
-        uiManager = GetComponent<UIManager>();
 
 
         throwLineRenderer.positionCount = 2;

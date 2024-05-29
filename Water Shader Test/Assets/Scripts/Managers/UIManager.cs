@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 {
     [Header("Dependencies")]
     public PlayerLoadout playerLoadout;
+    private FishingMechanic fishingMechanic;
 
     [Header("Fish Catch UI")]
     public GameObject fishCatchUI; // Reference to the UI GameObject
@@ -17,7 +18,6 @@ public class UIManager : MonoBehaviour
     public string leaveTrigger = "Leave"; // Trigger name to end the animation
     
     private bool isFishCatchUIActive = false;
-    private FishingMechanic fishingMechanic;
 
     [Header("Bait Choosing UI")]
     public GameObject[] cardOrder;
@@ -41,7 +41,8 @@ public class UIManager : MonoBehaviour
     
     void Start()
     {
-        fishingMechanic = GetComponent<FishingMechanic>();
+        fishingMechanic = playerLoadout.GetComponent<FishingMechanic>();
+
         // Ensure the UI is disabled at start
         fishCatchUI.SetActive(false);
 
