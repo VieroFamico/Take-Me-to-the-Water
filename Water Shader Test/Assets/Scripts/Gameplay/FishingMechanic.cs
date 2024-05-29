@@ -18,6 +18,9 @@ public class FishingMechanic : MonoBehaviour
 
     [Header("Fishing Mechanics")]
     public Slider tensionSlider;
+    public Image tensionSliderImage;
+    public Color lowTensionColor;
+    public Color highTensionColor;
     public float tensionIncreaseRate = 10f;
     public float tensionDecreaseRate = 5f;
     public float maxTension = 100f;
@@ -97,26 +100,29 @@ public class FishingMechanic : MonoBehaviour
             {
                 HandleThrowingInput();
             }
-
-            if (isFishing && !fishCaught)
+            Debug.Log(canThrowHook);
+            if (isFishing && hookInstance && !fishCaught)
             {
+                if (isFishing || isThrowing)
+                {
+                    UpdateFishingLine();
+                    UpdateCameraZoom();
+                }
+
                 if (fishIsEatingTheBait)
                 {
                     HandleFishingInput();
                 }
-
                 if (canCheckCatch)
                 {
                     CheckCatch();
+
+                    tensionSliderImage.color = Color.Lerp(lowTensionColor, highTensionColor, tensionSlider.value / maxTension);
                 }
             }
         }
 
-        if (isFishing || isThrowing)
-        {
-            UpdateFishingLine();
-            UpdateCameraZoom();
-        }
+        
 
         if (!isFishing && boatMovement != null)
         {
@@ -254,7 +260,13 @@ public class FishingMechanic : MonoBehaviour
 
     void FinishThrow()
     {
+        if(currentThrowDistance < 1f)
+        {
+            return;
+        }
+
         isThrowing = false;
+        canThrowHook = false;
 
         // Instantiate the hook at the player's position
         hookInstance = Instantiate(hookPrefab, player.position, Quaternion.identity);
@@ -338,8 +350,12 @@ public class FishingMechanic : MonoBehaviour
         vCam.m_Lens.OrthographicSize = originalCameraSize;
         tensionSlider.gameObject.SetActive(false);
 
+        fish.Released();
+
         if (fishingLineRenderer)
         {
+            fishingLineRenderer.SetPosition(0, player.position);
+            fishingLineRenderer.SetPosition(1, player.position);
             fishingLineRenderer.enabled = false; // Disable the fishing line renderer
         }
         Destroy(hookInstance); // Destroy the hook instance
@@ -370,6 +386,8 @@ public class FishingMechanic : MonoBehaviour
 
         if (fishingLineRenderer)
         {
+            fishingLineRenderer.SetPosition(0, player.position);
+            fishingLineRenderer.SetPosition(1, player.position);
             fishingLineRenderer.enabled = false; // Disable the fishing line renderer
         }
         

@@ -99,7 +99,7 @@ public class Fish : MonoBehaviour
             }
             else
             {
-                ResetBehavior();
+                
             }
         }
     }
@@ -114,16 +114,11 @@ public class Fish : MonoBehaviour
         isCaught = true;
     }
 
-    void ResetBehavior()
+    public void Released()
     {
         hook = null;
         fishingMechanic = null;
         isCaught = false;
         SetNewDestination();
-    }
-
-    public void Released()
-    {
-
     }
 }
