@@ -65,9 +65,6 @@ public class UIManager : MonoBehaviour
 
         pausePanelIsOpen = false;
         dayHasEndedPanelIsOpen = false;
-
-        pausePanel.SetActive(false);
-        dayHasEndedPanel.SetActive(false);
     }
 
     void OnEnable()
@@ -107,8 +104,6 @@ public class UIManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Escape)){
             OpenPauseMenu();
         }
-        
-
     }
 
 
@@ -136,7 +131,7 @@ public class UIManager : MonoBehaviour
         {
             pausePanelAnimator.SetTrigger("Show");
         }
-        baitPanelIsOpen = !baitPanelIsOpen;
+        pausePanelIsOpen = !pausePanelIsOpen;
     }
     public void SelectBait(GameObject selectedBait)
     {
