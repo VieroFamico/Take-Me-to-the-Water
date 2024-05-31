@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hook
+  - Rain
+  - SunLight
   layers:
   - Default
   - TransparentFX

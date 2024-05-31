@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -12,12 +13,14 @@ public class UIManager : MonoBehaviour
 
     [Header("Fish Catch UI")]
     public GameObject fishCatchUI; // Reference to the UI GameObject
-    public Animator fishCaughtAnimator; // Reference to the Animator component
     public Image fishImage;
     public TextMeshProUGUI fishName;
     public string leaveTrigger = "Leave"; // Trigger name to end the animation
-    
+
+    private Animator fishCaughtAnimator;
     private bool isFishCatchUIActive = false;
+    private Animator baitPanelAnimator;
+    private bool baitPanelIsOpen = false;
 
     [Header("Bait Choosing UI")]
     public GameObject[] cardOrder;
@@ -31,19 +34,22 @@ public class UIManager : MonoBehaviour
 
     private GameObject[] baits;
     private int currentIndex;
-    
 
+    [Header("Menu UI")]
+    public GameObject pausePanel;
+    public GameObject dayHasEndedPanel;
 
-    private Animator baitPanelAnimator;
-    private bool baitPanelIsOpen = false;
-
-
-    
+    private Animator pausePanelAnimator;
+    private Animator dayHasEndedAnimator;
+    private bool pausePanelIsOpen = false;
+    private bool dayHasEndedPanelIsOpen = false;
     void Start()
     {
+        playerLoadout = FindAnyObjectByType<PlayerLoadout>();
         fishingMechanic = playerLoadout.GetComponent<FishingMechanic>();
 
         // Ensure the UI is disabled at start
+        fishCaughtAnimator = fishCatchUI.GetComponent<Animator>();
         fishCatchUI.SetActive(false);
 
         baitPanelAnimator = baitPanel.GetComponent<Animator>();
@@ -53,6 +59,36 @@ public class UIManager : MonoBehaviour
         currentIndex = 2;
         UpdateCardOrder();
         UpdateBaitButtons();
+
+        pausePanelAnimator = pausePanel.GetComponent<Animator>();
+        dayHasEndedAnimator = dayHasEndedPanel.GetComponent<Animator>();
+
+        pausePanelIsOpen = false;
+        dayHasEndedPanelIsOpen = false;
+
+        pausePanel.SetActive(false);
+        dayHasEndedPanel.SetActive(false);
+    }
+
+    void OnEnable()
+    {
+        SceneManager.activeSceneChanged += OnActiveSceneChanged;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.activeSceneChanged -= OnActiveSceneChanged;
+    }
+
+    void OnActiveSceneChanged(Scene previousScene, Scene newScene)
+    {
+        FindPlayerObject();
+    }
+
+    private void FindPlayerObject()
+    {
+        playerLoadout = FindAnyObjectByType<PlayerLoadout>();
+        fishingMechanic = playerLoadout.GetComponent<FishingMechanic>();
     }
 
     void Update()
@@ -63,12 +99,18 @@ public class UIManager : MonoBehaviour
             StartCoroutine(EndFishCaughtUI());
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (!isFishCatchUIActive && Input.GetKeyDown(KeyCode.Tab))
         {
             OpenBaitPanel();
         }
 
+        if (Input.GetKeyUp(KeyCode.Escape)){
+            OpenPauseMenu();
+        }
+        
+
     }
+
 
     private void OpenBaitPanel()
     {
@@ -83,7 +125,19 @@ public class UIManager : MonoBehaviour
         }
         baitPanelIsOpen = !baitPanelIsOpen;
     }
+    private void OpenPauseMenu()
+    {
+        if (pausePanelIsOpen)
+        {
+            pausePanelAnimator.SetTrigger("Hide");
 
+        }
+        else
+        {
+            pausePanelAnimator.SetTrigger("Show");
+        }
+        baitPanelIsOpen = !baitPanelIsOpen;
+    }
     public void SelectBait(GameObject selectedBait)
     {
         int selectedIndex = System.Array.IndexOf(baits, selectedBait);

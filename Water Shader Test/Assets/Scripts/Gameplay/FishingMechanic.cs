@@ -101,7 +101,7 @@ public class FishingMechanic : MonoBehaviour
             {
                 HandleThrowingInput();
             }
-            Debug.Log(canThrowHook);
+
             if (isFishing && hookInstance && !fishCaught)
             {
                 if (isFishing || isThrowing)
