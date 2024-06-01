@@ -7,6 +7,7 @@ TagManager:
   - Hook
   - Rain
   - SunLight
+  - PauseMenu
   layers:
   - Default
   - TransparentFX

@@ -68,7 +68,6 @@ public class FishingMechanic : MonoBehaviour
     {
         boatMovement = GetComponent<BoatMovement>();
 
-
         throwLineRenderer.positionCount = 2;
         throwLineRenderer.enabled = false; // Initially disable the throw line renderer
 
@@ -123,8 +122,6 @@ public class FishingMechanic : MonoBehaviour
             }
         }
 
-        
-
         if (!isFishing && boatMovement != null)
         {
             boatMovement.GraduallyStopBoat(boatDecelerationRate);
@@ -159,6 +156,8 @@ public class FishingMechanic : MonoBehaviour
             throwLineRenderer.SetPosition(0, player.position);
             throwLineRenderer.SetPosition(1, player.position);
             throwLineRenderer.enabled = false;
+
+            isThrowing = false;
         }
         else
         {
@@ -235,6 +234,7 @@ public class FishingMechanic : MonoBehaviour
 
         // Enable the throw line renderer to show the throwing line
         throwLineRenderer.enabled = true;
+        DrawThrowLine();
     }
 
     void ContinueThrow()
@@ -306,6 +306,8 @@ public class FishingMechanic : MonoBehaviour
         {
             fishingLineRenderer.SetPosition(0, player.position);
             fishingLineRenderer.SetPosition(1, hookInstance.transform.position);
+            Debug.Log(fishingLineRenderer);
+            Debug.Log(fishingLineRenderer.GetPosition(1));
         }
     }
 
@@ -349,15 +351,13 @@ public class FishingMechanic : MonoBehaviour
         tensionSlider.value = startingTension;
         vCam.Follow = player.transform;
         vCam.m_Lens.OrthographicSize = originalCameraSize;
-        tensionSlider.gameObject.SetActive(false);
 
         fish.Released();
 
         if (fishingLineRenderer)
         {
-            fishingLineRenderer.SetPosition(0, player.position);
-            fishingLineRenderer.SetPosition(1, player.position);
-            fishingLineRenderer.enabled = false; // Disable the fishing line renderer
+            Destroy(fishingLineRenderer);
+            fishingLineRenderer = null;
         }
         Destroy(hookInstance); // Destroy the hook instance
     }
@@ -387,9 +387,8 @@ public class FishingMechanic : MonoBehaviour
 
         if (fishingLineRenderer)
         {
-            fishingLineRenderer.SetPosition(0, player.position);
-            fishingLineRenderer.SetPosition(1, player.position);
-            fishingLineRenderer.enabled = false; // Disable the fishing line renderer
+            Destroy(fishingLineRenderer);
+            fishingLineRenderer = null;
         }
         
         Destroy(hookInstance); // Destroy the hook instance
@@ -415,8 +414,9 @@ public class FishingMechanic : MonoBehaviour
         fish = fishTransform;
     }
 
-    bool HookIsStopped()
+    public bool HookIsStopped()
     {
-        return hookRigidbody.velocity.magnitude <= stopSpeedThreshold;
+        return hookRigidbody != null && hookRigidbody.velocity.magnitude <= stopSpeedThreshold;
     }
 }
+

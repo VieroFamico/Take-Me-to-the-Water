@@ -18,6 +18,7 @@ public class Fish : MonoBehaviour
     private Vector3 destination;
     private Transform hook;
     private FishingMechanic fishingMechanic;
+    private HookManager hookManager;
     private bool isCaught = false;
 
     void Start()
@@ -39,10 +40,7 @@ public class Fish : MonoBehaviour
             {
                 MoveTowardsHook();
             }
-            else
-            {
-
-            }
+            // The rest of the fish's behavior if it is caught can be handled here
         }
     }
 
@@ -71,15 +69,34 @@ public class Fish : MonoBehaviour
         if (!hook)
         {
             Collider[] colliders = Physics.OverlapSphere(transform.position, detectionRange);
+            HookManager closestHookManager = null;
+            float closestDistance = float.MaxValue;
+
             foreach (Collider collider in colliders)
             {
                 if (collider.CompareTag("Hook"))
                 {
-                    hook = collider.transform;
-                    destination = hook.transform.position;
-                    fishingMechanic = hook.GetComponentInParent<FishingMechanic>();
-                    break;
+                    HookManager potentialHookManager = collider.GetComponentInParent<HookManager>();
+                    FishingMechanic potentialFishingMechanic = collider.GetComponentInParent<FishingMechanic>();
+                    float distance = Vector3.Distance(transform.position, collider.transform.position);
+
+                    if (potentialFishingMechanic != null && potentialFishingMechanic.HookIsStopped() &&
+                        potentialHookManager != null && !potentialHookManager.IsTargeted &&
+                        distance < closestDistance)
+                    {
+                        closestHookManager = potentialHookManager;
+                        closestDistance = distance;
+                    }
                 }
+            }
+
+            if (closestHookManager != null)
+            {
+                hook = closestHookManager.transform;
+                destination = hook.position;
+                fishingMechanic = hook.GetComponentInParent<FishingMechanic>();
+                hookManager = closestHookManager;
+                hookManager.TargetFish = this;
             }
         }
     }
@@ -99,7 +116,7 @@ public class Fish : MonoBehaviour
             }
             else
             {
-                
+                // The fish didn't bite, you can add additional behavior here if needed
             }
         }
     }
@@ -114,11 +131,24 @@ public class Fish : MonoBehaviour
         isCaught = true;
     }
 
+    public void StopTargetingHook()
+    {
+        hook = null;
+        fishingMechanic = null;
+        hookManager = null;
+        SetNewDestination();
+    }
+
     public void Released()
     {
+        if (hookManager != null)
+        {
+            hookManager.ReleaseTarget();
+        }
         hook = null;
         fishingMechanic = null;
         isCaught = false;
         SetNewDestination();
     }
+
 }
