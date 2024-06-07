@@ -15,13 +15,13 @@ public class Aquarium_Manager : BuildingManager
     public GameObject aquariumDisplay; // Reference to the display panel
     public float fishSize = 1f;
 
-    private FishInventory fishInventoryScript;
+    private FishInventory fishInventoryList;
     private FishData selectedFish;
     private List<GameObject> aquariumFishList = new List<GameObject>();
 
     void Start()
     {
-        fishInventoryScript = GameManager.Instance.fishInventory;
+        fishInventoryList = GameManager.Instance.playerInventory.GetPlayerFishInventory();
         PopulateInventory();
         addButton.onClick.AddListener(AddSelectedFishToAquarium);
         feedButton.onClick.AddListener(SpawnFishFood);
@@ -30,14 +30,14 @@ public class Aquarium_Manager : BuildingManager
 
     void PopulateInventory()
     {
-        if (fishInventoryScript == null) return;
+        if (fishInventoryList == null) return;
 
         foreach (Transform child in inventoryPanel)
         {
             Destroy(child.gameObject);
         }
 
-        List<FishData> fishInventory = fishInventoryScript.GetFishInventory();
+        List<FishData> fishInventory = fishInventoryList.GetFishInventory();
 
         foreach (var fish in fishInventory)
         {

@@ -8,7 +8,6 @@ public class PlayerInventory : MonoBehaviour
     public float money = 100f; // Starting money for the player
     private FishInventory fishInventory;
 
-
     private void Awake()
     {
         DontDestroyOnLoad(gameObject); // Prevent PlayerInventory from being destroyed on scene load
@@ -16,7 +15,7 @@ public class PlayerInventory : MonoBehaviour
 
     private void Start()
     {
-        fishInventory = GameManager.Instance.fishInventory;
+        fishInventory = GameManager.Instance.playerInventory.GetPlayerFishInventory();
     }
 
     void OnEnable()
@@ -39,19 +38,26 @@ public class PlayerInventory : MonoBehaviour
         return fishInventory;
     }
 
+    public void SetFishInventory(FishInventory inventory)
+    {
+        fishInventory = inventory;
+    }
+
     private void FindPlayerFishInventory()
     {
-        fishInventory = GameManager.Instance.fishInventory;
+        fishInventory = GameManager.Instance.playerInventory.GetPlayerFishInventory();
     }
 
     public void CatchFish(FishData fish)
     {
         fishInventory.AddFish(fish); // Add the fish to the inventory
-        SaveManager.SaveFishInventory(fishInventory, "PlayerInventory.json"); // Save the inventory
+        SaveManager.SavePlayerInventory(this); // Save the inventory
     }
+
     public void AddMoney(float amount)
     {
         money += amount;
+        SaveManager.SavePlayerInventory(this); // Save after adding money
     }
 
     public bool SpendMoney(float amount)
@@ -59,9 +65,10 @@ public class PlayerInventory : MonoBehaviour
         if (money >= amount)
         {
             money -= amount;
+            SaveManager.SavePlayerInventory(this); // Save after spending money
             return true;
         }
         return false;
     }
-
 }
+

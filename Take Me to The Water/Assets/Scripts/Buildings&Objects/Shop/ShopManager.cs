@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class ShopManager : BuildingManager
 {
     public FishData temp;
+    public FishData empty;
 
     public Transform showFishPanel;
     public Button buyPanelButton;
@@ -26,7 +27,7 @@ public class ShopManager : BuildingManager
 
     void Start()
     {
-        playerInventory = FindAnyObjectByType<PlayerInventory>();
+        playerInventory = GameManager.Instance.playerInventory;
         buyPanelButton.onClick.AddListener(OpenBuyPanel);
         sellPanelButton.onClick.AddListener(OpenSellPanel);
         doneButton.onClick.AddListener(CloseDisplay);
@@ -39,15 +40,14 @@ public class ShopManager : BuildingManager
         isBuying = true;
         ChangeBuySellText();
         PopulateInventory();
-        OpenDisplay();
     }
 
     void OpenSellPanel()
     {
+        playerInventory.GetPlayerFishInventory().GetFishInventory().Add(temp);
         isBuying = false;
         ChangeBuySellText();
         PopulateInventory();
-        OpenDisplay();
     }
 
     private void ChangeBuySellText()
@@ -84,7 +84,7 @@ public class ShopManager : BuildingManager
     {
         selectedFish = fish;
         selectedFishName.text = fish.fishName;
-        selectedFishImage.sprite = fish.cardSprite;
+        selectedFishImage.sprite = fish.fishSprite;
         selectedFishPrice.text = isBuying ? $"BUY ${fish.price}" : $"SELL ${fish.price}";
     }
 
@@ -112,6 +112,12 @@ public class ShopManager : BuildingManager
         }
     }
 
+    public override void OpenDisplay()
+    {
+        base.OpenDisplay();
+        isBuying = true;
+        PopulateInventory();
+    }
     public override void CloseDisplay()
     {
         base.CloseDisplay();

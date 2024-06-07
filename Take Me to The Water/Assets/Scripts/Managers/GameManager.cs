@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public FishInventory fishInventory; // Player's fish inventory
+    public PlayerInventory playerInventory; // Player's inventory including money
     public FishInventory shopFishInventory; // Shop's fish inventory
     private static GameManager instance;
 
@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            LoadFishInventories();
+            LoadInventories();
         }
         else
         {
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        SaveFishInventories();
+        SaveInventories();
     }
 
     public static GameManager Instance
@@ -32,12 +32,19 @@ public class GameManager : MonoBehaviour
         get { return instance; }
     }
 
-    private void LoadFishInventories()
+    private void LoadInventories()
     {
-        fishInventory = SaveManager.LoadFishInventory("PlayerInventory.json");
-        if (fishInventory == null)
+        PlayerInventoryWrapper playerData = SaveManager.LoadPlayerInventory();
+        if (playerData != null)
         {
-            fishInventory = new FishInventory();
+            playerInventory.money = playerData.money;
+            FishInventory fishInventory = new FishInventory();
+            playerInventory.SetFishInventory(fishInventory);
+            SaveManager.SavePlayerInventory(playerInventory);
+        }
+        else
+        {
+            SaveManager.SavePlayerInventory(playerInventory);
         }
 
         shopFishInventory = SaveManager.LoadFishInventory("ShopInventory.json");
@@ -47,9 +54,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void SaveFishInventories()
+    private void SaveInventories()
     {
-        SaveManager.SaveFishInventory(fishInventory, "PlayerInventory.json");
+        SaveManager.SavePlayerInventory(playerInventory);
         SaveManager.SaveFishInventory(shopFishInventory, "ShopInventory.json");
     }
 }
+
