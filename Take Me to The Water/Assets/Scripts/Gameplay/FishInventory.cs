@@ -1,17 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
-public class FishInventory : MonoBehaviour
+[System.Serializable]
+public class FishInventory
 {
-    public List<FishData> fishInventory;
+    private List<FishData> fishInventory = new List<FishData>();
 
     public List<FishData> GetFishInventory()
     {
         return fishInventory;
     }
+
+    public void SetFishInventory(List<FishData> inventory)
+    {
+        fishInventory = inventory;
+    }
+
     public void AddFish(FishData newFish)
     {
         fishInventory.Add(newFish);
+    }
+    public void RemoveFish(FishData fish)
+    {
+        fishInventory.Remove(fish);
+    }
+
+    public FishData GetRandomFish()
+    {
+        if (fishInventory.Count == 0)
+        {
+            return null;
+        }
+        int randomIndex = Random.Range(0, fishInventory.Count);
+        return fishInventory[randomIndex];
     }
 }

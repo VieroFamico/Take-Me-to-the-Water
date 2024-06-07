@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b78351a66de0eb646b6c9c56913b1b27
+guid: fd8a70917d53b014b89e6831afc5ac34
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ikan_emas_2-Sheet_0
+      name: ikan_emas-Sheet 3 500_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 23
-        width: 64
-        height: 42
+        x: 195
+        y: 115
+        width: 320
+        height: 210
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9aa5b722e7a120c4895a07a297bae01e
-      internalID: 666640882
+      spriteID: e2fc08e423450614bafbc3b22f4a1125
+      internalID: 541559489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ikan_emas_2-Sheet_1
+      name: ikan_emas-Sheet 3 500_1
       rect:
         serializedVersion: 2
-        x: 183
-        y: 23
-        width: 64
-        height: 42
+        x: 915
+        y: 115
+        width: 320
+        height: 210
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23fb6d127ad06f94ca252a0325843f60
-      internalID: -1755356941
+      spriteID: e5c6879ee109cad4aaf469f6e91ea65f
+      internalID: -1679063372
       vertices: []
       indices: 
       edges: []
@@ -175,8 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ikan_emas_2-Sheet_0: 666640882
-      ikan_emas_2-Sheet_1: -1755356941
+      ikan_emas-Sheet 3 500_0: 541559489
+      ikan_emas-Sheet 3 500_1: -1679063372
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

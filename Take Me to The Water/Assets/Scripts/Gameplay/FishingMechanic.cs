@@ -1,5 +1,6 @@
 using Cinemachine;
 using System.Collections;
+using Unity.Services.Economy;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,7 @@ public class FishingMechanic : MonoBehaviour
 {
     [Header("Dependencies")]
     public UIManager uiManager;
+    public PlayerInventory playerInventory;
 
     [Header("Fishing Hook")]
     public LineRenderer throwLineRenderer;
@@ -50,6 +52,7 @@ public class FishingMechanic : MonoBehaviour
     private Vector3 hookStartPosition;
     private Vector3 hookTargetPosition;
     private float currentThrowDistance = 0f;
+
     private Camera mainCamera;
     private Fish fish;// Reference to the fish caught
     private BoatMovement boatMovement;
@@ -66,6 +69,8 @@ public class FishingMechanic : MonoBehaviour
 
     void Start()
     {
+        playerInventory = FindAnyObjectByType<PlayerInventory>();
+
         boatMovement = GetComponent<BoatMovement>();
 
         throwLineRenderer.positionCount = 2;
@@ -383,7 +388,7 @@ public class FishingMechanic : MonoBehaviour
         vCam.Follow = player.transform;
         vCam.m_Lens.OrthographicSize = originalCameraSize;
         canCheckCatch = false;
-        uiManager.ShowFishCaughtUI(fish.fishImage, fish.fishName);
+        uiManager.ShowFishCaughtUI(fish.fishData.fishSprite, fish.fishData.fishName);
 
         if (fishingLineRenderer)
         {
@@ -395,6 +400,10 @@ public class FishingMechanic : MonoBehaviour
 
         if (fish)
         {
+            FishData catchFishData = fish.fishData;
+
+            playerInventory.CatchFish(catchFishData); // Add the caught fish to the player's inventory
+
             Destroy(fish.gameObject);
         }
     }

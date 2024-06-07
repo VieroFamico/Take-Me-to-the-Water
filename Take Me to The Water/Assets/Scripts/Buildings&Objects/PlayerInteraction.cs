@@ -43,10 +43,18 @@ public class PlayerInteraction : MonoBehaviour
     void ToggleBuildingDisplay(BuildingManager building)
     {
         bool isActive = building.buildingDisplay.activeSelf;
-        building.buildingDisplay.SetActive(!isActive);
-        Vector3 temp = transform.position;
-        temp.y += buildingDisplayOffset.y;
-        building.buildingDisplay.transform.position = transform.position;
+
+        if (!isActive)
+        {
+            building.OpenDisplay();
+        }
+        else
+        {
+            building.CloseDisplay();
+        }
+        //Vector3 temp = transform.position;
+        //temp.y += buildingDisplayOffset.y;
+        //building.buildingDisplay.transform.position = transform.position;
 
     }
 

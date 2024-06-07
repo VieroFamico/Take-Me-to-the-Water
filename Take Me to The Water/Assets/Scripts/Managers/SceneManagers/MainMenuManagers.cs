@@ -20,7 +20,7 @@ public class MainMenuManagers : MonoBehaviour
     private void StartGame()
     {
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        SceneManager.LoadScene(nextSceneIndex);
+        SceneTransitionManager.Instance.TransitionToScene(nextSceneIndex);
     }
 
     private void ExitGame()
@@ -31,7 +31,7 @@ public class MainMenuManagers : MonoBehaviour
     private void OpenSettings()
     {
         // Placeholder for opening settings
-        Debug.Log("Settings button is le pressed");
+        Debug.Log("Settings button is pressed");
     }
 
 }

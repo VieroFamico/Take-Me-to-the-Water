@@ -85,6 +85,10 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8609585200564867850, guid: e0bf5e4ae0867714fb877a3bcd109186, type: 3}
+      propertyPath: fishData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1a7bce3b28ee7be47b9fe3d950a5fd39, type: 2}
+    - target: {fileID: 8609585200564867850, guid: e0bf5e4ae0867714fb877a3bcd109186, type: 3}
       propertyPath: fishImage
       value: 
       objectReference: {fileID: 666640882, guid: b78351a66de0eb646b6c9c56913b1b27, type: 3}

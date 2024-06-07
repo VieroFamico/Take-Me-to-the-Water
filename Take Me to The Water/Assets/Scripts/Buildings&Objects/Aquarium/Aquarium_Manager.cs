@@ -17,14 +17,15 @@ public class Aquarium_Manager : BuildingManager
 
     private FishInventory fishInventoryScript;
     private FishData selectedFish;
+    private List<GameObject> aquariumFishList = new List<GameObject>();
 
     void Start()
     {
-        fishInventoryScript = FindObjectOfType<FishInventory>();
+        fishInventoryScript = GameManager.Instance.fishInventory;
         PopulateInventory();
         addButton.onClick.AddListener(AddSelectedFishToAquarium);
         feedButton.onClick.AddListener(SpawnFishFood);
-        doneButton.onClick.AddListener(CloseAquariumDisplay);
+        doneButton.onClick.AddListener(CloseDisplay);
     }
 
     void PopulateInventory()
@@ -66,9 +67,8 @@ public class Aquarium_Manager : BuildingManager
             newFish.GetComponent<SpriteRenderer>().sortingOrder = 110;
             newFish.transform.position = fishContainer.transform.position;
             newFish.transform.localScale = Vector3.one * fishSize;
-            
-            // Set the fish data here if needed, such as setting a sprite or name
-            // newFish.GetComponent<Fish>().Initialize(selectedFish);
+
+            aquariumFishList.Add(newFish);
         }
     }
 
@@ -76,9 +76,22 @@ public class Aquarium_Manager : BuildingManager
     {
         Instantiate(fishFoodPrefab, fishContainer.GetComponent<RectTransform>().transform.position, Quaternion.identity);
     }
-
-    void CloseAquariumDisplay()
+    override public void OpenDisplay()
+    {
+        PopulateInventory();
+        aquariumDisplay.SetActive(true);
+        SetFishActiveState(true); // Enable fish when display is opened
+    }
+    void SetFishActiveState(bool state)
+    {
+        foreach (var fish in aquariumFishList)
+        {
+            fish.SetActive(state);
+        }
+    }
+    override public void CloseDisplay()
     {
         aquariumDisplay.SetActive(false);
+        SetFishActiveState(false);
     }
 }

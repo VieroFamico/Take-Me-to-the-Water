@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00ddc165b7e55914fb67b1995db05d94, type: 3}
-  m_Name: Base_fish
+  m_Name: OrangeGold_Fish
   m_EditorClassIdentifier: 
-  fishName: Base_Fish
-  fishSprite: {fileID: -2073602986, guid: d7c17001c3f79cc4eb5194222e8500e1, type: 3}
+  fishName: Orange Gold Fish
+  fishSprite: {fileID: 541559489, guid: fd8a70917d53b014b89e6831afc5ac34, type: 3}
   cardSprite: {fileID: 0}
-  price: 10
+  price: 20

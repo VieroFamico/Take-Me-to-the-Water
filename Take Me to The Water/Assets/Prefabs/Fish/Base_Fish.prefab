@@ -81,8 +81,7 @@ MonoBehaviour:
   rotationSpeed: 3
   detectionRange: 10
   biteChance: 0.5
-  fishImage: {fileID: -1703686198, guid: e74bcb30d80aabc488225786bfa33e24, type: 3}
-  fishName: Base Fish
+  fishData: {fileID: 11400000, guid: 177ff8a0fd42dbe45a3a9b4138f42faa, type: 2}
   fishSpriteGameObject: {fileID: 7399527063663411735}
   bitePoint: {fileID: 6596101706181678872}
 --- !u!1 &6370293082450271182

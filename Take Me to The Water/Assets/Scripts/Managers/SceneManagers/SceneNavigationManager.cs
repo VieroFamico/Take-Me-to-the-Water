@@ -20,7 +20,6 @@ public class SceneNavigationManager : MonoBehaviour
     public void ChangeScene(int buildIndexIncrement)
     {
         int currentBuildIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentBuildIndex + buildIndexIncrement);
+        SceneTransitionManager.Instance.TransitionToScene(currentBuildIndex + buildIndexIncrement);
     }
-
 }
