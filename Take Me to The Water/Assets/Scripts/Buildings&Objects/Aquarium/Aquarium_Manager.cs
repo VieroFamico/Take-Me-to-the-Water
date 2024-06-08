@@ -21,7 +21,7 @@ public class Aquarium_Manager : BuildingManager
 
     void Start()
     {
-        fishInventoryList = GameManager.Instance.playerInventory.GetPlayerFishInventory();
+        fishInventoryList = FindAnyObjectByType<PlayerInventory>().GetPlayerFishInventory();
         PopulateInventory();
         addButton.onClick.AddListener(AddSelectedFishToAquarium);
         feedButton.onClick.AddListener(SpawnFishFood);

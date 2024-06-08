@@ -35,16 +35,23 @@ public class GameManager : MonoBehaviour
     private void LoadInventories()
     {
         PlayerInventoryWrapper playerData = SaveManager.LoadPlayerInventory();
+        Debug.Log(playerData.money);
+        Debug.Log(playerData.fishInventory);
         if (playerData != null)
         {
             playerInventory.money = playerData.money;
+
             FishInventory fishInventory = new FishInventory();
-            playerInventory.SetFishInventory(fishInventory);
+            fishInventory.SetFishList(playerData.fishInventory);
+            playerInventory.SetPlayerFishInventory(fishInventory);
+
             SaveManager.SavePlayerInventory(playerInventory);
+            Debug.Log("Save If Not Null");
         }
         else
         {
             SaveManager.SavePlayerInventory(playerInventory);
+            Debug.Log("Save And Is Null");
         }
 
         shopFishInventory = SaveManager.LoadFishInventory("ShopInventory.json");

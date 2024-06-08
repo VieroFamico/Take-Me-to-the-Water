@@ -7,10 +7,19 @@ public class PlayerInventory : MonoBehaviour
 {
     public float money = 100f; // Starting money for the player
     private FishInventory fishInventory;
+    private static PlayerInventory instance;
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject); // Prevent PlayerInventory from being destroyed on scene load
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Start()
@@ -38,7 +47,7 @@ public class PlayerInventory : MonoBehaviour
         return fishInventory;
     }
 
-    public void SetFishInventory(FishInventory inventory)
+    public void SetPlayerFishInventory(FishInventory inventory)
     {
         fishInventory = inventory;
     }

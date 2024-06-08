@@ -57,7 +57,7 @@ public static class SaveManager
             string json = File.ReadAllText(path);
             FishInventoryWrapper wrapper = JsonUtility.FromJson<FishInventoryWrapper>(json);
             FishInventory inventory = new FishInventory();
-            inventory.SetFishInventory(wrapper.fishInventory);
+            inventory.SetFishList(wrapper.fishInventory);
             return inventory;
         }
         return null;

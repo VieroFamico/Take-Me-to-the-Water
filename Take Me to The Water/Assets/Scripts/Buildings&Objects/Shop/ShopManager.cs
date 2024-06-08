@@ -108,6 +108,9 @@ public class ShopManager : BuildingManager
             }
             SaveManager.SaveFishInventory(playerInventory.GetPlayerFishInventory(), "PlayerInventory.json"); // Save the player's inventory
             SaveManager.SaveFishInventory(shopFishInventory, "ShopInventory.json"); // Save the shop's inventory
+
+            SelectFish(empty);
+
             PopulateInventory(); // Refresh the inventory display
         }
     }

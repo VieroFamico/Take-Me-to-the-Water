@@ -13,7 +13,7 @@ public class FishInventory
         return fishInventory;
     }
 
-    public void SetFishInventory(List<FishData> inventory)
+    public void SetFishList(List<FishData> inventory)
     {
         fishInventory = inventory;
     }
