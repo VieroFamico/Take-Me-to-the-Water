@@ -98,6 +98,7 @@ public class ShopManager : BuildingManager
                 {
                     playerInventory.GetPlayerFishInventory().AddFish(selectedFish);
                     shopFishInventory.RemoveFish(selectedFish);
+                    SelectFish(empty);
                 }
             }
             else
@@ -105,11 +106,10 @@ public class ShopManager : BuildingManager
                 playerInventory.AddMoney(selectedFish.price);
                 playerInventory.GetPlayerFishInventory().RemoveFish(selectedFish);
                 shopFishInventory.AddFish(selectedFish);
+                SelectFish(empty);
             }
-            SaveManager.SaveFishInventory(playerInventory.GetPlayerFishInventory(), "PlayerInventory.json"); // Save the player's inventory
+            //SaveManager.SaveFishInventory(playerInventory.GetPlayerFishInventory(), "PlayerInventory.json"); // Save the player's inventory
             SaveManager.SaveFishInventory(shopFishInventory, "ShopInventory.json"); // Save the shop's inventory
-
-            SelectFish(empty);
 
             PopulateInventory(); // Refresh the inventory display
         }
@@ -124,5 +124,7 @@ public class ShopManager : BuildingManager
     public override void CloseDisplay()
     {
         base.CloseDisplay();
+        SaveManager.SaveFishInventory(playerInventory.GetPlayerFishInventory(), "PlayerInventory.json"); // Save the player's inventory
+        SaveManager.SaveFishInventory(shopFishInventory, "ShopInventory.json"); // Save the shop's inventory
     }
 }

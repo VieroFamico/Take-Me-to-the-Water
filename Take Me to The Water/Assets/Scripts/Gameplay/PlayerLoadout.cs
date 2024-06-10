@@ -12,7 +12,8 @@ public class PlayerLoadout : MonoBehaviour
     }
 
     private Bait currentBait = Bait.Worm;
-    private Dictionary<Bait, int> baitAmounts = new Dictionary<Bait, int>();
+    public Dictionary<Bait, int> baitAmounts = new Dictionary<Bait, int>();
+    public ShipSO currentShip;
 
     void Start()
     {
@@ -24,12 +25,7 @@ public class PlayerLoadout : MonoBehaviour
         baitAmounts[Bait.Pelet] = 3;
     }
 
-    void Update()
-    {
-        // Update logic if needed
-    }
-
-    public Bait CurrentBait()
+    public Bait GetCurrentBait()
     {
         return currentBait;
     }
@@ -58,6 +54,22 @@ public class PlayerLoadout : MonoBehaviour
         {
             baitAmounts[baitType] = Mathf.Max(baitAmounts[baitType] - amount, 0);
         }
+    }
+    public void SetCurrentBait(Bait baitType)
+    {
+        Debug.Log(currentBait);
+        currentBait = baitType;
+        Debug.Log(currentBait);
+    }
+
+    public void SetBaitAmounts(Dictionary<Bait, int> baitAmounts)
+    {
+        this.baitAmounts = baitAmounts;
+    }
+
+    public void SetCurrentShip(ShipSO ship)
+    {
+        currentShip = ship;
     }
 }
 

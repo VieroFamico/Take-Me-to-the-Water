@@ -20,6 +20,9 @@ public class DayNightManager : MonoBehaviour
     private float percentageOfPhasePassed = 0f;
     private int day = 0;
     private Light sunLight;
+    private PlayerLoadout playerLoadout;
+    private DisplayManager displayManager;
+
 
     void Awake()
     {
@@ -29,6 +32,8 @@ public class DayNightManager : MonoBehaviour
     void Start()
     {
         FindSunLight();
+        playerLoadout = GameManager.Instance.playerInventory.GetPlayerLoadout();
+        displayManager = FindAnyObjectByType<DisplayManager>();
     }
     void OnEnable()
     {
@@ -62,13 +67,19 @@ public class DayNightManager : MonoBehaviour
     private void UpdateDayCycle()
     {
         currentTime += Time.deltaTime;
-        if (currentTime >= dayLength)
+        if (currentTime < playerLoadout.currentShip.shipTimeLimit && currentTime <= dayLength)
+        {
+            currentTime += Time.deltaTime;
+            
+        }
+        else
         {
             currentTime = 0f;
             day++;
+            displayManager.UpdateDisplay();
             Debug.Log(day);
+            // Time has reached the ship's time limit, stop increasing currentTime
         }
-
         percentageOfDayPassed = currentTime / dayLength;
         sunLight.transform.rotation = Quaternion.Euler(20 + percentageOfDayPassed * (150 - 20), 0, 0);
 
@@ -96,9 +107,12 @@ public class DayNightManager : MonoBehaviour
         }
     }
 
+    public float GetCurrentDay()
+    {
+        return day;
+    }
     public float GetCurrentTime()
     {
         return currentTime;
     }
-
 }

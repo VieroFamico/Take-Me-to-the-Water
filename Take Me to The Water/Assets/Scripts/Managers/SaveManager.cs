@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using static PlayerLoadout;
 
 [System.Serializable]
 public class FishInventoryWrapper
@@ -13,6 +14,17 @@ public class PlayerInventoryWrapper
 {
     public float money;
     public List<FishData> fishInventory;
+    public PlayerLoadoutWrapper playerLoadout;
+}
+
+[System.Serializable]
+public class PlayerLoadoutWrapper
+{
+    public Bait currentBait;
+    public Dictionary<Bait, int> baitAmounts;
+    public string currentShipName;
+    public string currentShipSpritePath;
+    public float currentShipTimeLimit;
 }
 
 public static class SaveManager
@@ -22,11 +34,26 @@ public static class SaveManager
 
     public static void SavePlayerInventory(PlayerInventory playerInventory)
     {
+        Debug.Log("Tried Saving");
         PlayerInventoryWrapper wrapper = new PlayerInventoryWrapper
         {
             money = playerInventory.money,
-            fishInventory = playerInventory.GetPlayerFishInventory().GetFishInventory()
+            fishInventory = playerInventory.GetPlayerFishInventory().GetFishInventory(),
+            playerLoadout = new PlayerLoadoutWrapper
+            {
+                currentBait = playerInventory.GetPlayerLoadout().GetCurrentBait(),
+                baitAmounts = new Dictionary<Bait, int>(),
+                currentShipName = playerInventory.GetPlayerLoadout().currentShip.shipName,
+                currentShipSpritePath = playerInventory.GetPlayerLoadout().currentShip.shipSprite.name,
+                currentShipTimeLimit = playerInventory.GetPlayerLoadout().currentShip.shipTimeLimit
+            }
         };
+
+        foreach (var bait in playerInventory.GetPlayerLoadout().baitAmounts)
+        {
+            wrapper.playerLoadout.baitAmounts[bait.Key] = bait.Value;
+        }
+
         string json = JsonUtility.ToJson(wrapper);
         File.WriteAllText(playerSavePath, json);
     }

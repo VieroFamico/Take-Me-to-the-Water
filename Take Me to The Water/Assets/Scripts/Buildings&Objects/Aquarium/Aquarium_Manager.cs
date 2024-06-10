@@ -17,7 +17,7 @@ public class Aquarium_Manager : BuildingManager
 
     private FishInventory fishInventoryList;
     private FishData selectedFish;
-    private List<GameObject> aquariumFishList = new List<GameObject>();
+    private List<GameObject> aquariumGameObjectList = new List<GameObject>();
 
     void Start()
     {
@@ -68,13 +68,14 @@ public class Aquarium_Manager : BuildingManager
             newFish.transform.position = fishContainer.transform.position;
             newFish.transform.localScale = Vector3.one * fishSize;
 
-            aquariumFishList.Add(newFish);
+            aquariumGameObjectList.Add(newFish);
         }
     }
 
     void SpawnFishFood()
     {
-        Instantiate(fishFoodPrefab, fishContainer.GetComponent<RectTransform>().transform.position, Quaternion.identity);
+        GameObject temp = Instantiate(fishFoodPrefab, fishContainer.GetComponent<RectTransform>().transform.position, Quaternion.identity);
+        aquariumGameObjectList.Add(temp);
     }
     override public void OpenDisplay()
     {
@@ -84,7 +85,7 @@ public class Aquarium_Manager : BuildingManager
     }
     void SetFishActiveState(bool state)
     {
-        foreach (var fish in aquariumFishList)
+        foreach (var fish in aquariumGameObjectList)
         {
             fish.SetActive(state);
         }

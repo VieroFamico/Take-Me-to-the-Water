@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerInventory : MonoBehaviour
 {
     public float money = 100f; // Starting money for the player
+    public PlayerLoadout playerLoadout;
     private FishInventory fishInventory;
     private static PlayerInventory instance;
 
@@ -15,6 +16,7 @@ public class PlayerInventory : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            playerLoadout = GetComponent<PlayerLoadout>(); // Initialize playerLoadout
         }
         else
         {
@@ -44,6 +46,7 @@ public class PlayerInventory : MonoBehaviour
 
     public FishInventory GetPlayerFishInventory()
     {
+        Debug.Log("Get PlayerFishInventory");
         return fishInventory;
     }
 
@@ -51,7 +54,10 @@ public class PlayerInventory : MonoBehaviour
     {
         fishInventory = inventory;
     }
-
+    public void SetPlayerLoadout(PlayerLoadout inventory)
+    {
+        playerLoadout = inventory;
+    }
     private void FindPlayerFishInventory()
     {
         fishInventory = GameManager.Instance.playerInventory.GetPlayerFishInventory();
@@ -66,7 +72,7 @@ public class PlayerInventory : MonoBehaviour
     public void AddMoney(float amount)
     {
         money += amount;
-        SaveManager.SavePlayerInventory(this); // Save after adding money
+        SaveManager.SavePlayerInventory(this.GetComponent<PlayerInventory>()); // Save after adding money
     }
 
     public bool SpendMoney(float amount)
@@ -74,10 +80,21 @@ public class PlayerInventory : MonoBehaviour
         if (money >= amount)
         {
             money -= amount;
-            SaveManager.SavePlayerInventory(this); // Save after spending money
+            SaveManager.SavePlayerInventory(this.GetComponent<PlayerInventory>()); // Save after spending money
             return true;
         }
         return false;
+    }
+
+    public float GetMoney()
+    {
+        return money;
+    }
+
+    public PlayerLoadout GetPlayerLoadout()
+    {
+        Debug.Log("Tried Saving");
+        return playerLoadout;
     }
 }
 
