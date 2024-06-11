@@ -36,7 +36,7 @@ public class ShopManager : BuildingManager
 
     void OpenBuyPanel()
     {
-        shopFishInventory.GetFishInventory().Add(temp);
+        shopFishInventory.GetFishList().Add(temp);
         isBuying = true;
         ChangeBuySellText();
         PopulateInventory();
@@ -44,7 +44,7 @@ public class ShopManager : BuildingManager
 
     void OpenSellPanel()
     {
-        playerInventory.GetPlayerFishInventory().GetFishInventory().Add(temp);
+        playerInventory.GetPlayerFishInventory().GetFishList().Add(temp);
         isBuying = false;
         ChangeBuySellText();
         PopulateInventory();
@@ -62,7 +62,7 @@ public class ShopManager : BuildingManager
             Destroy(child.gameObject);
         }
 
-        List<FishData> fishInventory = isBuying ? shopFishInventory.GetFishInventory() : playerInventory.GetPlayerFishInventory().GetFishInventory();
+        List<FishData> fishInventory = isBuying ? shopFishInventory.GetFishList() : playerInventory.GetPlayerFishInventory().GetFishList();
 
         foreach (var fish in fishInventory)
         {
@@ -90,7 +90,7 @@ public class ShopManager : BuildingManager
 
     public void BuyOrSellSelectedFish()
     {
-        if (selectedFish != null)
+        if (selectedFish != null && selectedFish != empty)
         {
             if (isBuying)
             {
@@ -109,6 +109,7 @@ public class ShopManager : BuildingManager
                 SelectFish(empty);
             }
             //SaveManager.SaveFishInventory(playerInventory.GetPlayerFishInventory(), "PlayerInventory.json"); // Save the player's inventory
+            SaveManager.SavePlayerInventory(playerInventory); // Save the player's inventory
             SaveManager.SaveFishInventory(shopFishInventory, "ShopInventory.json"); // Save the shop's inventory
 
             PopulateInventory(); // Refresh the inventory display
@@ -124,7 +125,7 @@ public class ShopManager : BuildingManager
     public override void CloseDisplay()
     {
         base.CloseDisplay();
-        SaveManager.SaveFishInventory(playerInventory.GetPlayerFishInventory(), "PlayerInventory.json"); // Save the player's inventory
+        SaveManager.SavePlayerInventory(playerInventory); // Save the player's inventory
         SaveManager.SaveFishInventory(shopFishInventory, "ShopInventory.json"); // Save the shop's inventory
     }
 }

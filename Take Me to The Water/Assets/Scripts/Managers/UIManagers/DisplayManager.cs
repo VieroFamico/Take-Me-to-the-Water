@@ -6,6 +6,7 @@ using UnityEngine;
 public class DisplayManager : MonoBehaviour
 {
     public TextMeshProUGUI moneyText;
+    public TextMeshProUGUI fuelText;
     public TextMeshProUGUI dayText;
     public Transform moneyChangeParent; // Parent object for spawning money change text
     public GameObject moneyChangePrefab; // Prefab for the money change text
@@ -25,7 +26,8 @@ public class DisplayManager : MonoBehaviour
     public void UpdateDisplay()
     {
         moneyText.text = $"${playerInventory.GetMoney()}";
-        dayText.text = $"{dayNightManager.GetCurrentDay()}";
+        //dayText.text = $"{dayNightManager.GetCurrentDay()}";
+        fuelText.text = $"{(int)playerInventory.GetPlayerLoadout().GetCurrentShip().GetFuelPercentage()}%";
     }
 
     public void ShowMoneyChange(float amount)

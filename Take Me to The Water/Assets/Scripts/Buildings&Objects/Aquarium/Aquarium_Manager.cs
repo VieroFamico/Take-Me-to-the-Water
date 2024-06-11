@@ -37,7 +37,7 @@ public class Aquarium_Manager : BuildingManager
             Destroy(child.gameObject);
         }
 
-        List<FishData> fishInventory = fishInventoryList.GetFishInventory();
+        List<FishData> fishInventory = fishInventoryList.GetFishList();
 
         foreach (var fish in fishInventory)
         {

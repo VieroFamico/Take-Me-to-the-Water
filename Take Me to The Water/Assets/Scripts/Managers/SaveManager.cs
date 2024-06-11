@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -20,10 +21,10 @@ public class PlayerInventoryWrapper
 [System.Serializable]
 public class PlayerLoadoutWrapper
 {
-    public Bait currentBait;
-    public Dictionary<Bait, int> baitAmounts;
+    public PlayerLoadout.Bait currentBait;
+    public Dictionary<PlayerLoadout.Bait, int> baitAmounts;
     public string currentShipName;
-    public string currentShipSpritePath;
+    public byte[] currentShipSpriteData;
     public float currentShipTimeLimit;
 }
 
@@ -34,44 +35,53 @@ public static class SaveManager
 
     public static void SavePlayerInventory(PlayerInventory playerInventory)
     {
-        Debug.Log("Tried Saving");
-        PlayerInventoryWrapper wrapper = new PlayerInventoryWrapper
+        PlayerLoadout playerLoadout = playerInventory.GetPlayerLoadout();
+        ShipSO currentShip = playerLoadout.GetCurrentShip();
+
+        // Create a PlayerLoadoutWrapper instance
+        PlayerLoadoutWrapper playerLoadoutWrapper = new PlayerLoadoutWrapper
         {
-            money = playerInventory.money,
-            fishInventory = playerInventory.GetPlayerFishInventory().GetFishInventory(),
-            playerLoadout = new PlayerLoadoutWrapper
-            {
-                currentBait = playerInventory.GetPlayerLoadout().GetCurrentBait(),
-                baitAmounts = new Dictionary<Bait, int>(),
-                currentShipName = playerInventory.GetPlayerLoadout().currentShip.shipName,
-                currentShipSpritePath = playerInventory.GetPlayerLoadout().currentShip.shipSprite.name,
-                currentShipTimeLimit = playerInventory.GetPlayerLoadout().currentShip.shipTimeLimit
-            }
+            currentBait = playerLoadout.GetCurrentBait(),
+            baitAmounts = new Dictionary<PlayerLoadout.Bait, int>(playerLoadout.GetBaitAmounts()),
+            currentShipName = currentShip != null ? currentShip.shipName : "BaseShip",
+            currentShipSpriteData = currentShip != null && currentShip.shipSprite != null ? SpriteToByteArray(currentShip.shipSprite) : null,
+            currentShipTimeLimit = currentShip != null ? currentShip.shipTimeLimit : 5
         };
 
-        foreach (var bait in playerInventory.GetPlayerLoadout().baitAmounts)
+        // Create a PlayerInventoryWrapper instance
+        PlayerInventoryWrapper playerInventoryWrapper = new PlayerInventoryWrapper
         {
-            wrapper.playerLoadout.baitAmounts[bait.Key] = bait.Value;
-        }
+            money = playerInventory.money,
+            fishInventory = playerInventory.GetPlayerFishInventory().GetFishList(),
+            playerLoadout = playerLoadoutWrapper
+        };
 
-        string json = JsonUtility.ToJson(wrapper);
+        Debug.Log(playerInventoryWrapper.money);
+        Debug.Log(playerInventory.money);
+
+        // Serialize the PlayerInventoryWrapper to JSON
+        string json = JsonUtility.ToJson(playerInventoryWrapper);
+        Debug.Log(json);
         File.WriteAllText(playerSavePath, json);
     }
 
+
     public static PlayerInventoryWrapper LoadPlayerInventory()
     {
-        if (File.Exists(playerSavePath))
+        string path = playerSavePath;
+        if (File.Exists(path))
         {
-            string json = File.ReadAllText(playerSavePath);
-            PlayerInventoryWrapper wrapper = JsonUtility.FromJson<PlayerInventoryWrapper>(json);
-            return wrapper;
+            string json = File.ReadAllText(path);
+            Debug.Log(json);
+            return JsonUtility.FromJson<PlayerInventoryWrapper>(json);
         }
         return null;
     }
 
+
     public static void SaveFishInventory(FishInventory inventory, string fileName)
     {
-        FishInventoryWrapper wrapper = new FishInventoryWrapper { fishInventory = inventory.GetFishInventory() };
+        FishInventoryWrapper wrapper = new FishInventoryWrapper { fishInventory = inventory.GetFishList() };
         string json = JsonUtility.ToJson(wrapper);
         File.WriteAllText(Application.persistentDataPath + "/" + fileName, json);
     }
@@ -88,5 +98,29 @@ public static class SaveManager
             return inventory;
         }
         return null;
+    }
+    public static byte[] SpriteToByteArray(Sprite sprite)
+    {
+        if (sprite == null) return null;
+
+        try
+        {
+            Texture2D texture = sprite.texture;
+            byte[] bytes = texture.EncodeToPNG(); // Encode the texture to a PNG byte array
+            return bytes;
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Error converting sprite to byte array: " + e);
+            return null;
+        }
+    }
+
+
+    public static Sprite ByteArrayToSprite(byte[] data)
+    {
+        Texture2D texture = new Texture2D(2, 2);
+        texture.LoadImage(data);
+        return Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
     }
 }

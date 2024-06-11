@@ -16,12 +16,16 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            LoadInventories();
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+
+    void Start()
+    {
+        LoadInventories();
     }
 
     private void OnApplicationQuit()
@@ -37,33 +41,47 @@ public class GameManager : MonoBehaviour
     private void LoadInventories()
     {
         PlayerInventoryWrapper playerData = SaveManager.LoadPlayerInventory();
-        
+        Debug.Log(playerData?.money);
+        Debug.Log(playerData?.fishInventory);
+        Debug.Log(playerData?.playerLoadout);
+
         if (playerData != null)
         {
             playerInventory.money = playerData.money;
+            Debug.Log(playerData.money);
+            Debug.Log(playerInventory.money);
 
-            // Check and set fish inventory
             FishInventory fishInventory = new FishInventory();
-            if (playerData.fishInventory != null)
-            {
-                fishInventory.SetFishList(playerData.fishInventory);
-            }
-            else
-            {
-                fishInventory.SetFishList(new List<FishData>());
-            }
+            fishInventory.SetFishList(playerData.fishInventory);
             playerInventory.SetPlayerFishInventory(fishInventory);
 
-            // Check and set player loadout
             PlayerLoadoutWrapper loadedPlayerLoadout = playerData.playerLoadout;
             PlayerLoadout playerLoadout = playerInventory.GetPlayerLoadout();
 
-            if (loadedPlayerLoadout != null)
+            if (loadedPlayerLoadout == null)
             {
-                // Set current bait
-                playerLoadout.SetCurrentBait(Bait.Worm);
+                // If loadedPlayerLoadout is null, initialize with basic data
+                playerLoadout.SetCurrentBait(PlayerLoadout.Bait.Worm);
 
-                // Set bait amounts
+                Dictionary<PlayerLoadout.Bait, int> baitAmounts = new Dictionary<PlayerLoadout.Bait, int>();
+                foreach (var bait in System.Enum.GetValues(typeof(PlayerLoadout.Bait)))
+                {
+                    baitAmounts[(PlayerLoadout.Bait)bait] = 0;
+                }
+                playerLoadout.SetBaitAmounts(baitAmounts);
+
+                ShipSO ship = ScriptableObject.CreateInstance<ShipSO>();
+                ship.shipName = "BaseShip";
+                ship.shipSprite = Resources.Load<Sprite>("defaultSpritePath"); // Assuming default sprite
+                ship.shipTimeLimit = 5;
+
+                playerLoadout.SetCurrentShip(ship);
+            }
+            else
+            {
+                // If loadedPlayerLoadout is not null, load its values
+                playerLoadout.SetCurrentBait(loadedPlayerLoadout.currentBait);
+
                 Dictionary<PlayerLoadout.Bait, int> baitAmounts = new Dictionary<PlayerLoadout.Bait, int>();
                 if (loadedPlayerLoadout.baitAmounts != null)
                 {
@@ -74,66 +92,33 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-                    baitAmounts[PlayerLoadout.Bait.Worm] = 0;
-                    baitAmounts[PlayerLoadout.Bait.Ulat] = 0;
-                    baitAmounts[PlayerLoadout.Bait.Cricket] = 0;
-                    baitAmounts[PlayerLoadout.Bait.Shrimp] = 0;
-                    baitAmounts[PlayerLoadout.Bait.Pelet] = 0;
+                    // Initialize bait amounts if loadedPlayerLoadout.baitAmounts is null
+                    foreach (var bait in System.Enum.GetValues(typeof(PlayerLoadout.Bait)))
+                    {
+                        baitAmounts[(PlayerLoadout.Bait)bait] = 0;
+                    }
                 }
                 playerLoadout.SetBaitAmounts(baitAmounts);
 
-                // Set current ship
                 ShipSO baseShip = ScriptableObject.CreateInstance<ShipSO>();
-                if (!string.IsNullOrEmpty(loadedPlayerLoadout.currentShipName))
-                {
-                    baseShip.shipName = loadedPlayerLoadout.currentShipName;
-                }
-                else
-                {
-                    baseShip.shipName = "BaseShip";
-                }
+                baseShip.shipName = loadedPlayerLoadout.currentShipName ?? "BaseShip";
+                baseShip.shipSprite = loadedPlayerLoadout.currentShipSpriteData != null
+                    ? SaveManager.ByteArrayToSprite(loadedPlayerLoadout.currentShipSpriteData)
+                    : Resources.Load<Sprite>("defaultSpritePath");
+                baseShip.shipTimeLimit = loadedPlayerLoadout.currentShipTimeLimit != 0
+                    ? loadedPlayerLoadout.currentShipTimeLimit
+                    : 5;
 
-                if (!string.IsNullOrEmpty(loadedPlayerLoadout.currentShipSpritePath))
-                {
-                    baseShip.shipSprite = Resources.Load<Sprite>(loadedPlayerLoadout.currentShipSpritePath); // Assuming sprite is stored in Resources folder
-                }
-                else
-                {
-                    baseShip.shipSprite = Resources.Load<Sprite>("DefaultShipSprite"); // Load a default sprite
-                }
-
-                baseShip.shipTimeLimit = loadedPlayerLoadout.currentShipTimeLimit > 0 ? loadedPlayerLoadout.currentShipTimeLimit : 5;
-                playerLoadout.SetCurrentShip(baseShip);
-            }
-            else
-            {
-                // Set default values if player loadout is null
-                playerLoadout.SetCurrentBait(Bait.Worm);
-
-                Dictionary<PlayerLoadout.Bait, int> baitAmounts = new Dictionary<PlayerLoadout.Bait, int>();
-                baitAmounts[PlayerLoadout.Bait.Worm] = 0;
-                baitAmounts[PlayerLoadout.Bait.Ulat] = 0;
-                baitAmounts[PlayerLoadout.Bait.Cricket] = 0;
-                baitAmounts[PlayerLoadout.Bait.Shrimp] = 0;
-                baitAmounts[PlayerLoadout.Bait.Pelet] = 0;
-                playerLoadout.SetBaitAmounts(baitAmounts);
-
-                ShipSO baseShip = ScriptableObject.CreateInstance<ShipSO>();
-                baseShip.shipName = "BaseShip";
-                baseShip.shipSprite = Resources.Load<Sprite>("DefaultShipSprite"); // Load a default sprite
-                baseShip.shipTimeLimit = 5;
                 playerLoadout.SetCurrentShip(baseShip);
             }
 
-            Debug.Log(playerData.money);
-            Debug.Log(playerData.fishInventory);
-            Debug.Log(playerData.playerLoadout);
-
-            //SaveManager.SavePlayerInventory(playerInventory);
+            SaveManager.SavePlayerInventory(playerInventory);
+            Debug.Log("Save If Not Null");
         }
         else
         {
             SaveManager.SavePlayerInventory(playerInventory);
+            Debug.Log("Save And Is Null");
         }
 
         shopFishInventory = SaveManager.LoadFishInventory("ShopInventory.json");

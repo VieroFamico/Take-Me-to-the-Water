@@ -8,6 +8,9 @@ public class PlayerInventory : MonoBehaviour
     public float money = 100f; // Starting money for the player
     public PlayerLoadout playerLoadout;
     private FishInventory fishInventory;
+
+    private DisplayManager displayManager;
+
     private static PlayerInventory instance;
 
     private void Awake()
@@ -27,6 +30,8 @@ public class PlayerInventory : MonoBehaviour
     private void Start()
     {
         fishInventory = GameManager.Instance.playerInventory.GetPlayerFishInventory();
+        FindPlayerFishInventory();
+        FindDisplayManager();
     }
 
     void OnEnable()
@@ -42,6 +47,7 @@ public class PlayerInventory : MonoBehaviour
     void OnActiveSceneChanged(Scene previousScene, Scene newScene)
     {
         FindPlayerFishInventory();
+        FindDisplayManager();
     }
 
     public FishInventory GetPlayerFishInventory()
@@ -62,7 +68,10 @@ public class PlayerInventory : MonoBehaviour
     {
         fishInventory = GameManager.Instance.playerInventory.GetPlayerFishInventory();
     }
-
+    private void FindDisplayManager()
+    {
+        displayManager = FindAnyObjectByType<DisplayManager>();
+    }
     public void CatchFish(FishData fish)
     {
         fishInventory.AddFish(fish); // Add the fish to the inventory
@@ -72,7 +81,9 @@ public class PlayerInventory : MonoBehaviour
     public void AddMoney(float amount)
     {
         money += amount;
-        SaveManager.SavePlayerInventory(this.GetComponent<PlayerInventory>()); // Save after adding money
+        displayManager.UpdateDisplay();
+        displayManager.ShowMoneyChange(amount);
+        SaveManager.SavePlayerInventory(this); // Save after adding money
     }
 
     public bool SpendMoney(float amount)
@@ -80,12 +91,24 @@ public class PlayerInventory : MonoBehaviour
         if (money >= amount)
         {
             money -= amount;
-            SaveManager.SavePlayerInventory(this.GetComponent<PlayerInventory>()); // Save after spending money
+            displayManager.UpdateDisplay();
+            displayManager.ShowMoneyChange(-amount);
+            SaveManager.SavePlayerInventory(this); // Save after spending money
             return true;
         }
         return false;
     }
-
+    // Method to purchase fuel
+    public bool PurchaseFuel(float fuelPercentage)
+    {
+        float cost = fuelPercentage; // 1% fuel costs $1
+        if (SpendMoney(cost))
+        {
+            SaveManager.SavePlayerInventory(this);
+            return true;
+        }
+        return false;
+    }
     public float GetMoney()
     {
         return money;
@@ -95,6 +118,10 @@ public class PlayerInventory : MonoBehaviour
     {
         Debug.Log("Tried Saving");
         return playerLoadout;
+    }
+    public DisplayManager GetDisplayManager()
+    {
+        return displayManager;
     }
 }
 

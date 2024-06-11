@@ -8,7 +8,7 @@ public class FishInventory
 {
     private List<FishData> fishInventory = new List<FishData>();
 
-    public List<FishData> GetFishInventory()
+    public List<FishData> GetFishList()
     {
         return fishInventory;
     }

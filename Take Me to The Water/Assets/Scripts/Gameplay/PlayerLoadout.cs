@@ -39,6 +39,10 @@ public class PlayerLoadout : MonoBehaviour
     {
         return baitAmounts.ContainsKey(baitType) ? baitAmounts[baitType] : 0;
     }
+    public Dictionary<Bait, int> GetBaitAmounts()
+    {
+        return baitAmounts;
+    }
 
     public void IncreaseBaitAmount(Bait baitType, int amount)
     {
@@ -57,9 +61,7 @@ public class PlayerLoadout : MonoBehaviour
     }
     public void SetCurrentBait(Bait baitType)
     {
-        Debug.Log(currentBait);
         currentBait = baitType;
-        Debug.Log(currentBait);
     }
 
     public void SetBaitAmounts(Dictionary<Bait, int> baitAmounts)
@@ -70,6 +72,11 @@ public class PlayerLoadout : MonoBehaviour
     public void SetCurrentShip(ShipSO ship)
     {
         currentShip = ship;
+    }
+    
+    public ShipSO GetCurrentShip()
+    {
+        return currentShip;
     }
 }
 
