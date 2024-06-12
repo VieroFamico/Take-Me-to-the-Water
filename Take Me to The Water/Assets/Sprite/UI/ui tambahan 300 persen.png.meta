@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,616 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 1725
+        width: 293
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e2d22fb348e1254595fc4602fa40161
+      internalID: 1856704893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_1
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 1821
+        width: 198
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d35d80766f5d710469140dddc5737438
+      internalID: 699047149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_2
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 1863
+        width: 396
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65a82d6a0afc4b1409ee7fde08819b64
+      internalID: -2073194114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_3
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 1630
+        width: 81
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3ba3f092389a9249b676b600fbc3320
+      internalID: 1225045333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_4
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 1767
+        width: 396
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58679fd46f20b6743addecf600ce247f
+      internalID: -1732931256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_5
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 957
+        width: 1686
+        height: 821
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c970d318b3a301c42b06b4b37fc31626
+      internalID: -1874967694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_6
+      rect:
+        serializedVersion: 2
+        x: 2877
+        y: 957
+        width: 1685
+        height: 821
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 862f8578a82747a4b9739bcbef11b4af
+      internalID: -1013193933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_7
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 1581
+        width: 149
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d19fb59e0c6aab49a6f7ae6bf30673a
+      internalID: -1245398617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_8
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1603
+        width: 102
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebef0c51abf0c0f43b2ed7d7e355cdb0
+      internalID: 2073664749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_9
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 1671
+        width: 396
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59e65ecdba1bd494ebd5ebae64d27af5
+      internalID: 1279214618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_10
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 1576
+        width: 396
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90c3ee8806c973e44b2bfa12a9af9cfb
+      internalID: -1390269573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_11
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1396
+        width: 285
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 773e2e7439872304ea2cd04c19331a17
+      internalID: 174076175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_12
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 1479
+        width: 396
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7adb0a201f9d38341bf25434a9c0955e
+      internalID: 279073165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_13
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 1382
+        width: 396
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5560eebcc3760e4c8e611e435084888
+      internalID: 1620999471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_14
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 1225
+        width: 79
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 684ae64c4d72ebc4a8f21a6e55585cc5
+      internalID: -294510419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_15
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 1227
+        width: 11
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fffad20f582fef34a84e5caf81299154
+      internalID: -2045365892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_16
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 1225
+        width: 88
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a60d4e90b1ccd1748be3fb22f4af592d
+      internalID: 442552246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_17
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1247
+        width: 95
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f80dc4152d75844c9caf2a60d35d7be
+      internalID: -1557022237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_18
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 1101
+        width: 677
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1be1440f28cef3b439b55a134efff6c9
+      internalID: -739639164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_19
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1002
+        width: 216
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a39d55e84d626f45b49869cd1e1700c
+      internalID: 1173407128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_20
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 1002
+        width: 216
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a0950c8c7e70bb4ba35ad42d48838df
+      internalID: -1800876429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_21
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 905
+        width: 216
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cb91031252b0ad41938b92df29c604d
+      internalID: 1711388944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_22
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 723
+        width: 375
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 027ac4633c615444baecc46f097ea374
+      internalID: 762421932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_23
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 46
+        width: 1686
+        height: 821
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a43fbab5fc964b44a7a46d2c6a2bd0e
+      internalID: -793903208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_24
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 474
+        width: 924
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e02f518a48e0f4baa687290711853f
+      internalID: -838934651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_25
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 379
+        width: 214
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d58656ddd1150d4ca5a5679fdd92e97
+      internalID: 794975023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_26
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 379
+        width: 245
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ced7c3808d688ce4197365860442b300
+      internalID: 1466896193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_27
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 282
+        width: 214
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3779f98ba7ac0344689071cc570f53f1
+      internalID: -1395363850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui tambahan 300 persen_28
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 282
+        width: 245
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d72637f375f6cb4d8cabcc6eee24e55
+      internalID: 653366585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +741,36 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ui tambahan 300 persen_0: 1856704893
+      ui tambahan 300 persen_1: 699047149
+      ui tambahan 300 persen_10: -1390269573
+      ui tambahan 300 persen_11: 174076175
+      ui tambahan 300 persen_12: 279073165
+      ui tambahan 300 persen_13: 1620999471
+      ui tambahan 300 persen_14: -294510419
+      ui tambahan 300 persen_15: -2045365892
+      ui tambahan 300 persen_16: 442552246
+      ui tambahan 300 persen_17: -1557022237
+      ui tambahan 300 persen_18: -739639164
+      ui tambahan 300 persen_19: 1173407128
+      ui tambahan 300 persen_2: -2073194114
+      ui tambahan 300 persen_20: -1800876429
+      ui tambahan 300 persen_21: 1711388944
+      ui tambahan 300 persen_22: 762421932
+      ui tambahan 300 persen_23: -793903208
+      ui tambahan 300 persen_24: -838934651
+      ui tambahan 300 persen_25: 794975023
+      ui tambahan 300 persen_26: 1466896193
+      ui tambahan 300 persen_27: -1395363850
+      ui tambahan 300 persen_28: 653366585
+      ui tambahan 300 persen_3: 1225045333
+      ui tambahan 300 persen_4: -1732931256
+      ui tambahan 300 persen_5: -1874967694
+      ui tambahan 300 persen_6: -1013193933
+      ui tambahan 300 persen_7: -1245398617
+      ui tambahan 300 persen_8: 2073664749
+      ui tambahan 300 persen_9: 1279214618
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
