@@ -1,0 +1,765 @@
+fileFormatVersion: 2
+guid: 8a4bf728ed3ab8f4197a1214f50e02c5
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ui_tambahan_500_0
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 2874
+        width: 487
+        height: 329
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a02d561d93e6f1b47bd7595d44e53fd8
+      internalID: -86543636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_1
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 3035
+        width: 330
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dde4d081d932a746bf8d73d4525d668
+      internalID: 1940500844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_2
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 3106
+        width: 660
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a561fc693a965f4c8eaa29185843a20
+      internalID: -807391320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_3
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 2716
+        width: 135
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb3b1f2ec728a44cad93391b8bdd205
+      internalID: 625518544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_4
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 2945
+        width: 660
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97919192ea855a04aa17abcd78cb8d8d
+      internalID: -1321620634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_5
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 1595
+        width: 2808
+        height: 1368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f45f5b4d25423b044a7c0dbcff665be3
+      internalID: -752125926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_6
+      rect:
+        serializedVersion: 2
+        x: 4794
+        y: 1595
+        width: 2809
+        height: 1368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09a748daa08125046bf490949b352158
+      internalID: -1758566035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_7
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 2634
+        width: 247
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34d25c4b01f520344a23f7420e6d3c35
+      internalID: 834570627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_8
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 2671
+        width: 168
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a77fa210aa4c1d7418a599d2cfb6fbdc
+      internalID: 693533337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_9
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 2784
+        width: 660
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e31391a242c9d9b419f82e93b13258ed
+      internalID: 884902292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_10
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 2626
+        width: 660
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 700575f399db330468e441628103bd63
+      internalID: 1322911796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_11
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 2326
+        width: 477
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9859fcd10d7abdb4caed8739c9aa9016
+      internalID: 523532533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_12
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 2465
+        width: 660
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df1c52ee55320724b8ccb1e459383522
+      internalID: -182170562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_13
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 2304
+        width: 660
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcb1ea8cf603ecc49b09e6efbd259813
+      internalID: -545278818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_14
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 2041
+        width: 131
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfe96127bc1bdb54a80c1f69528e2134
+      internalID: 1108067635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_15
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 2045
+        width: 19
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1cb979dbd30fbe4c8765b442ba5b911
+      internalID: -1716824061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_16
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 2041
+        width: 146
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3669cbd70822b1242a1422f5127d6a1e
+      internalID: 1634736772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_17
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 2079
+        width: 157
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ad5760a0fea714b9cc4c5e6be7463e
+      internalID: 1302256805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_18
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 1835
+        width: 1129
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33c3eb31fa0a24d44a0ad3b72a3e4833
+      internalID: 1771745646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_19
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 1670
+        width: 360
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 870487e962a6e214891b5fc134320e14
+      internalID: 1440977125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_20
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 1670
+        width: 360
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d13069b6356cd064687b942ad9847efc
+      internalID: -69905847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_21
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 1509
+        width: 360
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49684c5f1a9ff5243bdeb79a3a124f4d
+      internalID: -1724825079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_22
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1205
+        width: 627
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70013c2a09b82ca419d933dce3bc5b16
+      internalID: -2003058824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_23
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 77
+        width: 2808
+        height: 1368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bc8f7e17a1361b4991f68c0612e4742
+      internalID: -1277077446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_24
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 789
+        width: 1542
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8316c10275966d144b06c2510443109f
+      internalID: 1871839179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_25
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 632
+        width: 356
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d466e462b354f5459859f79f6f1039a
+      internalID: -497136256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_26
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 632
+        width: 409
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02b65e5e33787b040964e93b570b31d5
+      internalID: -22616114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_27
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 470
+        width: 356
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12fe5b34b5ceb7c4096d76a16d88ce14
+      internalID: -912680896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_tambahan_500_28
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 470
+        width: 409
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b193e7fa50cd8064892dd73468ee9a02
+      internalID: 886850180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ui_tambahan_500_0: -86543636
+      ui_tambahan_500_1: 1940500844
+      ui_tambahan_500_10: 1322911796
+      ui_tambahan_500_11: 523532533
+      ui_tambahan_500_12: -182170562
+      ui_tambahan_500_13: -545278818
+      ui_tambahan_500_14: 1108067635
+      ui_tambahan_500_15: -1716824061
+      ui_tambahan_500_16: 1634736772
+      ui_tambahan_500_17: 1302256805
+      ui_tambahan_500_18: 1771745646
+      ui_tambahan_500_19: 1440977125
+      ui_tambahan_500_2: -807391320
+      ui_tambahan_500_20: -69905847
+      ui_tambahan_500_21: -1724825079
+      ui_tambahan_500_22: -2003058824
+      ui_tambahan_500_23: -1277077446
+      ui_tambahan_500_24: 1871839179
+      ui_tambahan_500_25: -497136256
+      ui_tambahan_500_26: -22616114
+      ui_tambahan_500_27: -912680896
+      ui_tambahan_500_28: 886850180
+      ui_tambahan_500_3: 625518544
+      ui_tambahan_500_4: -1321620634
+      ui_tambahan_500_5: -752125926
+      ui_tambahan_500_6: -1758566035
+      ui_tambahan_500_7: 834570627
+      ui_tambahan_500_8: 693533337
+      ui_tambahan_500_9: 884902292
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

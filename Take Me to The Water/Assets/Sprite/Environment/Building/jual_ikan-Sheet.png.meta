@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ad9cf9030f69f0b40a8e09e44fa4f889
+guid: 2c4587ea6816e1b41a9361db96abdac8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,19 +81,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -123,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: add feed_0
+      name: jual_ikan-Sheet_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 13
-        width: 582
-        height: 214
+        x: 0
+        y: 18
+        width: 497
+        height: 261
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +124,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cb365ed0f100074283f55b1f50ee884
-      internalID: 174042232
+      spriteID: d3bb7cea4084a7448b95fec1270c6756
+      internalID: -730323905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jual_ikan-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 18
+        width: 499
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1a3422bd6c05234085ae9ccec34ed5a
+      internalID: -427086854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jual_ikan-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 18
+        width: 498
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2216cf94abb8ff1409541be24f2ea91d
+      internalID: -634029916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jual_ikan-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 18
+        width: 498
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c905bc23e26421744830f06017da3863
+      internalID: 1256171703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jual_ikan-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1999
+        y: 18
+        width: 499
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 502c13eb6ce54124e833e4ea212815f9
+      internalID: 948485059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jual_ikan-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 18
+        width: 500
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 811333c9428a01e49a8dc4bc0012f661
+      internalID: 746914689
       vertices: []
       indices: 
       edges: []
@@ -154,7 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      add feed_0: 174042232
+      jual_ikan-Sheet_0: -730323905
+      jual_ikan-Sheet_1: -427086854
+      jual_ikan-Sheet_2: -634029916
+      jual_ikan-Sheet_3: 1256171703
+      jual_ikan-Sheet_4: 948485059
+      jual_ikan-Sheet_5: 746914689
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
