@@ -15,7 +15,8 @@ public class EquipmentShopManager : BuildingManager
     public TextMeshProUGUI minFuelText; // Text to display the minimum fuel percentage
     public TextMeshProUGUI maxFuelText; // Text to display the maximum fuel percentage
     public TextMeshProUGUI feedbackText; // Optional: To show feedback messages
-    public Button refuelButton; 
+    public Button refuelButton;
+    public Button fullRefuelButton; // Button to fully refuel the ship
     public Button closeButton; 
 
 
@@ -32,6 +33,7 @@ public class EquipmentShopManager : BuildingManager
         // Add listeners
         fuelAmountSlider.onValueChanged.AddListener(OnSliderValueChanged);
         refuelButton.onClick.AddListener(OnRefuelButtonClick);
+        fullRefuelButton.onClick.AddListener(OnFullRefuelButtonClick);
 
         // Update UI initially
         UpdateSliderUI();
@@ -40,7 +42,9 @@ public class EquipmentShopManager : BuildingManager
     private void InitializeSlider()
     {
         ShipSO currentShip = playerLoadout.GetCurrentShip();
-        fuelAmountSlider.minValue = 0;
+        float currentFuelPercentage = currentShip.currentTimeLimit / currentShip.shipTimeLimit * 100;
+
+        fuelAmountSlider.minValue = currentFuelPercentage;
         fuelAmountSlider.maxValue = 100;
         fuelAmountSlider.wholeNumbers = true;
 
@@ -48,17 +52,34 @@ public class EquipmentShopManager : BuildingManager
         fuelAmountSlider.value = currentShip.currentTimeLimit / currentShip.shipTimeLimit * 100;
 
         // Set min and max fuel texts
-        minFuelText.text = "0%";
+        minFuelText.text = $"{currentFuelPercentage}%";
         maxFuelText.text = "100%";
     }
 
     private void OnSliderValueChanged(float value)
     {
-        UpdateSliderUI();
+        ShipSO currentShip = playerLoadout.GetCurrentShip();
+        float currentFuelPercentage = currentShip.currentTimeLimit / currentShip.shipTimeLimit * 100;
+
+        if (value <= currentFuelPercentage)
+        {
+            fuelAmountSlider.value = currentFuelPercentage;
+        }
+        else
+        {
+            UpdateSliderUI();
+        }
+
     }
 
     private void OnRefuelButtonClick()
     {
+        RefuelShip();
+        UpdateSliderUI();
+    }
+    private void OnFullRefuelButtonClick()
+    {
+        fuelAmountSlider.value = playerInventory.money > 100f ? 100 : playerInventory.money;
         RefuelShip();
         UpdateSliderUI();
     }
@@ -73,6 +94,7 @@ public class EquipmentShopManager : BuildingManager
         float currentFuelPercentage = currentShip.currentTimeLimit / currentShip.shipTimeLimit * 100;
         float fuelCost = fuelPercentage - currentFuelPercentage;
         refuelButton.interactable = playerInventory.money >= fuelCost;
+        fullRefuelButton.interactable = playerInventory.money >= (100 - currentFuelPercentage);
     }
 
     public void RefuelShip()
@@ -101,6 +123,7 @@ public class EquipmentShopManager : BuildingManager
             ShowFeedback("Not enough money to refuel.");
         }
         playerInventory.GetDisplayManager().UpdateDisplay();
+        SaveManager.SavePlayerInventory(playerInventory);
     }
 
     private void ShowFeedback(string message)

@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour
                 ship.shipName = "BaseShip";
                 ship.shipSprite = Resources.Load<Sprite>("defaultSpritePath"); // Assuming default sprite
                 ship.shipTimeLimit = 5;
+                ship.currentTimeLimit = 0;
 
                 playerLoadout.SetCurrentShip(ship);
             }
@@ -103,11 +104,11 @@ public class GameManager : MonoBehaviour
                 ShipSO baseShip = ScriptableObject.CreateInstance<ShipSO>();
                 baseShip.shipName = loadedPlayerLoadout.currentShipName ?? "BaseShip";
                 baseShip.shipSprite = loadedPlayerLoadout.currentShipSpriteData != null
-                    ? SaveManager.ByteArrayToSprite(loadedPlayerLoadout.currentShipSpriteData)
-                    : Resources.Load<Sprite>("defaultSpritePath");
+                    ? SaveManager.ByteArrayToSprite(loadedPlayerLoadout.currentShipSpriteData) : Resources.Load<Sprite>("defaultSpritePath");
                 baseShip.shipTimeLimit = loadedPlayerLoadout.currentShipTimeLimit != 0
-                    ? loadedPlayerLoadout.currentShipTimeLimit
-                    : 5;
+                    ? loadedPlayerLoadout.currentShipTimeLimit : 5;
+                baseShip.currentTimeLimit = (loadedPlayerLoadout.currentCurrentTimeLimit >= 0 && loadedPlayerLoadout.currentCurrentTimeLimit <= 100) 
+                    ? loadedPlayerLoadout.currentCurrentTimeLimit : 0;
 
                 playerLoadout.SetCurrentShip(baseShip);
             }

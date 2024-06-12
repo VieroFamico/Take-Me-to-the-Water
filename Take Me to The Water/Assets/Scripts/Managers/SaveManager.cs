@@ -26,6 +26,7 @@ public class PlayerLoadoutWrapper
     public string currentShipName;
     public byte[] currentShipSpriteData;
     public float currentShipTimeLimit;
+    public float currentCurrentTimeLimit;
 }
 
 public static class SaveManager
@@ -45,7 +46,8 @@ public static class SaveManager
             baitAmounts = new Dictionary<PlayerLoadout.Bait, int>(playerLoadout.GetBaitAmounts()),
             currentShipName = currentShip != null ? currentShip.shipName : "BaseShip",
             currentShipSpriteData = currentShip != null && currentShip.shipSprite != null ? SpriteToByteArray(currentShip.shipSprite) : null,
-            currentShipTimeLimit = currentShip != null ? currentShip.shipTimeLimit : 5
+            currentShipTimeLimit = currentShip != null ? currentShip.shipTimeLimit : 5,
+            currentCurrentTimeLimit = currentShip!= null ? currentShip.currentTimeLimit : 0
         };
 
         // Create a PlayerInventoryWrapper instance
