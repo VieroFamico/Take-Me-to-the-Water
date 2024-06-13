@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7f034bd8ccb081241a2592f4e97570d8
+guid: d67ac395e6525e24380e3f6b3f895247
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,76 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: daily quest kotak dan centang dan bar_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 240
-        width: 320
-        height: 240
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 57bc70783b17bd84fa55585676da9e22
-      internalID: 1503588374
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: daily quest kotak dan centang dan bar_1
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 240
-        width: 320
-        height: 240
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9cf982b95eb4b8a43ae730abba686c92
-      internalID: -668621252
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: daily quest kotak dan centang dan bar_2
-      rect:
-        serializedVersion: 2
-        x: 885
-        y: 325
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 044e0471ecbb9074aacffeabc3760c00
-      internalID: 939983568
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: daily quest kotak dan centang dan bar_3
+      name: plus_minus_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1120
-        height: 160
+        width: 240
+        height: 280
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +124,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05c9e8695a142b04f8f045f757c6d6b5
-      internalID: -1847265709
+      spriteID: 64ce155a7bf4f6647a9b6892bce9185f
+      internalID: -1727918063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plus_minus_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 240
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58549301a887da14ba41ee12e4a94fb3
+      internalID: 1487299162
       vertices: []
       indices: 
       edges: []
@@ -204,10 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      daily quest kotak dan centang dan bar_0: 1503588374
-      daily quest kotak dan centang dan bar_1: -668621252
-      daily quest kotak dan centang dan bar_2: 939983568
-      daily quest kotak dan centang dan bar_3: -1847265709
+      plus_minus_0: -1727918063
+      plus_minus_1: 1487299162
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
