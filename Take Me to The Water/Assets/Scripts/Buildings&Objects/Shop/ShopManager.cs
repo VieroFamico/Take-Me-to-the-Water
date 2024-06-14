@@ -44,7 +44,7 @@ public class ShopManager : BuildingManager
 
     void OpenSellPanel()
     {
-        playerInventory.GetPlayerFishInventory().GetFishList().Add(temp);
+        playerInventory.CatchFish(temp);
         isBuying = false;
         ChangeBuySellText();
         PopulateInventory();

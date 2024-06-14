@@ -15,6 +15,8 @@ public class EquipmentShopManager : BuildingManager
     public TextMeshProUGUI minFuelText; // Text to display the minimum fuel percentage
     public TextMeshProUGUI maxFuelText; // Text to display the maximum fuel percentage
     public TextMeshProUGUI feedbackText; // Optional: To show feedback messages
+    public TextMeshProUGUI refuelPriceText; // Optional: To show feedback messages
+    public TextMeshProUGUI fullRefuelPriceText; // Optional: To show feedback messages
     public Button refuelButton;
     public Button fullRefuelButton; // Button to fully refuel the ship
     public Button closeButton; 
@@ -61,15 +63,18 @@ public class EquipmentShopManager : BuildingManager
         ShipSO currentShip = playerLoadout.GetCurrentShip();
         float currentFuelPercentage = currentShip.currentTimeLimit / currentShip.shipTimeLimit * 100;
 
-        if (value <= currentFuelPercentage)
+        if (value < currentFuelPercentage)
         {
             fuelAmountSlider.value = currentFuelPercentage;
         }
         else
         {
             UpdateSliderUI();
+            if (currentFuelPercentage == 100)
+            {
+                fuelAmountSlider.value = fuelAmountSlider.maxValue;
+            }
         }
-
     }
 
     private void OnRefuelButtonClick()
@@ -79,7 +84,15 @@ public class EquipmentShopManager : BuildingManager
     }
     private void OnFullRefuelButtonClick()
     {
-        fuelAmountSlider.value = playerInventory.money > 100f ? 100 : playerInventory.money;
+        ShipSO currentShip = playerLoadout.GetCurrentShip();
+        float currentFuelPercentage = currentShip.currentTimeLimit / currentShip.shipTimeLimit * 100;
+        float fuelCost = 100f - currentFuelPercentage;
+        fullRefuelButton.interactable = playerInventory.money > 0 && currentFuelPercentage < 100;
+
+        float temp = fullRefuelButton.interactable ? playerInventory.money : 0f;
+        temp = playerInventory.money > fuelCost ? fuelCost : temp;
+
+        fuelAmountSlider.value = currentFuelPercentage + temp;
         RefuelShip();
         UpdateSliderUI();
     }
@@ -89,12 +102,19 @@ public class EquipmentShopManager : BuildingManager
         int fuelPercentage = Mathf.RoundToInt(fuelAmountSlider.value);
         fuelPercentageText.text = $"{fuelPercentage}%";
 
-        // Check if the player has enough money
         ShipSO currentShip = playerLoadout.GetCurrentShip();
         float currentFuelPercentage = currentShip.currentTimeLimit / currentShip.shipTimeLimit * 100;
         float fuelCost = fuelPercentage - currentFuelPercentage;
-        refuelButton.interactable = playerInventory.money >= fuelCost;
-        fullRefuelButton.interactable = playerInventory.money >= (100 - currentFuelPercentage);
+        refuelButton.interactable = playerInventory.money > fuelCost;
+
+        fuelCost = 100f - currentFuelPercentage;
+        fullRefuelButton.interactable = playerInventory.money > 0 && currentFuelPercentage < 100;
+
+        float temp = fullRefuelButton.interactable ? playerInventory.money : 0f;
+        temp = playerInventory.money > fuelCost ? fuelCost : temp;
+        refuelPriceText.text = $"${fuelCost}%";
+        fullRefuelPriceText.text = $"${temp}%";
+
     }
 
     public void RefuelShip()
