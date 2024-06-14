@@ -1330,6 +1330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1537062268}
   - component: {fileID: 1537062267}
+  - component: {fileID: 1537062269}
   m_Layer: 0
   m_Name: PlayersInventory
   m_TagString: Untagged
@@ -1350,6 +1351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 100
+  playerLoadout: {fileID: 1537062269}
 --- !u!4 &1537062268
 Transform:
   m_ObjectHideFlags: 0
@@ -1365,6 +1367,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1537062269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537062266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca533eb980202234483d219ffa1209bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentShip: {fileID: 11400000, guid: 2f00e50579ff5cd4289a55b2bf6e63b9, type: 2}
 --- !u!1 &1959971357
 GameObject:
   m_ObjectHideFlags: 0
