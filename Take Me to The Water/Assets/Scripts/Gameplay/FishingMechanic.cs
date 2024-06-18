@@ -3,12 +3,14 @@ using System.Collections;
 using Unity.Services.Economy;
 using UnityEngine;
 using UnityEngine.UI;
+using static ShipStateManager;
 
 public class FishingMechanic : MonoBehaviour
 {
     [Header("Dependencies")]
     public UIManager uiManager;
     public PlayerInventory playerInventory;
+    public ShipStateManager shipStateManager;
 
     [Header("Fishing Hook")]
     public LineRenderer throwLineRenderer;
@@ -55,23 +57,14 @@ public class FishingMechanic : MonoBehaviour
 
     private Camera mainCamera;
     private Fish fish;// Reference to the fish caught
-    private BoatMovement boatMovement;
     private Animator tensionSliderAnimator;
 
     private float modeChangeDelay = 0.5f;
     private float lastModeChangeTime;
-    public enum Modes
-    {
-        Moving,
-        Fishing
-    }
-    private Modes currentMode = Modes.Moving;
 
     void Start()
     {
         playerInventory = FindAnyObjectByType<PlayerInventory>();
-
-        boatMovement = GetComponent<BoatMovement>();
 
         throwLineRenderer.positionCount = 2;
         throwLineRenderer.enabled = false; // Initially disable the throw line renderer
@@ -79,7 +72,6 @@ public class FishingMechanic : MonoBehaviour
         tensionSlider.gameObject.SetActive(true);
         tensionSlider.maxValue = maxTension;
         tensionSliderAnimator = tensionSlider.GetComponent<Animator>();
-        SetMode(Modes.Moving);
 
         mainCamera = Camera.main;
         originalCameraSize = vCam.m_Lens.OrthographicSize;
@@ -87,106 +79,32 @@ public class FishingMechanic : MonoBehaviour
 
     void Update()
     {
-        if (Time.time - lastModeChangeTime >= modeChangeDelay && Input.GetMouseButtonDown(1))
+        if (!hookInstance && canThrowHook)
         {
-            if (currentMode == Modes.Moving)
-            {
-                SetMode(Modes.Fishing);
-            }
-            else
-            {
-                SetMode(Modes.Moving);
-            }
+            HandleThrowingInput();
         }
 
-        if (currentMode == Modes.Fishing)
+        if (isFishing && hookInstance && !fishCaught)
         {
-            if (!hookInstance && canThrowHook)
+            if (isFishing || isThrowing)
             {
-                HandleThrowingInput();
+                UpdateFishingLine();
+                UpdateCameraZoom();
             }
 
-            if (isFishing && hookInstance && !fishCaught)
+            if (fishIsEatingTheBait)
             {
-                if (isFishing || isThrowing)
-                {
-                    UpdateFishingLine();
-                    UpdateCameraZoom();
-                }
-
-                if (fishIsEatingTheBait)
-                {
-                    HandleFishingInput();
-                }
-                if (canCheckCatch)
-                {
-                    CheckCatch();
-
-                    tensionSliderImage.color = Color.Lerp(lowTensionColor, highTensionColor, tensionSlider.value / maxTension);
-                }
+                HandleFishingInput();
             }
-        }
+            if (canCheckCatch)
+            {
+                CheckCatch();
 
-        if (!isFishing && boatMovement != null)
-        {
-            boatMovement.GraduallyStopBoat(boatDecelerationRate);
+                tensionSliderImage.color = Color.Lerp(lowTensionColor, highTensionColor, tensionSlider.value / maxTension);
+            }
         }
     }
 
-    void SetMode(Modes mode)
-    {
-        currentMode = mode;
-        isFishing = (mode == Modes.Fishing);
-        lastModeChangeTime = Time.time;
-
-        if (mode == Modes.Moving)
-        {
-            ResumeBoat();
-            tensionSliderAnimator.SetTrigger("Hide");
-
-            if (hookInstance)
-            {
-                canCheckCatch = false;
-                Destroy(hookInstance);
-                if (fish)
-                {
-                    // Release the fish
-                    fish.Released();
-                    fish.transform.SetParent(null);
-                    fish = null;
-                }
-                vCam.Follow = player.transform;
-                vCam.m_Lens.OrthographicSize = originalCameraSize;
-            }
-            throwLineRenderer.SetPosition(0, player.position);
-            throwLineRenderer.SetPosition(1, player.position);
-            throwLineRenderer.enabled = false;
-
-            isThrowing = false;
-        }
-        else
-        {
-            StopBoat();
-            tensionSliderAnimator.SetTrigger("Show");
-            StartCoroutine(EnableHookThrowAfterDelay());
-        }
-    }
-
-    void StopBoat()
-    {
-        if (boatMovement != null)
-        {
-            boatMovement.StopBoat();
-        }
-    }
-
-    void ResumeBoat()
-    {
-        if (boatMovement != null)
-        {
-            boatMovement.StartBoat();
-        }
-    }
     IEnumerator EnableHookThrowAfterDelay()
     {
         canThrowHook = false;
@@ -427,5 +345,34 @@ public class FishingMechanic : MonoBehaviour
     {
         return hookRigidbody != null && hookRigidbody.velocity.magnitude <= stopSpeedThreshold;
     }
-}
+    public void EnterFishingMode()
+    {
+        tensionSliderAnimator.SetTrigger("Show");
+        StartCoroutine(EnableHookThrowAfterDelay());
+    }
 
+    public void ExitFishingMode()
+    {
+        isFishing = false;
+        tensionSliderAnimator.SetTrigger("Hide");
+
+        if (hookInstance)
+        {
+            canCheckCatch = false;
+            Destroy(hookInstance);
+            if (fish)
+            {
+                fish.Released();
+                fish.transform.SetParent(null);
+                fish = null;
+            }
+            vCam.Follow = player.transform;
+            vCam.m_Lens.OrthographicSize = originalCameraSize;
+        }
+        throwLineRenderer.SetPosition(0, player.position);
+        throwLineRenderer.SetPosition(1, player.position);
+        throwLineRenderer.enabled = false;
+
+        isThrowing = false;
+    }
+}

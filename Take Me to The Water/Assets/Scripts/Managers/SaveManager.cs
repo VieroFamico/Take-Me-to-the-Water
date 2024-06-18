@@ -10,12 +10,21 @@ public class FishInventoryWrapper
 {
     public List<FishData> fishInventory;
 }
+
+[System.Serializable]
+public class TrashWrapper
+{
+    public Dictionary<Trash.MaterialType, int> recyclableMaterials;
+}
+
 [System.Serializable]
 public class PlayerInventoryWrapper
 {
     public float money;
     public List<FishData> fishInventory;
     public PlayerLoadoutWrapper playerLoadout;
+    public List<TrashWrapper> trashInventory;
+    public Dictionary<Trash.MaterialType, int> recycledMaterials;
 }
 
 [System.Serializable]
@@ -55,7 +64,9 @@ public static class SaveManager
         {
             money = playerInventory.money,
             fishInventory = playerInventory.GetPlayerFishInventory().GetFishList(),
-            playerLoadout = playerLoadoutWrapper
+            playerLoadout = playerLoadoutWrapper,
+            trashInventory = GetTrashWrappers(playerInventory.trashInventory),
+            recycledMaterials = new Dictionary<Trash.MaterialType, int>(playerInventory.recycledMaterials)
         };
 
         Debug.Log(playerInventoryWrapper.money);
@@ -79,7 +90,6 @@ public static class SaveManager
         }
         return null;
     }
-
 
     public static void SaveFishInventory(FishInventory inventory, string fileName)
     {
@@ -118,11 +128,24 @@ public static class SaveManager
         }
     }
 
-
     public static Sprite ByteArrayToSprite(byte[] data)
     {
         Texture2D texture = new Texture2D(2, 2);
         texture.LoadImage(data);
         return Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
     }
+    private static List<TrashWrapper> GetTrashWrappers(List<Trash> trashList)
+    {
+        List<TrashWrapper> wrappers = new List<TrashWrapper>();
+        foreach (var trash in trashList)
+        {
+            TrashWrapper wrapper = new TrashWrapper
+            {
+                recyclableMaterials = new Dictionary<Trash.MaterialType, int>(trash.recyclableMaterials)
+            };
+            wrappers.Add(wrapper);
+        }
+        return wrappers;
+    }
+
 }

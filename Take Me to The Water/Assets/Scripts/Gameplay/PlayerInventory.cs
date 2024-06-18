@@ -7,8 +7,11 @@ public class PlayerInventory : MonoBehaviour
 {
     public float money = 100f; // Starting money for the player
     public PlayerLoadout playerLoadout;
-    private FishInventory fishInventory;
+    public List<Trash> trashInventory = new List<Trash>();
+    public Dictionary<Trash.MaterialType, int> recycledMaterials = new Dictionary<Trash.MaterialType, int>();
 
+    private FishInventory fishInventory;
+    
     private DisplayManager displayManager;
 
     private static PlayerInventory instance;
@@ -109,6 +112,24 @@ public class PlayerInventory : MonoBehaviour
         }
         return false;
     }
+    public void AddTrash(Trash newTrash)
+    {
+        trashInventory.Add(newTrash);
+        SaveManager.SavePlayerInventory(this); // Save the inventory
+    }
+
+    // Recycle trash into materials
+    public void RecycleTrash(Trash trash)
+    {
+        foreach (var material in trash.recyclableMaterials)
+        {
+            recycledMaterials[material.Key] += material.Value;
+        }
+        trashInventory.Remove(trash);
+        Destroy(trash.gameObject); // Optionally destroy the trash game object after recycling
+        SaveManager.SavePlayerInventory(this); // Save the inventory
+    }
+
     public float GetMoney()
     {
         return money;

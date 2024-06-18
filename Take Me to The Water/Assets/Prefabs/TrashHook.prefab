@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6950480188203351930}
   - component: {fileID: 2207569746922984215}
-  - component: {fileID: 5440167495248645030}
   - component: {fileID: 5121513288217773246}
+  - component: {fileID: -1928480746471173590}
   - component: {fileID: -2504572763604782117}
   - component: {fileID: -4933608119184915726}
   m_Layer: 0
-  m_Name: Hook
+  m_Name: TrashHook
   m_TagString: Hook
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,18 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5440167495248645030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9080832260513483149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ebe584b82264c4d9a15df677b07f6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &5121513288217773246
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,6 +115,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 0
+--- !u!114 &-1928480746471173590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9080832260513483149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab1d589725249840b713d03bd21a134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!120 &-2504572763604782117
 LineRenderer:
   serializedVersion: 2
