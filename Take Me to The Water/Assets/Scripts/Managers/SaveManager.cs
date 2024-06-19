@@ -12,19 +12,12 @@ public class FishInventoryWrapper
 }
 
 [System.Serializable]
-public class TrashWrapper
-{
-    public Dictionary<Trash.MaterialType, int> recyclableMaterials;
-}
-
-[System.Serializable]
 public class PlayerInventoryWrapper
 {
     public float money;
-    public List<FishData> fishInventory;
+    public List<FishData> fishList;
     public PlayerLoadoutWrapper playerLoadout;
-    public List<TrashWrapper> trashInventory;
-    public Dictionary<Trash.MaterialType, int> recycledMaterials;
+    public List<TrashSO> trashList;
 }
 
 [System.Serializable]
@@ -63,10 +56,9 @@ public static class SaveManager
         PlayerInventoryWrapper playerInventoryWrapper = new PlayerInventoryWrapper
         {
             money = playerInventory.money,
-            fishInventory = playerInventory.GetPlayerFishInventory().GetFishList(),
+            fishList = playerInventory.GetPlayerFishInventory().GetFishList(),
             playerLoadout = playerLoadoutWrapper,
-            trashInventory = GetTrashWrappers(playerInventory.trashInventory),
-            recycledMaterials = new Dictionary<Trash.MaterialType, int>(playerInventory.recycledMaterials)
+            trashList = playerInventory.GetPlayerTrashInventory().GetTrashList()
         };
 
         Debug.Log(playerInventoryWrapper.money);
@@ -134,7 +126,7 @@ public static class SaveManager
         texture.LoadImage(data);
         return Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
     }
-    private static List<TrashWrapper> GetTrashWrappers(List<Trash> trashList)
+/*    private static List<TrashWrapper> GetTrashWrappers(List<Trash> trashList)
     {
         List<TrashWrapper> wrappers = new List<TrashWrapper>();
         foreach (var trash in trashList)
@@ -146,6 +138,6 @@ public static class SaveManager
             wrappers.Add(wrapper);
         }
         return wrappers;
-    }
+    }*/
 
 }
