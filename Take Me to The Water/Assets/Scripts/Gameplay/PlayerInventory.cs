@@ -7,11 +7,10 @@ public class PlayerInventory : MonoBehaviour
 {
     public float money = 100f; // Starting money for the player
     public PlayerLoadout playerLoadout;
-    public List<Trash> trashInventory = new List<Trash>();
-    public Dictionary<Trash.MaterialType, int> recycledMaterials = new Dictionary<Trash.MaterialType, int>();
 
     private FishInventory fishInventory;
-    
+    private TrashInventory trashInventory;
+
     private DisplayManager displayManager;
 
     private static PlayerInventory instance;
@@ -32,8 +31,7 @@ public class PlayerInventory : MonoBehaviour
 
     private void Start()
     {
-        fishInventory = GameManager.Instance.playerInventory.GetPlayerFishInventory();
-        FindPlayerFishInventory();
+        FindPlayerInventory();
         FindDisplayManager();
     }
 
@@ -49,27 +47,36 @@ public class PlayerInventory : MonoBehaviour
 
     void OnActiveSceneChanged(Scene previousScene, Scene newScene)
     {
-        FindPlayerFishInventory();
+        FindPlayerInventory();
         FindDisplayManager();
     }
 
     public FishInventory GetPlayerFishInventory()
     {
-        Debug.Log("Get PlayerFishInventory");
         return fishInventory;
+    }
+    public TrashInventory GetPlayerTrashInventory()
+    {
+        Debug.Log("Tried GetPlayerTrashInventory");
+        return trashInventory;
     }
 
     public void SetPlayerFishInventory(FishInventory inventory)
     {
         fishInventory = inventory;
     }
+    public void SetPlayerTrashInventory(TrashInventory inventory)
+    {
+        trashInventory = inventory;
+    }
     public void SetPlayerLoadout(PlayerLoadout inventory)
     {
         playerLoadout = inventory;
     }
-    private void FindPlayerFishInventory()
+    private void FindPlayerInventory()
     {
         fishInventory = GameManager.Instance.playerInventory.GetPlayerFishInventory();
+        trashInventory = GameManager.Instance.playerInventory.GetPlayerTrashInventory();
     }
     private void FindDisplayManager()
     {
@@ -112,21 +119,17 @@ public class PlayerInventory : MonoBehaviour
         }
         return false;
     }
-    public void AddTrash(Trash newTrash)
+    public void AddTrash(TrashSO newTrash)
     {
-        trashInventory.Add(newTrash);
+        trashInventory.AddTrash(newTrash);
         SaveManager.SavePlayerInventory(this); // Save the inventory
     }
 
     // Recycle trash into materials
-    public void RecycleTrash(Trash trash)
+    public void RecycleTrash(TrashSO trash)
     {
-        foreach (var material in trash.recyclableMaterials)
-        {
-            recycledMaterials[material.Key] += material.Value;
-        }
-        trashInventory.Remove(trash);
-        Destroy(trash.gameObject); // Optionally destroy the trash game object after recycling
+
+        trashInventory.RemoveTrash(trash);
         SaveManager.SavePlayerInventory(this); // Save the inventory
     }
 
@@ -137,7 +140,6 @@ public class PlayerInventory : MonoBehaviour
 
     public PlayerLoadout GetPlayerLoadout()
     {
-        Debug.Log("Tried Saving");
         return playerLoadout;
     }
     public DisplayManager GetDisplayManager()

@@ -45,9 +45,8 @@ public class TrashCatchingHook : MonoBehaviour
             {
                 if (capturedTrashContainer != null)
                 {
-                    playerInventory.AddTrash(capturedTrashContainer);
+                    playerInventory.AddTrash(capturedTrashContainer.GetTrashSO());
                 }
-                Debug.Log("returning");
                 Destroy(gameObject);
             }
         }

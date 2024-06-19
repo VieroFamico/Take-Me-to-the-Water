@@ -14921,6 +14921,7 @@ GameObject:
   - component: {fileID: 1123709640}
   - component: {fileID: 1123709639}
   - component: {fileID: 1123709641}
+  - component: {fileID: 1123709642}
   m_Layer: 0
   m_Name: PlayersInventory
   m_TagString: Untagged
@@ -14970,6 +14971,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentShip: {fileID: 11400000, guid: 2f00e50579ff5cd4289a55b2bf6e63b9, type: 2}
+--- !u!114 &1123709642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123709638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e3925836d238b4086bae14ca49fb46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trashInventory: []
 --- !u!1 &1124369998
 GameObject:
   m_ObjectHideFlags: 0

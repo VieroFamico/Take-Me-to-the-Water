@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     {
         PlayerInventoryWrapper playerData = SaveManager.LoadPlayerInventory();
         Debug.Log(playerData?.money);
-        Debug.Log(playerData?.fishInventory);
+        Debug.Log(playerData?.trashList);
         Debug.Log(playerData?.playerLoadout);
 
         if (playerData != null)
@@ -52,8 +52,12 @@ public class GameManager : MonoBehaviour
             Debug.Log(playerInventory.money);
 
             FishInventory fishInventory = new FishInventory();
-            fishInventory.SetFishList(playerData.fishInventory);
+            fishInventory.SetFishList(playerData.fishList);
             playerInventory.SetPlayerFishInventory(fishInventory);
+
+            TrashInventory trashInventory = new TrashInventory();
+            trashInventory.SetTrashList(playerData.trashList);
+            playerInventory.SetPlayerTrashInventory(trashInventory);
 
             PlayerLoadoutWrapper loadedPlayerLoadout = playerData.playerLoadout;
             PlayerLoadout playerLoadout = playerInventory.GetPlayerLoadout();
