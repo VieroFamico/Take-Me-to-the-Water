@@ -17,7 +17,7 @@ public class ReturnHomeManager : MonoBehaviour
 
     public void ReturnHome()
     {
-        SceneTransitionManager.Instance.TransitionToScene(originalSceneIndex);
+        SceneTransitionManager.Instance.TransitionToScene(1);
     }
 
 }

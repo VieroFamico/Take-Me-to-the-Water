@@ -31,7 +31,7 @@ public class SceneTransitionManager : MonoBehaviour
     private IEnumerator Transition(int sceneIndex)
     {
         // Move the image from the left to cover the screen
-        float duration = 1f;
+        float duration = 0.3f;
         float time = 0;
         RectTransform rectTransform = transitionImage.GetComponent<RectTransform>();
         Vector2 initialPosition = new Vector2(-rectTransform.rect.width, 0);
@@ -46,7 +46,7 @@ public class SceneTransitionManager : MonoBehaviour
         rectTransform.anchoredPosition = targetPosition;
 
         // Wait for 1 second
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
 
         // Load the new scene
         SceneManager.LoadScene(sceneIndex);

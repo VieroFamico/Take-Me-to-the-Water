@@ -18,6 +18,11 @@ public class PlayerInventoryWrapper
     public List<FishData> fishList;
     public PlayerLoadoutWrapper playerLoadout;
     public List<TrashSO> trashList;
+    public int plasticAmount;
+    public int metalAmount;
+    public int woodAmount;
+    public int rubberAmount;
+
 }
 
 [System.Serializable]
@@ -45,7 +50,7 @@ public static class SaveManager
         PlayerLoadoutWrapper playerLoadoutWrapper = new PlayerLoadoutWrapper
         {
             currentBait = playerLoadout.GetCurrentBait(),
-            baitAmounts = new Dictionary<PlayerLoadout.Bait, int>(playerLoadout.GetBaitAmounts()),
+            baitAmounts = new Dictionary<Bait, int>(playerLoadout.GetBaitAmounts()),
             currentShipName = currentShip != null ? currentShip.shipName : "BaseShip",
             currentShipSpriteData = currentShip != null && currentShip.shipSprite != null ? SpriteToByteArray(currentShip.shipSprite) : null,
             currentShipTimeLimit = currentShip != null ? currentShip.shipTimeLimit : 5,
@@ -58,11 +63,12 @@ public static class SaveManager
             money = playerInventory.money,
             fishList = playerInventory.GetPlayerFishInventory().GetFishList(),
             playerLoadout = playerLoadoutWrapper,
-            trashList = playerInventory.GetPlayerTrashInventory().GetTrashList()
+            trashList = playerInventory.GetPlayerTrashInventory().GetTrashList(),
+            plasticAmount = playerInventory.GetPlayerTrashInventory().GetPlasticAmount(),
+            metalAmount = playerInventory.GetPlayerTrashInventory().GetMetalAmount(),
+            woodAmount = playerInventory.GetPlayerTrashInventory().GetWoodAmount(),
+            rubberAmount = playerInventory.GetPlayerTrashInventory().GetRubberAmount(),
         };
-
-        Debug.Log(playerInventoryWrapper.money);
-        Debug.Log(playerInventory.money);
 
         // Serialize the PlayerInventoryWrapper to JSON
         string json = JsonUtility.ToJson(playerInventoryWrapper);

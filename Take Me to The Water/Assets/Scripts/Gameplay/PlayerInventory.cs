@@ -12,6 +12,7 @@ public class PlayerInventory : MonoBehaviour
     private TrashInventory trashInventory;
 
     private DisplayManager displayManager;
+    private int flag;
 
     private static PlayerInventory instance;
 
@@ -33,6 +34,15 @@ public class PlayerInventory : MonoBehaviour
     {
         FindPlayerInventory();
         FindDisplayManager();
+    }
+    private void Update()
+    {
+        if(flag == 0)
+        {
+            FindPlayerInventory();
+            FindDisplayManager();
+            flag++;
+        }
     }
 
     void OnEnable()
@@ -57,7 +67,6 @@ public class PlayerInventory : MonoBehaviour
     }
     public TrashInventory GetPlayerTrashInventory()
     {
-        Debug.Log("Tried GetPlayerTrashInventory");
         return trashInventory;
     }
 
@@ -122,14 +131,15 @@ public class PlayerInventory : MonoBehaviour
     public void AddTrash(TrashSO newTrash)
     {
         trashInventory.AddTrash(newTrash);
+        Debug.Log("AddTrash");
+        Debug.Log(newTrash);
         SaveManager.SavePlayerInventory(this); // Save the inventory
     }
 
     // Recycle trash into materials
     public void RecycleTrash(TrashSO trash)
     {
-
-        trashInventory.RemoveTrash(trash);
+        trashInventory.RecycleTrash(trash);
         SaveManager.SavePlayerInventory(this); // Save the inventory
     }
 

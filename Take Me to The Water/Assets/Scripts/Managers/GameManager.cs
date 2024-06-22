@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        //SaveInventories();
+        SaveInventories();
     }
 
     public static GameManager Instance
@@ -41,15 +41,10 @@ public class GameManager : MonoBehaviour
     private void LoadInventories()
     {
         PlayerInventoryWrapper playerData = SaveManager.LoadPlayerInventory();
-        Debug.Log(playerData?.money);
-        Debug.Log(playerData?.trashList);
-        Debug.Log(playerData?.playerLoadout);
 
         if (playerData != null)
         {
             playerInventory.money = playerData.money;
-            Debug.Log(playerData.money);
-            Debug.Log(playerInventory.money);
 
             FishInventory fishInventory = new FishInventory();
             fishInventory.SetFishList(playerData.fishList);
@@ -58,6 +53,9 @@ public class GameManager : MonoBehaviour
             TrashInventory trashInventory = new TrashInventory();
             trashInventory.SetTrashList(playerData.trashList);
             playerInventory.SetPlayerTrashInventory(trashInventory);
+
+            playerInventory.GetPlayerTrashInventory().SetMaterials(playerData.plasticAmount, playerData.metalAmount,
+                playerData.woodAmount, playerData.rubberAmount);
 
             PlayerLoadoutWrapper loadedPlayerLoadout = playerData.playerLoadout;
             PlayerLoadout playerLoadout = playerInventory.GetPlayerLoadout();

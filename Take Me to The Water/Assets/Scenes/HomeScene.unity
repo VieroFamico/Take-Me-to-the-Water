@@ -363,6 +363,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 645a11af7b8747e0a436cd353263b8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderer: {fileID: 0}
+  sortingLayer: 0
+  displacementScale: 1
+  foamAmount: 1
+  normalStrength: 1
 --- !u!1 &56115642
 GameObject:
   m_ObjectHideFlags: 0
@@ -8454,6 +8459,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52480f6baf9b7b0428c75481cb3d5a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  material: {fileID: 0}
+  meshFilter: {fileID: 0}
+  meshRenderer: {fileID: 0}
 --- !u!61 &723414446
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8548,7 +8556,7 @@ SpriteRenderer:
   m_Size: {x: 100, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &723414448
@@ -19645,7 +19653,6 @@ GameObject:
   - component: {fileID: 1123709640}
   - component: {fileID: 1123709639}
   - component: {fileID: 1123709641}
-  - component: {fileID: 1123709642}
   m_Layer: 0
   m_Name: PlayersInventory
   m_TagString: Untagged
@@ -19695,19 +19702,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentShip: {fileID: 11400000, guid: 2f00e50579ff5cd4289a55b2bf6e63b9, type: 2}
---- !u!114 &1123709642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1123709638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74e3925836d238b4086bae14ca49fb46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trashInventory: []
 --- !u!1 &1124369998
 GameObject:
   m_ObjectHideFlags: 0
@@ -20523,7 +20517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1197877986
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20585,8 +20579,8 @@ Transform:
   m_GameObject: {fileID: 1197877985}
   serializedVersion: 2
   m_LocalRotation: {x: 0.67559016, y: 0, z: 0, w: 0.7372774}
-  m_LocalPosition: {x: -0.29, y: 1.44, z: -3.62}
-  m_LocalScale: {x: 20, y: 15, z: 1}
+  m_LocalPosition: {x: 0.03, y: 1.4, z: -3.6}
+  m_LocalScale: {x: 21.5, y: 15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1966780320}
@@ -33482,6 +33476,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52480f6baf9b7b0428c75481cb3d5a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  material: {fileID: 0}
+  meshFilter: {fileID: 0}
+  meshRenderer: {fileID: 0}
 --- !u!1 &1465544524
 GameObject:
   m_ObjectHideFlags: 0
@@ -34557,6 +34554,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52480f6baf9b7b0428c75481cb3d5a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: eb07dd84adf822c43a66b49eb976fe9c, type: 2}
+  meshFilter: {fileID: 1533826746}
+  meshRenderer: {fileID: 1533826745}
 --- !u!1 &1534674761
 GameObject:
   m_ObjectHideFlags: 0
@@ -35497,7 +35497,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 3.1
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -35522,7 +35522,7 @@ Transform:
   m_GameObject: {fileID: 1590532194}
   serializedVersion: 2
   m_LocalRotation: {x: 0.043619405, y: 0, z: 0, w: 0.9990483}
-  m_LocalPosition: {x: -0.35, y: 6.98, z: -19.93}
+  m_LocalPosition: {x: -0.35, y: 7.39, z: -19.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45027,6 +45027,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52480f6baf9b7b0428c75481cb3d5a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  material: {fileID: 0}
+  meshFilter: {fileID: 0}
+  meshRenderer: {fileID: 0}
 --- !u!61 &2058948791
 BoxCollider2D:
   m_ObjectHideFlags: 0

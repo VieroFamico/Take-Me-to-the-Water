@@ -6,7 +6,6 @@ public class TrashCatchingHook : MonoBehaviour
 {
     private Vector3 targetPosition;
     private float speed;
-    private bool isMoving = false;
     private float lifeTime = 10;
     private float currentTime = 0f;
     private bool isReturning = false;
@@ -18,7 +17,6 @@ public class TrashCatchingHook : MonoBehaviour
     {
         this.targetPosition = targetPosition;
         this.speed = speed;
-        isMoving = true;
         playerInventory = FindAnyObjectByType<PlayerInventory>();
     }
 
