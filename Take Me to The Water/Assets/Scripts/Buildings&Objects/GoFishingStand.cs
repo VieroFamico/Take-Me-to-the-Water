@@ -2,18 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HomeShip : MonoBehaviour
+public class GoFishingStand : MonoBehaviour
 {
+    public GameObject player;
+    public GameObject goFishingPanel;
+
     public Animator mapMenuAnimator;
     public float proximityDistance = 5f;
+
     private bool isNearShip = false;
-    private GameObject player;
-    private GameObject goFishingPanel;
+    private bool mapIsShowing = false;
 
     private void Start()
     {
         player = GameObject.FindWithTag("Player"); // Assuming the player has the tag "Player"
-        goFishingPanel = transform.Find("GoFishingPanel").gameObject; // Get the child named "GoFishingButton"
         goFishingPanel.SetActive(false); // Ensure the button is initially inactive
     }
 
@@ -32,7 +34,15 @@ public class HomeShip : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    ShowMapMenu();
+                    if (!mapIsShowing)
+                    {
+                        ShowMapMenu();
+                    }
+                    else
+                    {
+                        HideMapMenu();
+                    }
+                    mapIsShowing = !mapIsShowing;
                 }
             }
             else
@@ -50,5 +60,8 @@ public class HomeShip : MonoBehaviour
     {
         mapMenuAnimator.SetTrigger("Show");
     }
-
+    public void HideMapMenu()
+    {
+        mapMenuAnimator.SetTrigger("Hide");
+    }
 }

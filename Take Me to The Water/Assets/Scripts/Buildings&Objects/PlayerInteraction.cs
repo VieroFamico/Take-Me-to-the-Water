@@ -68,5 +68,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             interactPrompt.SetActive(false);
         }
+        Vector3 temp = transform.position + promptOffset;
+        interactPrompt.transform.position = temp;
     }
 }
