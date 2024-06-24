@@ -128,8 +128,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 500
-        height: 500
+        width: 2500
+        height: 2500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: rumah_utama-Sheet_1
       rect:
         serializedVersion: 2
-        x: 500
+        x: 2500
         y: 0
-        width: 500
-        height: 500
+        width: 2500
+        height: 2500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: rumah_utama-Sheet_2
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 5000
         y: 0
-        width: 500
-        height: 500
+        width: 2500
+        height: 2500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,48 +181,6 @@ TextureImporter:
       bones: []
       spriteID: 56bc13651624a65418bb682edf5daa3b
       internalID: 1252978736
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rumah_utama-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 1500
-        y: 0
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 90ab50a577adc41479c818ec16b75b2b
-      internalID: -2099873464
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rumah_utama-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 2000
-        y: 0
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e6ffd707a314b114fa21b1f12c85feed
-      internalID: 1123756469
       vertices: []
       indices: 
       edges: []
@@ -241,8 +199,6 @@ TextureImporter:
       rumah_utama-Sheet_0: 1303198741
       rumah_utama-Sheet_1: 612135553
       rumah_utama-Sheet_2: 1252978736
-      rumah_utama-Sheet_3: -2099873464
-      rumah_utama-Sheet_4: 1123756469
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

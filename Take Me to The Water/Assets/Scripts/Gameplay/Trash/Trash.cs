@@ -14,6 +14,7 @@ public class Trash : MonoBehaviour
     {
         // Move the trash object in the specified direction
         transform.position += moveDirection * moveSpeed * Time.deltaTime;
+        transform.rotation = Quaternion.Euler(90f, 0f, 0f);
     }
 
     public TrashSO GetTrashSO()

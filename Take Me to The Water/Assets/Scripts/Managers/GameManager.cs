@@ -134,9 +134,7 @@ public class GameManager : MonoBehaviour
 
     private void SaveInventories()
     {
-        Debug.Log("First Save");
         SaveManager.SavePlayerInventory(playerInventory);
-        Debug.Log("Second Save");
         SaveManager.SaveFishInventory(shopFishInventory, "ShopInventory.json");
     }
 }

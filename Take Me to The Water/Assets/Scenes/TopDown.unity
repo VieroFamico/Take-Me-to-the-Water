@@ -8817,6 +8817,7 @@ MonoBehaviour:
   trashPrefabs:
   - {fileID: 5338902752611805541, guid: b23b71b5a5e1ce849ba0eca3495b3b0e, type: 3}
   - {fileID: 5996064728578093304, guid: 4c7e4b545a17f6c4794a2c78e9cf1730, type: 3}
+  - {fileID: 4559065085758387399, guid: 6a326329b7cd2674cbf11c99b316129b, type: 3}
   player: {fileID: 1047941874}
   spawnDistance: 25
   moveDirection: {x: 1, y: 0, z: 1}
@@ -22459,7 +22460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1859578866
 MonoBehaviour:
   m_ObjectHideFlags: 0
