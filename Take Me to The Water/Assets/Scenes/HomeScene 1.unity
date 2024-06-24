@@ -1628,7 +1628,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &463261288
@@ -2014,6 +2014,135 @@ Transform:
   - {fileID: 829913673}
   - {fileID: 78291786}
   - {fileID: 44654705}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &585225946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 585225950}
+  - component: {fileID: 585225949}
+  - component: {fileID: 585225948}
+  - component: {fileID: 585225947}
+  m_Layer: 0
+  m_Name: Rumah Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &585225947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585225946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14cbd08f648d6584897b6441d2c75d34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingDisplay: {fileID: 0}
+  animationDuration: 0.2
+  closeButton: {fileID: 0}
+  trashButtonPrefab: {fileID: 8267730219057520662, guid: 51f1ab452ee4d1340a17f5ee40847702, type: 3}
+  trashButtonContainer: {fileID: 0}
+  selectedTrashImage: {fileID: 0}
+  selectedTrashName: {fileID: 0}
+  recycleButton: {fileID: 0}
+  recycleAllButton: {fileID: 0}
+  inventory: {fileID: 0}
+--- !u!95 &585225948
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585225946}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 194a7bbc5614a61479d53a6e16c2bce5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &585225949
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585225946}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 44bc20ee82eaa1346b485db5ed650e78, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 1303198741, guid: 07ea4450002c5f04b9b40dce13a5caae, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 7.8125, y: 7.8125}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &585225950
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585225946}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.3199997, y: 3.37, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &630119692
@@ -2547,7 +2676,7 @@ SpriteRenderer:
   m_Size: {x: 100, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &723414448
@@ -3857,6 +3986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 100
+  playerLoadout: {fileID: 0}
 --- !u!1 &991102117
 GameObject:
   m_ObjectHideFlags: 0
@@ -9172,13 +9302,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingDisplay: {fileID: 429901524}
+  animationDuration: 1
+  closeButton: {fileID: 0}
   temp: {fileID: 11400000, guid: 48d05e438298eea40a0b4ca46844aa86, type: 2}
   empty: {fileID: 0}
   showFishPanel: {fileID: 1018142681}
   buyPanelButton: {fileID: 1512933725}
   sellPanelButton: {fileID: 1540344644}
   buyButton: {fileID: 991102119}
-  doneButton: {fileID: 1322971678}
   selectedFishName: {fileID: 1437464315}
   selectedFishImage: {fileID: 224732951}
   selectedFishPrice: {fileID: 1713520154}
@@ -20141,6 +20272,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingDisplay: {fileID: 1749138532}
+  animationDuration: 1
+  closeButton: {fileID: 0}
   fishPrefab: {fileID: 3581015919884288194, guid: f4a2c9f1ceef3bd478cea1701d007525, type: 3}
   fishFoodPrefab: {fileID: 7542101962961368503, guid: 7a20728aa9be5314a90e244608db957f, type: 3}
   inventoryPanel: {fileID: 1684702865}
@@ -20218,7 +20351,7 @@ SpriteRenderer:
   m_Size: {x: 100, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1463842500
@@ -27238,6 +27371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca533eb980202234483d219ffa1209bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentShip: {fileID: 0}
 --- !u!114 &1990789165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27771,3 +27905,4 @@ SceneRoots:
   - {fileID: 1268907095}
   - {fileID: 330726030}
   - {fileID: 463261288}
+  - {fileID: 585225950}

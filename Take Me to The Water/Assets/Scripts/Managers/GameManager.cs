@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            LoadInventories();
         }
         else
         {
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        LoadInventories();
+        //LoadInventories();
     }
 
     private void OnApplicationQuit()

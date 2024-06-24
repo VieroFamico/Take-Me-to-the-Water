@@ -84,7 +84,7 @@ public class TrashCollectingMechanic : MonoBehaviour
         trashCatchingHookGO = hook.GetComponent<TrashCatchingHook>();
         trashCatchingHookGO.Initialize(targetPosition, hookSpeed);
         trashCatchingHookGO.transform.parent = this.transform;
-        trashCatchingHookGO.transform.eulerAngles = new Vector3(0f, 0f, 0f);
+        trashCatchingHookGO.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         ExitTrashCollectingMode();
     }
 

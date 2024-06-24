@@ -14,7 +14,6 @@ public class ShopManager : BuildingManager
     public Button buyPanelButton;
     public Button sellPanelButton;
     public Button buyButton;
-    public Button doneButton;
     public TextMeshProUGUI selectedFishName;
     public Image selectedFishImage;
     public TextMeshProUGUI selectedFishPrice;
@@ -30,7 +29,7 @@ public class ShopManager : BuildingManager
         playerInventory = GameManager.Instance.playerInventory;
         buyPanelButton.onClick.AddListener(OpenBuyPanel);
         sellPanelButton.onClick.AddListener(OpenSellPanel);
-        doneButton.onClick.AddListener(CloseDisplay);
+        closeButton.onClick.AddListener(CloseDisplay);
         buyButton.onClick.AddListener(BuyOrSellSelectedFish);
     }
 

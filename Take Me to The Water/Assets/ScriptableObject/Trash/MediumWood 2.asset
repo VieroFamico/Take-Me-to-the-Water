@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dc6d91d5737cb74bbc6a73062dea557, type: 3}
-  m_Name: MediumWood
+  m_Name: MediumWood 2
   m_EditorClassIdentifier: 
   trashName: Wood
   plasticAmount: 0
   metalAmount: 0
   woodAmount: 2
   rubberAmount: 0
-  trashImage: {fileID: 21300000, guid: 08a5900e48db62648a8789078cdd966b, type: 3}
+  trashImage: {fileID: 21300000, guid: 57e30f438c829f14d90802c94595ca5a, type: 3}

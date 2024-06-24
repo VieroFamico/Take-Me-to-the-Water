@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EquipmentShopManager : BuildingManager
+public class RefuelShipManager : MonoBehaviour
 {
     private PlayerInventory playerInventory;
     private PlayerLoadout playerLoadout;
@@ -19,15 +19,13 @@ public class EquipmentShopManager : BuildingManager
     public TextMeshProUGUI fullRefuelPriceText; // Optional: To show feedback messages
     public Button refuelButton;
     public Button fullRefuelButton; // Button to fully refuel the ship
-    public Button closeButton; 
+    
 
 
     private void Start()
     {
         playerInventory = GameManager.Instance.playerInventory;
         playerLoadout = playerInventory.GetPlayerLoadout();
-
-        closeButton.onClick.AddListener(CloseDisplay);
 
         // Initialize the slider
         InitializeSlider();
@@ -93,7 +91,6 @@ public class EquipmentShopManager : BuildingManager
         temp = playerInventory.money > fuelCost ? fuelCost : temp;
 
         fuelAmountSlider.value = currentFuelPercentage + temp;
-        RefuelShip();
         UpdateSliderUI();
     }
 
@@ -114,7 +111,6 @@ public class EquipmentShopManager : BuildingManager
         temp = playerInventory.money > fuelCost ? fuelCost : temp;
         refuelPriceText.text = $"${fuelCost}%";
         fullRefuelPriceText.text = $"${temp}%";
-
     }
 
     public void RefuelShip()
@@ -153,5 +149,4 @@ public class EquipmentShopManager : BuildingManager
             feedbackText.text = message;
         }
     }
-
 }
