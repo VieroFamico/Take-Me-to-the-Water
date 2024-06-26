@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using Unity.Services.Economy;
 using UnityEngine;
 using static PlayerLoadout;
+using static StylizedWater2.WaterMesh;
 
 public class GameManager : MonoBehaviour
 {
     public PlayerInventory playerInventory; // Player's inventory including money
     public FishInventory shopFishInventory; // Shop's fish inventory
+
+    public ShipBodySO baseShipBodySO;
+    public ShipEngineSO baseShipEngineSO;
+    public FishingRodSO baseFishingRodSO;
+
     private static GameManager instance;
 
     private void Awake()
@@ -73,13 +79,15 @@ public class GameManager : MonoBehaviour
                 }
                 playerLoadout.SetBaitAmounts(baitAmounts);
 
-                ShipBodySO ship = ScriptableObject.CreateInstance<ShipBodySO>();
-                ship.shipName = "BaseShip";
-                ship.shipSprite = Resources.Load<Sprite>("defaultSpritePath"); // Assuming default sprite
-                ship.shipTimeLimit = 5;
-                ship.currentTimeLimit = 0;
-
+                ShipBodySO ship = baseShipBodySO;
                 playerLoadout.SetCurrentShip(ship);
+                playerLoadout.SetCurrentShipFuel(ship.shipTimeLimit);
+
+                ShipEngineSO shipEngine = baseShipEngineSO;
+                playerLoadout.SetCurrentShipEngine(shipEngine);
+
+                FishingRodSO fishingRodSO = baseFishingRodSO;
+                playerLoadout.SetCurrentFishingRod(fishingRodSO);
             }
             else
             {
@@ -104,16 +112,15 @@ public class GameManager : MonoBehaviour
                 }
                 playerLoadout.SetBaitAmounts(baitAmounts);
 
-                ShipBodySO baseShip = ScriptableObject.CreateInstance<ShipBodySO>();
-                baseShip.shipName = loadedPlayerLoadout.currentShipName ?? "BaseShip";
-                baseShip.shipSprite = loadedPlayerLoadout.currentShipSpriteData != null
-                    ? SaveManager.ByteArrayToSprite(loadedPlayerLoadout.currentShipSpriteData) : Resources.Load<Sprite>("defaultSpritePath");
-                baseShip.shipTimeLimit = loadedPlayerLoadout.currentShipTimeLimit != 0
-                    ? loadedPlayerLoadout.currentShipTimeLimit : 5;
-                baseShip.currentTimeLimit = (loadedPlayerLoadout.currentCurrentTimeLimit >= 0 && loadedPlayerLoadout.currentCurrentTimeLimit <= 100) 
-                    ? loadedPlayerLoadout.currentCurrentTimeLimit : 0;
+                ShipBodySO ship = loadedPlayerLoadout.currentShip;
+                playerLoadout.SetCurrentShip(ship);
+                playerLoadout.SetCurrentShipFuel(loadedPlayerLoadout.currentShipCurrentFuel);
 
-                playerLoadout.SetCurrentShip(baseShip);
+                ShipEngineSO shipEngine = loadedPlayerLoadout.currentShipEngine;
+                playerLoadout.SetCurrentShipEngine(shipEngine);
+
+                FishingRodSO fishingRodSO = loadedPlayerLoadout.currentFishingRod;
+                playerLoadout.SetCurrentFishingRod(fishingRodSO);
             }
 
             SaveManager.SavePlayerInventory(playerInventory);

@@ -27,7 +27,7 @@ public class DisplayManager : MonoBehaviour
     {
         moneyText.text = $"${playerInventory.GetMoney()}";
         //dayText.text = $"{dayNightManager.GetCurrentDay()}";
-        fuelText.text = $"{(int)playerInventory.GetPlayerLoadout().GetCurrentShip().GetFuelPercentage()}%";
+        fuelText.text = $"{(int)playerInventory.GetPlayerLoadout().GetFuelPercentage()}%";
     }
 
     public void ShowMoneyChange(float amount)

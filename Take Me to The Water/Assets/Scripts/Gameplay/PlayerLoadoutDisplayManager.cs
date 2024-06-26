@@ -16,9 +16,6 @@ public class PlayerLoadoutDisplayManager : MonoBehaviour
     void Start()
     {
         playerLoadout = playerInventory.GetComponent<PlayerLoadout>();
-        Debug.Log(playerLoadout);
-        Debug.Log(playerLoadout.currentShip);
-        Debug.Log(playerLoadout.currentShip.shipSprite != null);
         UpdateSprites();
     }
 

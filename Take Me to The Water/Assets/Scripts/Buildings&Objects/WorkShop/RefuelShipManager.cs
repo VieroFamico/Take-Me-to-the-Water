@@ -42,14 +42,15 @@ public class RefuelShipManager : MonoBehaviour
     private void InitializeSlider()
     {
         ShipBodySO currentShip = playerLoadout.GetCurrentShip();
-        float currentFuelPercentage = currentShip.currentTimeLimit / currentShip.shipTimeLimit * 100;
+        float currentFuel = playerLoadout.GetCurrentShipFuel();
+        float currentFuelPercentage = currentFuel / currentShip.shipTimeLimit * 100;
 
         fuelAmountSlider.minValue = currentFuelPercentage;
         fuelAmountSlider.maxValue = 100;
         fuelAmountSlider.wholeNumbers = true;
 
         // Set initial slider value to the current fuel percentage
-        fuelAmountSlider.value = currentShip.currentTimeLimit / currentShip.shipTimeLimit * 100;
+        fuelAmountSlider.value = currentFuel / currentShip.shipTimeLimit * 100;
 
         // Set min and max fuel texts
         minFuelText.text = $"{currentFuelPercentage}%";
@@ -59,7 +60,9 @@ public class RefuelShipManager : MonoBehaviour
     private void OnSliderValueChanged(float value)
     {
         ShipBodySO currentShip = playerLoadout.GetCurrentShip();
-        float currentFuelPercentage = currentShip.currentTimeLimit / currentShip.shipTimeLimit * 100;
+        float currentFuel = playerLoadout.GetCurrentShipFuel();
+
+        float currentFuelPercentage = currentFuel / currentShip.shipTimeLimit * 100;
 
         if (value < currentFuelPercentage)
         {
@@ -83,7 +86,9 @@ public class RefuelShipManager : MonoBehaviour
     private void OnFullRefuelButtonClick()
     {
         ShipBodySO currentShip = playerLoadout.GetCurrentShip();
-        float currentFuelPercentage = currentShip.currentTimeLimit / currentShip.shipTimeLimit * 100;
+        float currentFuel = playerLoadout.GetCurrentShipFuel();
+
+        float currentFuelPercentage = currentFuel / currentShip.shipTimeLimit * 100;
         float fuelCost = 100f - currentFuelPercentage;
         fullRefuelButton.interactable = playerInventory.money > 0 && currentFuelPercentage < 100;
 
@@ -100,7 +105,9 @@ public class RefuelShipManager : MonoBehaviour
         fuelPercentageText.text = $"{fuelPercentage}%";
 
         ShipBodySO currentShip = playerLoadout.GetCurrentShip();
-        float currentFuelPercentage = currentShip.currentTimeLimit / currentShip.shipTimeLimit * 100;
+        float currentFuel = playerLoadout.GetCurrentShipFuel();
+
+        float currentFuelPercentage = currentFuel / currentShip.shipTimeLimit * 100;
         float fuelCost = fuelPercentage - currentFuelPercentage;
         refuelButton.interactable = playerInventory.money > fuelCost;
 
@@ -117,7 +124,9 @@ public class RefuelShipManager : MonoBehaviour
     {
         int fuelPercentage = Mathf.RoundToInt(fuelAmountSlider.value);
         ShipBodySO currentShip = playerLoadout.GetCurrentShip();
-        float currentFuelPercentage = currentShip.currentTimeLimit / currentShip.shipTimeLimit * 100;
+        float currentFuel = playerLoadout.GetCurrentShipFuel();
+
+        float currentFuelPercentage = currentFuel / currentShip.shipTimeLimit * 100;
         float fuelToBuy = fuelPercentage - currentFuelPercentage;
 
         if (fuelToBuy <= 0)
@@ -130,7 +139,7 @@ public class RefuelShipManager : MonoBehaviour
         if (success)
         {
             ShowFeedback("Ship refueled successfully.");
-            currentShip.Refuel((int)fuelPercentage); // Refuel the ship
+            playerLoadout.Refuel((int)fuelPercentage); // Refuel the ship
             InitializeSlider(); // Reinitialize slider values
             UpdateSliderUI(); // Update UI after refueling
         }

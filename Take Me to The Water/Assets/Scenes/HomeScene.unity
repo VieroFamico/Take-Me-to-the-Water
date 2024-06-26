@@ -853,7 +853,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &72096856
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2970,6 +2970,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 1123709639}
+  baseShipBodySO: {fileID: 11400000, guid: 777aaf480a735bc4cacb06a596f8d626, type: 2}
+  baseShipEngineSO: {fileID: 11400000, guid: c2b7ca4b0e938fb428418c0b6e21c930, type: 2}
+  baseFishingRodSO: {fileID: 11400000, guid: 40feb451b25e25f4883588de575c8cbc, type: 2}
 --- !u!4 &330726030
 Transform:
   m_ObjectHideFlags: 0
@@ -33261,7 +33264,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
     m_PressedColor: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
-    m_SelectedColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -34148,7 +34151,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
     m_PressedColor: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
-    m_SelectedColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -41649,9 +41652,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca533eb980202234483d219ffa1209bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentShip: {fileID: 11400000, guid: 2f00e50579ff5cd4289a55b2bf6e63b9, type: 2}
-  currentFishingRod: {fileID: 11400000, guid: 3321f4aefd9ac8d4a8cceaaebe459554, type: 2}
-  currentShipEngine: {fileID: 11400000, guid: 781e99a64c6b5874db4cf730280dcd58, type: 2}
+  currentShip: {fileID: 11400000, guid: 777aaf480a735bc4cacb06a596f8d626, type: 2}
+  currentFishingRod: {fileID: 11400000, guid: 40feb451b25e25f4883588de575c8cbc, type: 2}
+  currentShipEngine: {fileID: 11400000, guid: c2b7ca4b0e938fb428418c0b6e21c930, type: 2}
 --- !u!114 &1990789165
 MonoBehaviour:
   m_ObjectHideFlags: 0

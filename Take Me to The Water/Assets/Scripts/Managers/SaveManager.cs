@@ -30,10 +30,10 @@ public class PlayerLoadoutWrapper
 {
     public PlayerLoadout.Bait currentBait;
     public Dictionary<PlayerLoadout.Bait, int> baitAmounts;
-    public string currentShipName;
-    public byte[] currentShipSpriteData;
-    public float currentShipTimeLimit;
-    public float currentCurrentTimeLimit;
+    public ShipBodySO currentShip;
+    public FishingRodSO currentFishingRod;
+    public ShipEngineSO currentShipEngine;
+    public float currentShipCurrentFuel;
 }
 
 public static class SaveManager
@@ -51,10 +51,10 @@ public static class SaveManager
         {
             currentBait = playerLoadout.GetCurrentBait(),
             baitAmounts = new Dictionary<Bait, int>(playerLoadout.GetBaitAmounts()),
-            currentShipName = currentShip != null ? currentShip.shipName : "BaseShip",
-            currentShipSpriteData = currentShip != null && currentShip.shipSprite != null ? SpriteToByteArray(currentShip.shipSprite) : null,
-            currentShipTimeLimit = currentShip != null ? currentShip.shipTimeLimit : 5,
-            currentCurrentTimeLimit = currentShip!= null ? currentShip.currentTimeLimit : 0
+            currentShip = playerLoadout.GetCurrentShip(),
+            currentFishingRod = playerLoadout.GetCurrentFishingRod(),
+            currentShipEngine = playerLoadout.GetCurrentShipEngine(),
+            currentShipCurrentFuel = playerLoadout.GetCurrentShipFuel()
         };
 
         // Create a PlayerInventoryWrapper instance
@@ -132,18 +132,4 @@ public static class SaveManager
         texture.LoadImage(data);
         return Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
     }
-/*    private static List<TrashWrapper> GetTrashWrappers(List<Trash> trashList)
-    {
-        List<TrashWrapper> wrappers = new List<TrashWrapper>();
-        foreach (var trash in trashList)
-        {
-            TrashWrapper wrapper = new TrashWrapper
-            {
-                recyclableMaterials = new Dictionary<Trash.MaterialType, int>(trash.recyclableMaterials)
-            };
-            wrappers.Add(wrapper);
-        }
-        return wrappers;
-    }*/
-
 }

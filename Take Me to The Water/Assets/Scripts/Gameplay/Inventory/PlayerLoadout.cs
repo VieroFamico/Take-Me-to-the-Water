@@ -15,6 +15,7 @@ public class PlayerLoadout : MonoBehaviour
     public ShipBodySO currentShip;
     public FishingRodSO currentFishingRod;
     public ShipEngineSO currentShipEngine;
+    private float currentShipFuel;
 
     void Start()
     {
@@ -69,6 +70,25 @@ public class PlayerLoadout : MonoBehaviour
     {
         this.baitAmounts = baitAmounts;
     }
+
+    public float GetCurrentShipFuel()
+    {
+        return currentShipFuel;
+    }
+    public void SetCurrentShipFuel(float fuel)
+    {
+        currentShipFuel = fuel;
+    }
+    public void Refuel(float fuelPercentage)
+    {
+        currentShipFuel = currentShip.shipTimeLimit * (fuelPercentage / 100);
+    }
+    public float GetFuelPercentage()
+    {
+        return (currentShipFuel / currentShip.shipTimeLimit) * 100;
+    }
+    
+
 
     // Ship management methods
     public void SetCurrentShip(ShipBodySO ship)
