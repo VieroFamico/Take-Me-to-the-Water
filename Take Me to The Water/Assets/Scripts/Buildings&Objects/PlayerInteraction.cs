@@ -52,11 +52,13 @@ public class PlayerInteraction : MonoBehaviour
         if (!isActive)
         {
             building.OpenDisplay();
+            playerMovement.ChangeMove();
             playerMovement.enabled = false;
         }
         else
         {
             building.CloseDisplay();
+            playerMovement.ChangeMove();
             playerMovement.enabled = true;
         }
         //Vector3 temp = transform.position;

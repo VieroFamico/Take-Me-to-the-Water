@@ -8,6 +8,7 @@ public class HomePlayerMovement : MonoBehaviour
 
     private Animator animator;
     private Rigidbody2D rb2d;
+    private bool couldMove = true;
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -16,6 +17,11 @@ public class HomePlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if(!couldMove)
+        {
+            return;
+        }
+
         float moveInput = Input.GetAxisRaw("Horizontal");
 
         if(Mathf.Abs(moveInput) > 0)
@@ -32,5 +38,11 @@ public class HomePlayerMovement : MonoBehaviour
         {
             animator.SetBool("IsMoving", false);
         }
+    }
+
+    public void ChangeMove()
+    {
+        couldMove = !couldMove;
+        animator.SetBool("IsMoving", couldMove);
     }
 }
