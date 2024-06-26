@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b88bdc9c43abb24596791ca1f6a5dc3, type: 3}
-  m_Name: Base_Engine
+  m_Name: EngineT5
   m_EditorClassIdentifier: 
-  engineName: 
-  engineTier: 0
-  engineSprite: {fileID: 21300000, guid: d2898fdfb28d04b47bc3e067342805fe, type: 3}
-  movementSpeed: 0
-  price: 0
-  plasticNeeded: 0
-  metalNeeded: 0
-  woodNeeded: 0
-  rubberNeeded: 0
+  engineName: Marine Maverick
+  engineTier: 5
+  engineSprite: {fileID: 21300000, guid: a6ebf85f0fb255d4f9fa1dfc6679e3aa, type: 3}
+  movementSpeed: 1.25
+  price: 300
+  plasticNeeded: 2
+  metalNeeded: 2
+  woodNeeded: 1
+  rubberNeeded: 1

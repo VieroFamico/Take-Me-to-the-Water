@@ -9,14 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b88bdc9c43abb24596791ca1f6a5dc3, type: 3}
-  m_Name: Base_Engine
+  m_Script: {fileID: 11500000, guid: 7640f6360ecf16a49a9133bc5b8092e9, type: 3}
+  m_Name: Ship T4
   m_EditorClassIdentifier: 
-  engineName: 
-  engineTier: 0
-  engineSprite: {fileID: 21300000, guid: d2898fdfb28d04b47bc3e067342805fe, type: 3}
-  movementSpeed: 0
-  price: 0
+  shipName: 
+  shipSprite: {fileID: 21300000, guid: e8751982065a8b847ba372ac262580bd, type: 3}
+  shipTier: 4
+  shipTimeLimit: 9.5
+  currentTimeLimit: 9.5
+  price: 250
   plasticNeeded: 0
   metalNeeded: 0
   woodNeeded: 0

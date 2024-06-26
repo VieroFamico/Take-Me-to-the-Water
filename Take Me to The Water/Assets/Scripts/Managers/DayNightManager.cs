@@ -61,6 +61,11 @@ public class DayNightManager : MonoBehaviour
 
     void Update()
     {
+        if(SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            return;
+        }
+
         UpdateDayCycle();
     }
 

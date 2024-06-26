@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7640f6360ecf16a49a9133bc5b8092e9, type: 3}
+  m_Name: Ship T3
+  m_EditorClassIdentifier: 
+  shipName: 
+  shipSprite: {fileID: 21300000, guid: e8751982065a8b847ba372ac262580bd, type: 3}
+  shipTier: 3
+  shipTimeLimit: 8
+  currentTimeLimit: 8
+  price: 200
+  plasticNeeded: 2
+  metalNeeded: 3
+  woodNeeded: 2
+  rubberNeeded: 2

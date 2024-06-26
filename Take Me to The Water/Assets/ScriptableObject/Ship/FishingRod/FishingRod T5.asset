@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b88bdc9c43abb24596791ca1f6a5dc3, type: 3}
-  m_Name: Base_Engine
+  m_Script: {fileID: 11500000, guid: 140c4240eb52f9546a5b1c627cf460b1, type: 3}
+  m_Name: FishingRod T5
   m_EditorClassIdentifier: 
-  engineName: 
-  engineTier: 0
-  engineSprite: {fileID: 21300000, guid: d2898fdfb28d04b47bc3e067342805fe, type: 3}
-  movementSpeed: 0
-  price: 0
+  rodName: Sea Rod
+  rodTier: 5
+  rodSprite: {fileID: 21300000, guid: 66d9bbadbf8485e4586e5202072832fb, type: 3}
+  maxTension: 110
+  price: 300
   plasticNeeded: 0
   metalNeeded: 0
   woodNeeded: 0
