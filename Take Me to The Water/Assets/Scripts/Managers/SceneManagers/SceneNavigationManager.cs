@@ -13,18 +13,24 @@ public class SceneNavigationManager : MonoBehaviour
     private int choosenIndex;
     void Start()
     {
-        if (choosePlaceButton == null)
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
-            choosePlaceButton = GameObject.FindGameObjectWithTag("ChoosePlaceButton").GetComponent<Button>();
+            GetChoosePlaceButton();
         }
         for (int i = 0; i < navigationButtons.Length; i++)
         {
             int index = i + 1;
             navigationButtons[i].onClick.AddListener(() => SelectLocation(index));
         }
-        choosePlaceButton.onClick.AddListener(ChangeScene);
+        if (choosePlaceButton)
+        {
+            choosePlaceButton.onClick.AddListener(ChangeScene);
+        }
     }
-    
+    private void GetChoosePlaceButton()
+    {
+        choosePlaceButton = GameObject.FindGameObjectWithTag("ChoosePlaceButton").GetComponent<Button>();
+    }
     public void SelectLocation(int index)
     {
         choosenIndex = index;

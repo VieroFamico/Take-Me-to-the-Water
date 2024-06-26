@@ -18,6 +18,7 @@ public class BuildingManager : MonoBehaviour
             StopCoroutine(currentCoroutine);
         }
         currentCoroutine = StartCoroutine(ScalePanel(buildingDisplay, Vector3.zero, Vector3.one, animationDuration));
+        BlurEffectForPanel.ToggleBlur();
     }
     virtual public void CloseDisplay()
     {
@@ -26,6 +27,7 @@ public class BuildingManager : MonoBehaviour
             StopCoroutine(currentCoroutine);
         }
         currentCoroutine = StartCoroutine(ScalePanel(buildingDisplay, Vector3.one, Vector3.zero, animationDuration));
+        BlurEffectForPanel.ToggleBlur();
     }
     private IEnumerator ScalePanel(GameObject panel, Vector3 startScale, Vector3 endScale, float duration)
     {

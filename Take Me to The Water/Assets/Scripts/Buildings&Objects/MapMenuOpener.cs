@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoFishingStand : MonoBehaviour
+public class MapMenuOpener : MonoBehaviour
 {
     public GameObject player;
     public GameObject goFishingPanel;
@@ -59,9 +59,11 @@ public class GoFishingStand : MonoBehaviour
     public void ShowMapMenu()
     {
         mapMenuAnimator.SetTrigger("Show");
+        BlurEffectForPanel.ToggleBlur();
     }
     public void HideMapMenu()
     {
         mapMenuAnimator.SetTrigger("Hide");
+        BlurEffectForPanel.ToggleBlur();
     }
 }
