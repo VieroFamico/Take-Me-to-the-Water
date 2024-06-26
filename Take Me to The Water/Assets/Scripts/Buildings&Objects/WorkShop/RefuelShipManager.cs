@@ -41,7 +41,7 @@ public class RefuelShipManager : MonoBehaviour
 
     private void InitializeSlider()
     {
-        ShipSO currentShip = playerLoadout.GetCurrentShip();
+        ShipBodySO currentShip = playerLoadout.GetCurrentShip();
         float currentFuelPercentage = currentShip.currentTimeLimit / currentShip.shipTimeLimit * 100;
 
         fuelAmountSlider.minValue = currentFuelPercentage;
@@ -58,7 +58,7 @@ public class RefuelShipManager : MonoBehaviour
 
     private void OnSliderValueChanged(float value)
     {
-        ShipSO currentShip = playerLoadout.GetCurrentShip();
+        ShipBodySO currentShip = playerLoadout.GetCurrentShip();
         float currentFuelPercentage = currentShip.currentTimeLimit / currentShip.shipTimeLimit * 100;
 
         if (value < currentFuelPercentage)
@@ -82,7 +82,7 @@ public class RefuelShipManager : MonoBehaviour
     }
     private void OnFullRefuelButtonClick()
     {
-        ShipSO currentShip = playerLoadout.GetCurrentShip();
+        ShipBodySO currentShip = playerLoadout.GetCurrentShip();
         float currentFuelPercentage = currentShip.currentTimeLimit / currentShip.shipTimeLimit * 100;
         float fuelCost = 100f - currentFuelPercentage;
         fullRefuelButton.interactable = playerInventory.money > 0 && currentFuelPercentage < 100;
@@ -99,7 +99,7 @@ public class RefuelShipManager : MonoBehaviour
         int fuelPercentage = Mathf.RoundToInt(fuelAmountSlider.value);
         fuelPercentageText.text = $"{fuelPercentage}%";
 
-        ShipSO currentShip = playerLoadout.GetCurrentShip();
+        ShipBodySO currentShip = playerLoadout.GetCurrentShip();
         float currentFuelPercentage = currentShip.currentTimeLimit / currentShip.shipTimeLimit * 100;
         float fuelCost = fuelPercentage - currentFuelPercentage;
         refuelButton.interactable = playerInventory.money > fuelCost;
@@ -116,7 +116,7 @@ public class RefuelShipManager : MonoBehaviour
     public void RefuelShip()
     {
         int fuelPercentage = Mathf.RoundToInt(fuelAmountSlider.value);
-        ShipSO currentShip = playerLoadout.GetCurrentShip();
+        ShipBodySO currentShip = playerLoadout.GetCurrentShip();
         float currentFuelPercentage = currentShip.currentTimeLimit / currentShip.shipTimeLimit * 100;
         float fuelToBuy = fuelPercentage - currentFuelPercentage;
 

@@ -8,14 +8,14 @@ using static PlayerLoadout;
 [System.Serializable]
 public class FishInventoryWrapper
 {
-    public List<FishData> fishInventory;
+    public List<FishSO> fishInventory;
 }
 
 [System.Serializable]
 public class PlayerInventoryWrapper
 {
     public float money;
-    public List<FishData> fishList;
+    public List<FishSO> fishList;
     public PlayerLoadoutWrapper playerLoadout;
     public List<TrashSO> trashList;
     public int plasticAmount;
@@ -44,7 +44,7 @@ public static class SaveManager
     public static void SavePlayerInventory(PlayerInventory playerInventory)
     {
         PlayerLoadout playerLoadout = playerInventory.GetPlayerLoadout();
-        ShipSO currentShip = playerLoadout.GetCurrentShip();
+        ShipBodySO currentShip = playerLoadout.GetCurrentShip();
 
         // Create a PlayerLoadoutWrapper instance
         PlayerLoadoutWrapper playerLoadoutWrapper = new PlayerLoadoutWrapper

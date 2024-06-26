@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class AquariumFish : MonoBehaviour
 {
-    public FishData fishData;
+    public FishSO fishData;
     public float moveSpeed = 2f;
     public float verticalMoveLimit = 2f; // Half the horizontal move distance
     public float foodDetectionRadius = 5f; // Radius to detect food

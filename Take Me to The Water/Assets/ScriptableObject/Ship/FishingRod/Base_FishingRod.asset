@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7640f6360ecf16a49a9133bc5b8092e9, type: 3}
-  m_Name: Base_Ship
+  m_Script: {fileID: 11500000, guid: 140c4240eb52f9546a5b1c627cf460b1, type: 3}
+  m_Name: Base_FishingRod
   m_EditorClassIdentifier: 
-  shipName: BaseShip
-  shipSprite: {fileID: 21300000, guid: eccf0c9d9cd460f4cbc857acd5166a94, type: 3}
-  shipTimeLimit: 5
+  rodName: 
+  rodTier: 0
+  maxTension: 69
+  craftingMaterials: []
+  price: 0

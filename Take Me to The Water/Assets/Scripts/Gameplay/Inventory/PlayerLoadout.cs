@@ -12,7 +12,9 @@ public class PlayerLoadout : MonoBehaviour
 
     private Bait currentBait = Bait.Worm;
     public Dictionary<Bait, int> baitAmounts = new Dictionary<Bait, int>();
-    public ShipSO currentShip;
+    public ShipBodySO currentShip;
+    public FishingRodSO currentFishingRod;
+    public ShipEngineSO currentShipEngine;
 
     void Start()
     {
@@ -68,14 +70,37 @@ public class PlayerLoadout : MonoBehaviour
         this.baitAmounts = baitAmounts;
     }
 
-    public void SetCurrentShip(ShipSO ship)
+    // Ship management methods
+    public void SetCurrentShip(ShipBodySO ship)
     {
         currentShip = ship;
     }
-    
-    public ShipSO GetCurrentShip()
+
+    public ShipBodySO GetCurrentShip()
     {
         return currentShip;
+    }
+
+    // Fishing rod management methods
+    public void SetCurrentFishingRod(FishingRodSO fishingRod)
+    {
+        currentFishingRod = fishingRod;
+    }
+
+    public FishingRodSO GetCurrentFishingRod()
+    {
+        return currentFishingRod;
+    }
+
+    // Ship engine management methods
+    public void SetCurrentShipEngine(ShipEngineSO shipEngine)
+    {
+        currentShipEngine = shipEngine;
+    }
+
+    public ShipEngineSO GetCurrentShipEngine()
+    {
+        return currentShipEngine;
     }
 }
 

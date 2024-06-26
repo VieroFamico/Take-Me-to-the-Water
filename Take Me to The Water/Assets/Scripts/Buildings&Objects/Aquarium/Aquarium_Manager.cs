@@ -16,7 +16,7 @@ public class Aquarium_Manager : BuildingManager
     public float fishSize = 1f;
 
     private FishInventory fishInventoryList;
-    private FishData selectedFish;
+    private FishSO selectedFish;
     private List<GameObject> aquariumGameObjectList = new List<GameObject>();
 
     void Start()
@@ -37,7 +37,7 @@ public class Aquarium_Manager : BuildingManager
             Destroy(child.gameObject);
         }
 
-        List<FishData> fishInventory = fishInventoryList.GetFishList();
+        List<FishSO> fishInventory = fishInventoryList.GetFishList();
 
         foreach (var fish in fishInventory)
         {
@@ -51,7 +51,7 @@ public class Aquarium_Manager : BuildingManager
         }
     }
 
-    void SelectFish(FishData fish)
+    void SelectFish(FishSO fish)
     {
         selectedFish = fish;
     }

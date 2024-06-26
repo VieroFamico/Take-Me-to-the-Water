@@ -91,7 +91,7 @@ public class PlayerInventory : MonoBehaviour
     {
         displayManager = FindAnyObjectByType<DisplayManager>();
     }
-    public void CatchFish(FishData fish)
+    public void CatchFish(FishSO fish)
     {
         fishInventory.AddFish(fish); // Add the fish to the inventory
         SaveManager.SavePlayerInventory(this); // Save the inventory

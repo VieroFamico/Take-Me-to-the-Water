@@ -7,8 +7,8 @@ using UnityEngine.UI;
 
 public class ShopManager : BuildingManager
 {
-    public FishData temp;
-    public FishData empty;
+    public FishSO temp;
+    public FishSO empty;
 
     public Transform showFishPanel;
     public Button buyPanelButton;
@@ -21,7 +21,7 @@ public class ShopManager : BuildingManager
     public PlayerInventory playerInventory;
     public FishInventory shopFishInventory; // Separate inventory for the shop
 
-    private FishData selectedFish;
+    private FishSO selectedFish;
     private bool isBuying;
 
     void Start()
@@ -61,7 +61,7 @@ public class ShopManager : BuildingManager
             Destroy(child.gameObject);
         }
 
-        List<FishData> fishInventory = isBuying ? shopFishInventory.GetFishList() : playerInventory.GetPlayerFishInventory().GetFishList();
+        List<FishSO> fishInventory = isBuying ? shopFishInventory.GetFishList() : playerInventory.GetPlayerFishInventory().GetFishList();
 
         foreach (var fish in fishInventory)
         {
@@ -79,7 +79,7 @@ public class ShopManager : BuildingManager
         }
     }
 
-    void SelectFish(FishData fish)
+    void SelectFish(FishSO fish)
     {
         selectedFish = fish;
         selectedFishName.text = fish.fishName;

@@ -9,7 +9,7 @@ public class Fish : MonoBehaviour
     public float rotationSpeed = 2f;
     public float detectionRange = 5f;
     public float biteChance = 0.5f; // 50% chance to bite the hook
-    public FishData fishData;
+    public FishSO fishData;
     public Transform fishSpriteGameObject;
     public Transform bitePoint;
 

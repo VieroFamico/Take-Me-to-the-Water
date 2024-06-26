@@ -58,6 +58,7 @@ public class MapMenuManager : MonoBehaviour
         LoadoutPanel.SetActive(true);
         isMapPanelActive = false;
         UpdateButtonSprites();
+        GetComponent<PlayerLoadoutDisplayManager>().UpdateSprites();
         NextButtonImage.sprite = GoButtonSprite;
     }
     void ChangePanel()

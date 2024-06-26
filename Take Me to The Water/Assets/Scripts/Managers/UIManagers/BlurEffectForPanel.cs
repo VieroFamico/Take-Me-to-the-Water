@@ -19,7 +19,6 @@ public class BlurEffectForPanel : MonoBehaviour
     void Start()
     {
         profile = GetComponent<Volume>().profile;
-        Debug.Log(_instance != null);
     }
     public static void ToggleBlur()
     {

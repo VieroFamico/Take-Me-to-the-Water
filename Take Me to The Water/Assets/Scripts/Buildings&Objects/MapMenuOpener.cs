@@ -2,68 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapMenuOpener : MonoBehaviour
+public class MapMenuOpener : BuildingManager
 {
-    public GameObject player;
-    public GameObject goFishingPanel;
-
     public Animator mapMenuAnimator;
-    public float proximityDistance = 5f;
-
-    private bool isNearShip = false;
-    private bool mapIsShowing = false;
 
     private void Start()
     {
-        player = GameObject.FindWithTag("Player"); // Assuming the player has the tag "Player"
-        goFishingPanel.SetActive(false); // Ensure the button is initially inactive
+        closeButton.onClick.AddListener(CloseDisplay);
     }
-
-    private void Update()
+    public override void OpenDisplay()
     {
-        if (player != null)
-        {
-            float distance = Vector3.Distance(transform.position, player.transform.position);
-            if (distance <= proximityDistance)
-            {
-                if (!isNearShip)
-                {
-                    isNearShip = true;
-                    goFishingPanel.SetActive(true);
-                }
-
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    if (!mapIsShowing)
-                    {
-                        ShowMapMenu();
-                    }
-                    else
-                    {
-                        HideMapMenu();
-                    }
-                    mapIsShowing = !mapIsShowing;
-                }
-            }
-            else
-            {
-                if (isNearShip)
-                {
-                    isNearShip = false;
-                    goFishingPanel.SetActive(false);
-                }
-            }
-        }
-    }
-
-    public void ShowMapMenu()
-    {
+        Debug.Log("Open");
+        Debug.Log(mapMenuAnimator.parameterCount);
         mapMenuAnimator.SetTrigger("Show");
         BlurEffectForPanel.ToggleBlur();
+        ChangeState();
     }
-    public void HideMapMenu()
+    public override void CloseDisplay()
     {
+        Debug.Log("Close");
         mapMenuAnimator.SetTrigger("Hide");
         BlurEffectForPanel.ToggleBlur();
+        ChangeState();
     }
 }

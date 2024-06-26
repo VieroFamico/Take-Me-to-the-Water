@@ -6,28 +6,28 @@ using UnityEngine;
 [System.Serializable]
 public class FishInventory
 {
-    private List<FishData> fishList = new List<FishData>();
+    private List<FishSO> fishList = new List<FishSO>();
 
-    public List<FishData> GetFishList()
+    public List<FishSO> GetFishList()
     {
         return fishList;
     }
 
-    public void SetFishList(List<FishData> inventory)
+    public void SetFishList(List<FishSO> inventory)
     {
         fishList = inventory;
     }
 
-    public void AddFish(FishData newFish)
+    public void AddFish(FishSO newFish)
     {
         fishList.Add(newFish);
     }
-    public void RemoveFish(FishData fish)
+    public void RemoveFish(FishSO fish)
     {
         fishList.Remove(fish);
     }
 
-    public FishData GetRandomFish()
+    public FishSO GetRandomFish()
     {
         if (fishList.Count == 0)
         {

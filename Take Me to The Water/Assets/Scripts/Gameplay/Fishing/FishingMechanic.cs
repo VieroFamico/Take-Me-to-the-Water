@@ -318,7 +318,7 @@ public class FishingMechanic : MonoBehaviour
 
         if (fish)
         {
-            FishData catchFishData = fish.fishData;
+            FishSO catchFishData = fish.fishData;
 
             playerInventory.CatchFish(catchFishData); // Add the caught fish to the player's inventory
 
