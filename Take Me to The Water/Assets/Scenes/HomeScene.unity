@@ -853,7 +853,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &72096856
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3214,6 +3214,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 1123709639}
+  baseShipBodySO: {fileID: 11400000, guid: 777aaf480a735bc4cacb06a596f8d626, type: 2}
+  baseShipEngineSO: {fileID: 11400000, guid: c2b7ca4b0e938fb428418c0b6e21c930, type: 2}
+  baseFishingRodSO: {fileID: 11400000, guid: 40feb451b25e25f4883588de575c8cbc, type: 2}
 --- !u!4 &330726030
 Transform:
   m_ObjectHideFlags: 0
@@ -8632,10 +8635,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da27ee8d89b12849998a4267bdb0fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  goFishingPanel: {fileID: 0}
+  buildingDisplay: {fileID: 401264758}
+  animationDuration: 0.2
+  closeButton: {fileID: 821028925}
   mapMenuAnimator: {fileID: 401264762}
-  proximityDistance: 5
 --- !u!114 &804507640
 MonoBehaviour:
   m_ObjectHideFlags: 0
