@@ -8814,11 +8814,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9813e177249b844f9446864b149b8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canTrashPrefabs: []
-  bottleTrashPrefabs: []
-  tireTrashPrefabs: []
-  branchTrashPrefabs: []
-  treeTrunkTrashPrefabs: []
+  canTrashPrefabs:
+  - {fileID: 1685175215464457504, guid: 8a6f138c082e3c3468ca547a32f56c41, type: 3}
+  - {fileID: 3499745323282707703, guid: c7c2a994d4a339b4d945584dd538074e, type: 3}
+  - {fileID: 8923544926636925861, guid: 301c050bdeb4142458c3ee7c2c09c4a7, type: 3}
+  bottleTrashPrefabs:
+  - {fileID: 2036248926378524310, guid: 63240ab105650d54997083a17668ff25, type: 3}
+  - {fileID: 1531997210215660121, guid: 1f53aa0dda9078f44a4b9aa290ef69a1, type: 3}
+  - {fileID: 4661999224268107497, guid: 5149b48d96dcbff44aad4e1f4fc4a5fe, type: 3}
+  - {fileID: 6988823053204933039, guid: 24b6d4074401f7f42a4703a4e3ad5858, type: 3}
+  tireTrashPrefabs:
+  - {fileID: 4559065085758387399, guid: 6a326329b7cd2674cbf11c99b316129b, type: 3}
+  branchTrashPrefabs:
+  - {fileID: 8580271345718428943, guid: 51133c983e922a4448c76d859f143376, type: 3}
+  - {fileID: 1218670190501436942, guid: c1193f44f22484947b2cb71cc68a88da, type: 3}
+  treeTrunkTrashPrefabs:
+  - {fileID: 5996064728578093304, guid: 4c7e4b545a17f6c4794a2c78e9cf1730, type: 3}
+  - {fileID: 5338902752611805541, guid: b23b71b5a5e1ce849ba0eca3495b3b0e, type: 3}
   player: {fileID: 1047941874}
   spawnDistance: 25
   moveDirection: {x: 1, y: 0, z: 1}
