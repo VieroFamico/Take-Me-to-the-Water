@@ -17,7 +17,11 @@ public class WorkShopManager : BuildingManager
 
     void Start()
     {
-        int temp = 0;
+        InitializePanel();
+        closeButton.onClick.AddListener(CloseDisplay);
+    }
+    private void InitializePanel()
+    {
         // Deactivate all panels and their scripts at the start
         foreach (Panel panel in panels)
         {
@@ -26,16 +30,13 @@ public class WorkShopManager : BuildingManager
             {
                 panel.panelScript.enabled = false;
             }
-            panel.panelButton.onClick.AddListener(() => SwitchPanel(temp));
-            temp++;
+            panel.panelButton.onClick.AddListener(() => SwitchPanel(panel));
         }
+        //Debug.Log(temp);
         panels[0].panelGameObject.SetActive(true);
-        closeButton.onClick.AddListener(CloseDisplay);
     }
-
-    public void SwitchPanel(int panelIndex)
+    public void SwitchPanel(Panel choosenPanel)
     {
-        // Deactivate all panels and their scripts
         foreach (Panel panel in panels)
         {
             panel.panelGameObject.SetActive(false);
@@ -45,11 +46,10 @@ public class WorkShopManager : BuildingManager
             }
         }
 
-        // Activate the selected panel and its script
-        panels[panelIndex].panelGameObject.SetActive(true);
-        if (panels[panelIndex].panelScript != null)
+        choosenPanel.panelGameObject.SetActive(true);
+        if (choosenPanel.panelScript != null)
         {
-            panels[panelIndex].panelScript.enabled = true;
+            choosenPanel.panelScript.enabled = true;
         }
     }
 }

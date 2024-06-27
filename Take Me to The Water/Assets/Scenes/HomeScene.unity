@@ -451,6 +451,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 645a11af7b8747e0a436cd353263b8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderer: {fileID: 0}
+  sortingLayer: 0
+  displacementScale: 1
+  foamAmount: 1
+  normalStrength: 1
 --- !u!1 &53545598
 GameObject:
   m_ObjectHideFlags: 0
@@ -2862,6 +2867,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 293499911}
+  - component: {fileID: 293499912}
   m_Layer: 0
   m_Name: Engine
   m_TagString: Untagged
@@ -2884,6 +2890,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 903948238}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &293499912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293499910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1a3c7b57cf829242b8f7413d39ce8f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &294823609
 GameObject:
   m_ObjectHideFlags: 0
@@ -7644,6 +7662,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52480f6baf9b7b0428c75481cb3d5a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  material: {fileID: 0}
+  meshFilter: {fileID: 0}
+  meshRenderer: {fileID: 0}
 --- !u!61 &723414446
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9825,6 +9846,9 @@ MonoBehaviour:
   - panelGameObject: {fileID: 1087197335}
     panelButton: {fileID: 114043093}
     panelScript: {fileID: 615638779}
+  - panelGameObject: {fileID: 53545598}
+    panelButton: {fileID: 345865038}
+    panelScript: {fileID: 293499912}
 --- !u!1 &919768757
 GameObject:
   m_ObjectHideFlags: 0
@@ -17060,6 +17084,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4e5449ad953eb419c2156862ea63d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  money: 100
+  playerLoadout: {fileID: 0}
 --- !u!4 &1123709640
 Transform:
   m_ObjectHideFlags: 0
@@ -17135,6 +17161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1136619676}
+  - component: {fileID: 1136619677}
   m_Layer: 0
   m_Name: FishingRod
   m_TagString: Untagged
@@ -17157,6 +17184,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 903948238}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1136619677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136619675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02665630598105547aedfd0c6dabd414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1158570547
 GameObject:
   m_ObjectHideFlags: 0
@@ -30146,6 +30185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52480f6baf9b7b0428c75481cb3d5a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  material: {fileID: 0}
+  meshFilter: {fileID: 0}
+  meshRenderer: {fileID: 0}
 --- !u!1 &1473951960
 GameObject:
   m_ObjectHideFlags: 0
@@ -31340,6 +31382,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52480f6baf9b7b0428c75481cb3d5a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: eb07dd84adf822c43a66b49eb976fe9c, type: 2}
+  meshFilter: {fileID: 1533826746}
+  meshRenderer: {fileID: 1533826745}
 --- !u!1 &1534674761
 GameObject:
   m_ObjectHideFlags: 0
@@ -42891,6 +42936,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52480f6baf9b7b0428c75481cb3d5a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  material: {fileID: 0}
+  meshFilter: {fileID: 0}
+  meshRenderer: {fileID: 0}
 --- !u!61 &2058948791
 BoxCollider2D:
   m_ObjectHideFlags: 0
