@@ -55,8 +55,8 @@ public class UIManager : MonoBehaviour
         baitPanelAnimator = baitPanel.GetComponent<Animator>();
         baitPanelIsOpen = false;
 
-        baits = new GameObject[] { worm, cricket, pellet };
-        currentIndex = 1;
+        baits = new GameObject[] { worm, caterpillar, cricket, shrimp, pellet };
+        currentIndex = 2;
         UpdateCardOrder();
         UpdateBaitButtons();
 
