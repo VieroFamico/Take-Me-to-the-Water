@@ -451,11 +451,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 645a11af7b8747e0a436cd353263b8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 0}
-  sortingLayer: 0
-  displacementScale: 1
-  foamAmount: 1
-  normalStrength: 1
 --- !u!1 &53545598
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,7 +848,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &72096856
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3214,6 +3209,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 1123709639}
+  baseShipBodySO: {fileID: 0}
+  baseShipEngineSO: {fileID: 0}
+  baseFishingRodSO: {fileID: 0}
 --- !u!4 &330726030
 Transform:
   m_ObjectHideFlags: 0
@@ -4169,7 +4167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &401264759
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6446,8 +6444,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 581457057}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2, y: -5.09, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.27000004, y: -5.38, z: 2.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6456,7 +6454,7 @@ Transform:
   - {fileID: 829913673}
   - {fileID: 78291786}
   - {fileID: 44654705}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1990789161}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &588579697
 GameObject:
@@ -7721,9 +7719,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52480f6baf9b7b0428c75481cb3d5a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 0}
-  meshFilter: {fileID: 0}
-  meshRenderer: {fileID: 0}
 --- !u!61 &723414446
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8632,10 +8627,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da27ee8d89b12849998a4267bdb0fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  goFishingPanel: {fileID: 0}
+  buildingDisplay: {fileID: 0}
+  animationDuration: 0.2
+  closeButton: {fileID: 0}
   mapMenuAnimator: {fileID: 401264762}
-  proximityDistance: 5
 --- !u!114 &804507640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17139,8 +17134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4e5449ad953eb419c2156862ea63d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 100
-  playerLoadout: {fileID: 1123709641}
 --- !u!4 &1123709640
 Transform:
   m_ObjectHideFlags: 0
@@ -17168,9 +17161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca533eb980202234483d219ffa1209bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentShip: {fileID: 11400000, guid: 2f00e50579ff5cd4289a55b2bf6e63b9, type: 2}
-  currentFishingRod: {fileID: 11400000, guid: 3321f4aefd9ac8d4a8cceaaebe459554, type: 2}
-  currentShipEngine: {fileID: 11400000, guid: 781e99a64c6b5874db4cf730280dcd58, type: 2}
 --- !u!1 &1136587677
 GameObject:
   m_ObjectHideFlags: 0
@@ -30228,9 +30218,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52480f6baf9b7b0428c75481cb3d5a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 0}
-  meshFilter: {fileID: 0}
-  meshRenderer: {fileID: 0}
 --- !u!1 &1473951960
 GameObject:
   m_ObjectHideFlags: 0
@@ -31425,9 +31412,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52480f6baf9b7b0428c75481cb3d5a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: eb07dd84adf822c43a66b49eb976fe9c, type: 2}
-  meshFilter: {fileID: 1533826746}
-  meshRenderer: {fileID: 1533826745}
 --- !u!1 &1534674761
 GameObject:
   m_ObjectHideFlags: 0
@@ -42078,7 +42062,8 @@ Transform:
   m_LocalPosition: {x: -0.93, y: 0.29, z: -2.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 581457058}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1990789162
@@ -42133,9 +42118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca533eb980202234483d219ffa1209bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentShip: {fileID: 11400000, guid: 777aaf480a735bc4cacb06a596f8d626, type: 2}
-  currentFishingRod: {fileID: 11400000, guid: 40feb451b25e25f4883588de575c8cbc, type: 2}
-  currentShipEngine: {fileID: 11400000, guid: c2b7ca4b0e938fb428418c0b6e21c930, type: 2}
 --- !u!114 &1990789165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42727,9 +42709,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52480f6baf9b7b0428c75481cb3d5a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 0}
-  meshFilter: {fileID: 0}
-  meshRenderer: {fileID: 0}
 --- !u!61 &2058948791
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44497,7 +44476,6 @@ SceneRoots:
   - {fileID: 1990789161}
   - {fileID: 632705818}
   - {fileID: 1123709640}
-  - {fileID: 581457058}
   - {fileID: 1167467611}
   - {fileID: 723414448}
   - {fileID: 1940858196}
