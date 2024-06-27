@@ -4172,7 +4172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &401264759
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8635,9 +8635,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da27ee8d89b12849998a4267bdb0fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingDisplay: {fileID: 0}
+  buildingDisplay: {fileID: 401264758}
   animationDuration: 0.2
-  closeButton: {fileID: 0}
+  closeButton: {fileID: 821028925}
   mapMenuAnimator: {fileID: 401264762}
 --- !u!114 &804507640
 MonoBehaviour:
