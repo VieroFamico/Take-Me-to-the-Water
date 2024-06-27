@@ -65,7 +65,7 @@ public class ShopManager : BuildingManager
 
         foreach (var fish in fishInventory)
         {
-            GameObject fishButton = new GameObject(fish.name);
+            GameObject fishButton = new(fish.name);
             fishButton.transform.SetParent(showFishPanel);
             Button button = fishButton.AddComponent<Button>();
             Image image = fishButton.AddComponent<Image>();

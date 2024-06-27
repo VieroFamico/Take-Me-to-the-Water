@@ -10,12 +10,6 @@ public class PlayerInteraction : MonoBehaviour
     public Vector3 buildingDisplayOffset;
 
     private BuildingManager nearestBuilding;
-    private HomePlayerMovement playerMovement;
-
-    private void Start()
-    {
-        playerMovement = GetComponent<HomePlayerMovement>();
-    }
 
     void Update()
     {
@@ -52,14 +46,10 @@ public class PlayerInteraction : MonoBehaviour
         if (!isActive)
         {
             building.OpenDisplay();
-            playerMovement.ChangeMove();
-            playerMovement.enabled = false;
         }
         else
         {
             building.CloseDisplay();
-            playerMovement.ChangeMove();
-            playerMovement.enabled = true;
         }
         //Vector3 temp = transform.position;
         //temp.y += buildingDisplayOffset.y;

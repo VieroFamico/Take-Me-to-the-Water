@@ -39,7 +39,7 @@ public class PlayerLoadoutWrapper
 public static class SaveManager
 {
     private static string playerSavePath = Application.persistentDataPath + "/PlayerInventory.json";
-    private static string shopSavePath = Application.persistentDataPath + "/ShopInventory.json";
+    //private static string shopSavePath = Application.persistentDataPath + "/ShopInventory.json";
 
     public static void SavePlayerInventory(PlayerInventory playerInventory)
     {

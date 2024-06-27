@@ -9,6 +9,7 @@ public class WorkShopManager : BuildingManager
     public class Panel
     {
         public GameObject panelGameObject;
+        public Button panelButton;
         public MonoBehaviour panelScript;
     }
 
@@ -16,6 +17,7 @@ public class WorkShopManager : BuildingManager
 
     void Start()
     {
+        int temp = 0;
         // Deactivate all panels and their scripts at the start
         foreach (Panel panel in panels)
         {
@@ -24,7 +26,10 @@ public class WorkShopManager : BuildingManager
             {
                 panel.panelScript.enabled = false;
             }
+            panel.panelButton.onClick.AddListener(() => SwitchPanel(temp));
+            temp++;
         }
+        panels[0].panelGameObject.SetActive(true);
         closeButton.onClick.AddListener(CloseDisplay);
     }
 

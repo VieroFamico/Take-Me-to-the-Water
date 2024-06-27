@@ -10,8 +10,13 @@ public class BuildingManager : MonoBehaviour
     public Button closeButton;
 
     private Coroutine currentCoroutine;
+    private HomePlayerMovement playerMovement;
     private bool isOpen = false;
 
+    private void Awake()
+    {
+        playerMovement = FindAnyObjectByType<HomePlayerMovement>();
+    }
     void Start()
     {
         closeButton.onClick.AddListener(CloseDisplay);
@@ -33,6 +38,8 @@ public class BuildingManager : MonoBehaviour
         currentCoroutine = StartCoroutine(ScalePanel(buildingDisplay, Vector3.zero, Vector3.one, animationDuration));
         BlurEffectForPanel.ToggleBlur();
         ChangeState();
+        playerMovement.ChangeMove();
+        playerMovement.enabled = false;
     }
     public virtual void CloseDisplay()
     {
@@ -43,6 +50,8 @@ public class BuildingManager : MonoBehaviour
         currentCoroutine = StartCoroutine(ScalePanel(buildingDisplay, Vector3.one, Vector3.zero, animationDuration));
         BlurEffectForPanel.ToggleBlur();
         ChangeState();
+        playerMovement.ChangeMove();
+        playerMovement.enabled = true;
     }
     private IEnumerator ScalePanel(GameObject panel, Vector3 startScale, Vector3 endScale, float duration)
     {

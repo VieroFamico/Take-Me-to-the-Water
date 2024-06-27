@@ -7,11 +7,11 @@ public class PlayerLoadout : MonoBehaviour
 {
     public enum Bait
     {
-        None, Worm, Ulat, Cricket, Shrimp, Pelet
+        None, Worm, Cricket, Pelet
     }
 
     private Bait currentBait = Bait.Worm;
-    public Dictionary<Bait, int> baitAmounts = new Dictionary<Bait, int>();
+    public Dictionary<Bait, int> baitAmounts = new();
     public ShipBodySO currentShip;
     public FishingRodSO currentFishingRod;
     public ShipEngineSO currentShipEngine;
@@ -21,9 +21,7 @@ public class PlayerLoadout : MonoBehaviour
     {
         // Initialize bait amounts (example values, adjust as needed)
         baitAmounts[Bait.Worm] = 10;
-        baitAmounts[Bait.Ulat] = 5;
         baitAmounts[Bait.Cricket] = 8;
-        baitAmounts[Bait.Shrimp] = 7;
         baitAmounts[Bait.Pelet] = 3;
     }
 
