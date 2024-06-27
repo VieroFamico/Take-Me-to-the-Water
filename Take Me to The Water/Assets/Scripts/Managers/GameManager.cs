@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Services.Economy;
 using UnityEngine;
-using static PlayerLoadout;
-using static StylizedWater2.WaterMesh;
 
 public class GameManager : MonoBehaviour
 {
