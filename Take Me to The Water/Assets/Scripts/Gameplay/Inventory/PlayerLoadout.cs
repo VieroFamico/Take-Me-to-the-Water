@@ -89,12 +89,12 @@ public class PlayerLoadout : MonoBehaviour
 
 
     // Ship management methods
-    public void SetCurrentShip(ShipBodySO ship)
+    public void SetCurrentShipBody(ShipBodySO ship)
     {
         currentShip = ship;
     }
 
-    public ShipBodySO GetCurrentShip()
+    public ShipBodySO GetCurrentShipBody()
     {
         return currentShip;
     }
@@ -114,6 +114,7 @@ public class PlayerLoadout : MonoBehaviour
     public void SetCurrentShipEngine(ShipEngineSO shipEngine)
     {
         currentShipEngine = shipEngine;
+        currentShipFuel = currentShip.shipTimeLimit;
     }
 
     public ShipEngineSO GetCurrentShipEngine()

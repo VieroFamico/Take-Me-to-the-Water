@@ -44,14 +44,14 @@ public static class SaveManager
     public static void SavePlayerInventory(PlayerInventory playerInventory)
     {
         PlayerLoadout playerLoadout = playerInventory.GetPlayerLoadout();
-        ShipBodySO currentShip = playerLoadout.GetCurrentShip();
+        ShipBodySO currentShip = playerLoadout.GetCurrentShipBody();
 
         // Create a PlayerLoadoutWrapper instance
         PlayerLoadoutWrapper playerLoadoutWrapper = new PlayerLoadoutWrapper
         {
             currentBait = playerLoadout.GetCurrentBait(),
             baitAmounts = new Dictionary<Bait, int>(playerLoadout.GetBaitAmounts()),
-            currentShip = playerLoadout.GetCurrentShip(),
+            currentShip = playerLoadout.GetCurrentShipBody(),
             currentFishingRod = playerLoadout.GetCurrentFishingRod(),
             currentShipEngine = playerLoadout.GetCurrentShipEngine(),
             currentShipCurrentFuel = playerLoadout.GetCurrentShipFuel()

@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
                 playerLoadout.SetBaitAmounts(baitAmounts);
 
                 ShipBodySO ship = baseShipBodySO;
-                playerLoadout.SetCurrentShip(ship);
+                playerLoadout.SetCurrentShipBody(ship);
                 playerLoadout.SetCurrentShipFuel(ship.shipTimeLimit);
 
                 ShipEngineSO shipEngine = baseShipEngineSO;
@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
                 playerLoadout.SetBaitAmounts(baitAmounts);
 
                 ShipBodySO ship = loadedPlayerLoadout.currentShip;
-                playerLoadout.SetCurrentShip(ship);
+                playerLoadout.SetCurrentShipBody(ship);
                 playerLoadout.SetCurrentShipFuel(loadedPlayerLoadout.currentShipCurrentFuel);
 
                 ShipEngineSO shipEngine = loadedPlayerLoadout.currentShipEngine;

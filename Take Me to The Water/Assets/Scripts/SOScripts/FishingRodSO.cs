@@ -6,7 +6,7 @@ using UnityEngine;
 public class FishingRodSO : ScriptableObject
 {
     public string rodName;
-    public int rodTier;
+    public int tier;
     public Sprite rodSprite;
     public float maxTension;
     public int price;
