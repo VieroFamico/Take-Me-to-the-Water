@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b88bdc9c43abb24596791ca1f6a5dc3, type: 3}
   m_Name: Engine T2
   m_EditorClassIdentifier: 
-  engineName: Wave Master
-  engineTier: 2
-  engineSprite: {fileID: 21300000, guid: a32b69a59389f714d9a91f71561d4a28, type: 3}
+  toolsName: 
+  tier: 2
+  sprite: {fileID: 21300000, guid: a32b69a59389f714d9a91f71561d4a28, type: 3}
   movementSpeed: 1.14
   price: 150
   plasticNeeded: 0

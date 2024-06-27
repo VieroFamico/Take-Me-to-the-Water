@@ -66,12 +66,10 @@ public class MapMenuManager : MonoBehaviour
         if (isMapPanelActive)
         {
             ShowLoadoutPanel();
-            Debug.Log("b");
         }
         else
         {
             ChangeScene();
-            Debug.Log("c");
         }
     }
     void UpdateButtonSprites()

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140c4240eb52f9546a5b1c627cf460b1, type: 3}
   m_Name: FishingRod T4
   m_EditorClassIdentifier: 
-  rodName: Silver Reller
-  rodTier: 4
-  rodSprite: {fileID: 21300000, guid: e2f234a3cf14d464bb2a969c57794f92, type: 3}
+  toolsName: 
+  tier: 4
+  sprite: {fileID: 21300000, guid: e2f234a3cf14d464bb2a969c57794f92, type: 3}
   maxTension: 100
   price: 250
   plasticNeeded: 2

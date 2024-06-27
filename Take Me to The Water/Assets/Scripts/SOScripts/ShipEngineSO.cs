@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Ship Engine", menuName = "ScriptableObjects/ShipEngineSO", order = 1)]
 public class ShipEngineSO : ScriptableObject
 {
-    public string engineName;
-    public int engineTier; 
-    public Sprite engineSprite;
+    public string toolsName;
+    public int tier; 
+    public Sprite sprite;
     public float movementSpeed;
     public int price;
     [Header("MaterialNeeded")]

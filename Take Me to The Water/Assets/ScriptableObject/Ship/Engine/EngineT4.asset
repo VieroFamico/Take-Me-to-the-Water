@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b88bdc9c43abb24596791ca1f6a5dc3, type: 3}
   m_Name: EngineT4
   m_EditorClassIdentifier: 
-  engineName: Aqua Turbo
-  engineTier: 4
-  engineSprite: {fileID: 21300000, guid: ad291c1ed2cd2f74ab48e6843af306b2, type: 3}
+  toolsName: 
+  tier: 4
+  sprite: {fileID: 21300000, guid: ad291c1ed2cd2f74ab48e6843af306b2, type: 3}
   movementSpeed: 1.2
   price: 250
   plasticNeeded: 2

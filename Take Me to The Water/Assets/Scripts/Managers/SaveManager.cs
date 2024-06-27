@@ -44,7 +44,6 @@ public static class SaveManager
     public static void SavePlayerInventory(PlayerInventory playerInventory)
     {
         PlayerLoadout playerLoadout = playerInventory.GetPlayerLoadout();
-        ShipBodySO currentShip = playerLoadout.GetCurrentShipBody();
 
         // Create a PlayerLoadoutWrapper instance
         PlayerLoadoutWrapper playerLoadoutWrapper = new PlayerLoadoutWrapper
@@ -72,7 +71,6 @@ public static class SaveManager
 
         // Serialize the PlayerInventoryWrapper to JSON
         string json = JsonUtility.ToJson(playerInventoryWrapper);
-        Debug.Log(json);
         File.WriteAllText(playerSavePath, json);
     }
 
@@ -132,4 +130,5 @@ public static class SaveManager
         texture.LoadImage(data);
         return Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
     }
+
 }

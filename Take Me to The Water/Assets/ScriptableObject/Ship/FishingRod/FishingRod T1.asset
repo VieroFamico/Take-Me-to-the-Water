@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140c4240eb52f9546a5b1c627cf460b1, type: 3}
   m_Name: FishingRod T1
   m_EditorClassIdentifier: 
-  rodName: 
-  rodTier: 1
-  rodSprite: {fileID: 21300000, guid: 1f5e300c2a411a846969f85efaca63a5, type: 3}
+  toolsName: 
+  tier: 1
+  sprite: {fileID: 21300000, guid: 1f5e300c2a411a846969f85efaca63a5, type: 3}
   maxTension: 70
   price: 0
   plasticNeeded: 0
   metalNeeded: 0
   woodNeeded: 0
   rubberNeeded: 0
+  spriteBase64: 

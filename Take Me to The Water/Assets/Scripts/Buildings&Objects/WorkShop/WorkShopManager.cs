@@ -22,18 +22,17 @@ public class WorkShopManager : BuildingManager
     }
     private void InitializePanel()
     {
-        // Deactivate all panels and their scripts at the start
         foreach (Panel panel in panels)
         {
-            panel.panelGameObject.SetActive(false);
+            panel.panelGameObject.SetActive(false);  
             if (panel.panelScript != null)
             {
                 panel.panelScript.enabled = false;
             }
             panel.panelButton.onClick.AddListener(() => SwitchPanel(panel));
         }
-        //Debug.Log(temp);
-        panels[0].panelGameObject.SetActive(true);
+
+        SwitchPanel(panels[0]);
     }
     public void SwitchPanel(Panel choosenPanel)
     {
@@ -50,6 +49,10 @@ public class WorkShopManager : BuildingManager
         if (choosenPanel.panelScript != null)
         {
             choosenPanel.panelScript.enabled = true;
+            if(choosenPanel.panelScript.GetComponent<CraftingManager>())
+            {
+                choosenPanel.panelScript.GetComponent<CraftingManager>().UpdateUI();
+            }
         }
     }
 }

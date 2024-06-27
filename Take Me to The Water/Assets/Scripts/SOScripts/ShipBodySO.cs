@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewShipSO", menuName = "ScriptableObjects/ShipBodySO", order = 1)]
 public class ShipBodySO : ScriptableObject
 {
-    public string shipName;
-    public Sprite shipSprite;
-    public int shipTier;
+    public string toolsName;
+    public Sprite sprite;
+    public int tier;
     public float shipTimeLimit; // In Minutes
     public int price;
     [Header("MaterialNeeded")]

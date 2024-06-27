@@ -14,20 +14,28 @@ public class DisplayManager : MonoBehaviour
     private PlayerInventory playerInventory;
     private DayNightManager dayNightManager;
 
-    private void Start()
+    private int flag = 0;
+    private void Update()
     {
+        if (flag > 10)
+        {
+            return;
+        }
         playerInventory = FindObjectOfType<PlayerInventory>();
         dayNightManager = FindObjectOfType<DayNightManager>();
 
-        // Initial display update
         UpdateDisplay();
+        flag++;
     }
 
     public void UpdateDisplay()
     {
         moneyText.text = $"${playerInventory.GetMoney()}";
         //dayText.text = $"{dayNightManager.GetCurrentDay()}";
-        fuelText.text = $"{(int)playerInventory.GetPlayerLoadout().GetFuelPercentage()}%";
+        if(playerInventory.GetPlayerLoadout() != null)
+        {
+            fuelText.text = $"{(int)playerInventory.GetPlayerLoadout().GetFuelPercentage()}%";
+        }
     }
 
     public void ShowMoneyChange(float amount)

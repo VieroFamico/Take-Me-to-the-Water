@@ -15,7 +15,7 @@ public class PlayerLoadout : MonoBehaviour
     public ShipBodySO currentShip;
     public FishingRodSO currentFishingRod;
     public ShipEngineSO currentShipEngine;
-    private float currentShipFuel;
+    private float currentShipFuel = 0;
 
     void Start()
     {
@@ -83,10 +83,10 @@ public class PlayerLoadout : MonoBehaviour
     }
     public float GetFuelPercentage()
     {
+        Debug.Log(currentShip);
+        Debug.Log(currentShip.shipTimeLimit);
         return (currentShipFuel / currentShip.shipTimeLimit) * 100;
     }
-    
-
 
     // Ship management methods
     public void SetCurrentShipBody(ShipBodySO ship)
@@ -114,7 +114,6 @@ public class PlayerLoadout : MonoBehaviour
     public void SetCurrentShipEngine(ShipEngineSO shipEngine)
     {
         currentShipEngine = shipEngine;
-        currentShipFuel = currentShip.shipTimeLimit;
     }
 
     public ShipEngineSO GetCurrentShipEngine()

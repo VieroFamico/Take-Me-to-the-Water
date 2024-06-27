@@ -19,11 +19,19 @@ public class RefuelShipManager : MonoBehaviour
     public TextMeshProUGUI fullRefuelPriceText; // Optional: To show feedback messages
     public Button refuelButton;
     public Button fullRefuelButton; // Button to fully refuel the ship
-    
 
+    private bool flag = false;
 
     private void Start()
     {
+        
+    }
+    private void Update()
+    {
+        if (flag)
+        {
+            return;
+        }
         playerInventory = GameManager.Instance.playerInventory;
         playerLoadout = playerInventory.GetPlayerLoadout();
 
@@ -37,6 +45,7 @@ public class RefuelShipManager : MonoBehaviour
 
         // Update UI initially
         UpdateSliderUI();
+        flag = true;
     }
 
     private void InitializeSlider()

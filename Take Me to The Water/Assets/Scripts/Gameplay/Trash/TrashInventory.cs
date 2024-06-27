@@ -64,6 +64,13 @@ public class TrashInventory
         woodAmount = wood;
         rubberAmount = rubber;
     }
+    public void UseMaterials(int plastic, int metal, int wood, int rubber)
+    {
+        plasticAmount -= plastic;
+        metalAmount -= metal;
+        woodAmount -= wood;
+        rubberAmount -= rubber;
+    }
     public void SpendPlastic(int amountSpent)
     {
         plasticAmount -= amountSpent;

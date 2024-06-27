@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140c4240eb52f9546a5b1c627cf460b1, type: 3}
   m_Name: FishingRod T2
   m_EditorClassIdentifier: 
-  rodName: King Baiter
-  rodTier: 2
-  rodSprite: {fileID: 21300000, guid: b09635306214a114e9687e75269fcfd0, type: 3}
+  toolsName: 
+  tier: 2
+  sprite: {fileID: 21300000, guid: b09635306214a114e9687e75269fcfd0, type: 3}
   maxTension: 80
-  price: 150
+  price: 4
   plasticNeeded: 0
   metalNeeded: 0
   woodNeeded: 0
   rubberNeeded: 0
+  spriteBase64: 

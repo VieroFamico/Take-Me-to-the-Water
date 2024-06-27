@@ -7712,7 +7712,7 @@ Transform:
   m_GameObject: {fileID: 411321437}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3.27, y: 17.32, z: -5.33}
+  m_LocalPosition: {x: 5.3, y: 17.32, z: -5.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10634,7 +10634,7 @@ Transform:
   m_GameObject: {fileID: 745884773}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3.27, y: 17.32, z: -5.33}
+  m_LocalPosition: {x: 5.3, y: 17.32, z: -5.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12295,7 +12295,7 @@ Transform:
   m_GameObject: {fileID: 1047941872}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3.27, y: -0.68, z: -5.33}
+  m_LocalPosition: {x: 5.3, y: -0.68, z: -5.33}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17485,6 +17485,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 1168568460}
+  baseShipBodySO: {fileID: 0}
+  baseShipEngineSO: {fileID: 0}
+  baseFishingRodSO: {fileID: 0}
 --- !u!4 &1051846657
 Transform:
   m_ObjectHideFlags: 0

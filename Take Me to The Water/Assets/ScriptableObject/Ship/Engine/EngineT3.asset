@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b88bdc9c43abb24596791ca1f6a5dc3, type: 3}
   m_Name: EngineT3
   m_EditorClassIdentifier: 
-  engineName: DeepSea Dynamo
-  engineTier: 3
-  engineSprite: {fileID: 21300000, guid: 05416ef5024add04ca3b1cc410abdf5e, type: 3}
+  toolsName: 
+  tier: 3
+  sprite: {fileID: 21300000, guid: 05416ef5024add04ca3b1cc410abdf5e, type: 3}
   movementSpeed: 1.18
   price: 200
   plasticNeeded: 1

@@ -23,17 +23,17 @@ public class PlayerLoadoutDisplayManager : MonoBehaviour
     {
         if (playerLoadout.currentShip != null)
         {
-            shipImage.sprite = playerLoadout.currentShip.shipSprite;
+            shipImage.sprite = playerLoadout.currentShip.sprite;
         }
 
         if (playerLoadout.currentFishingRod != null)
         {
-            fishingRodImage.sprite = playerLoadout.currentFishingRod.rodSprite;
+            fishingRodImage.sprite = playerLoadout.currentFishingRod.sprite;
         }
 
         if (playerLoadout.currentShipEngine != null)
         {
-            shipEngineImage.sprite = playerLoadout.currentShipEngine.engineSprite;
+            shipEngineImage.sprite = playerLoadout.currentShipEngine.sprite;
         }
     }
 

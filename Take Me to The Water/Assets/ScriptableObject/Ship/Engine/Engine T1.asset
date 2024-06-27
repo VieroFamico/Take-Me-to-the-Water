@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b88bdc9c43abb24596791ca1f6a5dc3, type: 3}
   m_Name: Engine T1
   m_EditorClassIdentifier: 
-  engineName: Wind Propeller
-  engineTier: 1
-  engineSprite: {fileID: 21300000, guid: d2898fdfb28d04b47bc3e067342805fe, type: 3}
+  toolsName: 
+  tier: 1
+  sprite: {fileID: 21300000, guid: d2898fdfb28d04b47bc3e067342805fe, type: 3}
   movementSpeed: 1
-  price: 0
+  price: 5
   plasticNeeded: 0
   metalNeeded: 0
   woodNeeded: 0

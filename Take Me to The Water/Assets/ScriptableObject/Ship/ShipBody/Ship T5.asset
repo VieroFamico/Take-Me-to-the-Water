@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7640f6360ecf16a49a9133bc5b8092e9, type: 3}
   m_Name: Ship T5
   m_EditorClassIdentifier: 
-  shipName: 
-  shipSprite: {fileID: 21300000, guid: e8751982065a8b847ba372ac262580bd, type: 3}
-  shipTier: 5
+  toolsName: 
+  sprite: {fileID: 21300000, guid: d53a22e09060ec649b6f29b4e41588de, type: 3}
+  tier: 5
   shipTimeLimit: 11
-  currentTimeLimit: 11
   price: 300
   plasticNeeded: 0
   metalNeeded: 0
