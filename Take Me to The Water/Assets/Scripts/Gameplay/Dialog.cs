@@ -6,6 +6,7 @@ using UnityEngine;
 public class Dialog
 {
     public string name;
+    public Sprite picture;
 
     [TextArea(3, 10)]
     public string[] sentences;

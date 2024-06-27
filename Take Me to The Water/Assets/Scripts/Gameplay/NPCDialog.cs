@@ -10,4 +10,12 @@ public class NPCDialog : MonoBehaviour
     {
         FindObjectOfType<DialogBoxManager>().StartDialog(dialog);
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            FindObjectOfType<DialogBoxManager>().StartDialog(dialog);
+        }
+    }
 }

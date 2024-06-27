@@ -12,15 +12,13 @@ public class MapMenuOpener : BuildingManager
     }
     public override void OpenDisplay()
     {
-        Debug.Log("Open");
-        Debug.Log(mapMenuAnimator.parameterCount);
+        mapMenuAnimator.gameObject.SetActive(true);
         mapMenuAnimator.SetTrigger("Show");
         BlurEffectForPanel.ToggleBlur();
         ChangeState();
     }
     public override void CloseDisplay()
     {
-        Debug.Log("Close");
         mapMenuAnimator.SetTrigger("Hide");
         BlurEffectForPanel.ToggleBlur();
         ChangeState();
