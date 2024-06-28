@@ -16,7 +16,7 @@ public class SceneNavigationManager : MonoBehaviour
 
     void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 1)
+        if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             GetChoosePlaceButton();
         }

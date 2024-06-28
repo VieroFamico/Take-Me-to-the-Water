@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dc6d91d5737cb74bbc6a73062dea557, type: 3}
+  m_Name: Tire
+  m_EditorClassIdentifier: 
+  trashName: Tire
+  trashImage: {fileID: 21300000, guid: 03bc041bf14f817429e078267354ce8b, type: 3}
+  dirtinessValue: 0
+  plasticAmount: 0
+  metalAmount: 2
+  woodAmount: 0
+  rubberAmount: 3

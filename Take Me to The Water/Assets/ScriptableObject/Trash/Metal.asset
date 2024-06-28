@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dc6d91d5737cb74bbc6a73062dea557, type: 3}
+  m_Name: Metal
+  m_EditorClassIdentifier: 
+  trashName: Wood
+  trashImage: {fileID: 2082622803, guid: ddde6846ca1e27f4e8e9511a2b846759, type: 3}
+  dirtinessValue: 0
+  plasticAmount: 2
+  metalAmount: 0
+  woodAmount: 0
+  rubberAmount: 0

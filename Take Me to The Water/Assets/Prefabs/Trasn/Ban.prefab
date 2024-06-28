@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171644c7234ff4446ac7d617fdc3fced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashSO: {fileID: 11400000, guid: d911b7928b284e549bc269239a421fe0, type: 2}
+  trashSO: {fileID: 11400000, guid: c95eaca693bf847488911e2897ea90a8, type: 2}
 --- !u!54 &5599711400804601477
 Rigidbody:
   m_ObjectHideFlags: 0

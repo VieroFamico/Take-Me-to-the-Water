@@ -24,6 +24,11 @@ public class ExitMenuManager : MonoBehaviour
     public Slider generalSoundSlider;
     public Slider musicSoundSlider;
 
+    public Button TutorialSceneButton;
+
+    [Header("To Turn Off")]
+    public GameObject dissapearUI;
+
     [Header("Animator References")]
     public Animator settingsPanelAnimator;
     public Animator startMenuPanelAnimator;
@@ -65,6 +70,8 @@ public class ExitMenuManager : MonoBehaviour
         settingsTabButton.onClick.AddListener(ShowSettingsSection);
         fishDexTabButton.onClick.AddListener(ShowFishDexSection);
 
+        //TutorialSceneButton.onClick.AddListener()
+
         // Set initial tab
         ShowSettingsSection();
 
@@ -84,6 +91,7 @@ public class ExitMenuManager : MonoBehaviour
         playerMovement.ChangeMove();
         playerInteraction.enabled = false;
         BlurEffectForPanel.ToggleBlur();
+        dissapearUI.SetActive(false);
 
         // Create and set up the camera target
         cameraTarget = new GameObject("CameraTarget").transform;
@@ -126,6 +134,8 @@ public class ExitMenuManager : MonoBehaviour
 
         // Show the settings panel
         settingsPanelAnimator.SetTrigger("Show");
+
+        dissapearUI.SetActive(false);
         BlurEffectForPanel.ToggleBlur();
     }
 
@@ -139,6 +149,8 @@ public class ExitMenuManager : MonoBehaviour
         settingsPanelAnimator.SetTrigger("Hide");
         StartCoroutine(DisablePanelAfterAnimation(settingsPanelAnimator, settingsPanel));
         BlurEffectForPanel.ToggleBlur();
+
+        dissapearUI.SetActive(true);
     }
 
     public void OpenStartMenuPanel()
@@ -155,6 +167,8 @@ public class ExitMenuManager : MonoBehaviour
 
         // Show the start menu panel
         startMenuPanelAnimator.SetTrigger("Show");
+
+        dissapearUI.SetActive(false);
     }
 
     public void CloseStartMenuPanel()
@@ -167,6 +181,8 @@ public class ExitMenuManager : MonoBehaviour
         playerMovement.ChangeMove();
         playerInteraction.enabled = true;
         BlurEffectForPanel.ToggleBlur();
+
+        dissapearUI.SetActive(true);
 
         // Stop camera movement and focus on the player
         isMoving = false;

@@ -38,10 +38,11 @@ public class BoatMovement : MonoBehaviour
             float acceleration = moveInput >= 0 ? forwardAcceleration : backwardAcceleration;
             float maxSpeed = moveInput >= 0 ? forwardMaxSpeed : backwardMaxSpeed;
 
+            float currSpeed = moveInput * acceleration * Time.fixedDeltaTime;
             rb.AddRelativeForce(Vector3.right * moveInput * acceleration * Time.fixedDeltaTime, ForceMode.Impulse);
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed) * speed; // Clamp the ship's velocity to the maximum speed
 
-            rb.AddTorque(Vector3.up * turnInput * turnTorque * Time.fixedDeltaTime * turnInput * 2); // Apply torque for turning
+            rb.AddTorque(Vector3.up * turnInput * turnTorque * Time.fixedDeltaTime * currSpeed * 2); // Apply torque for turning
         }
     }
 

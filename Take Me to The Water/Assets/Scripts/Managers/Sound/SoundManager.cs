@@ -15,6 +15,7 @@ public class SoundManager : MonoBehaviour
         {
             AudioSource buttonAudioSource = button.AddComponent<AudioSource>();
             buttonAudioSource.clip = buttonClickSound;
+            buttonAudioSource.volume = 0.5f;
             button.onClick.AddListener(() => PlayButtonClick(buttonAudioSource));
         }
     }

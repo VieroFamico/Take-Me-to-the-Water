@@ -6,10 +6,12 @@ public class DirtinessManager : MonoBehaviour
 {
     [Header("Sick Fish Settings")]
     [Range(0f, 1f)]
-    public float sickFishChance = 0.1f; // 10% chance for a fish to be sick
+    private float sickFishChance = 0.1f; // 10% chance for a fish to be sick
 
     public bool GetSickFishChance()
     {
+        sickFishChance = Random.value;
+
         return Random.value < sickFishChance;
     }
 }

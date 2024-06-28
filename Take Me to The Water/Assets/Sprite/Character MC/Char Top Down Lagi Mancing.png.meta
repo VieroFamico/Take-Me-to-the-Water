@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4766ab0d27989aa4e826a1b4c3e3b0a7
+guid: 36bed86cbb393364c8e7f988479fcc5e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,7 +121,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Char Top Down Lagi Mancing_0
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 170
+        width: 195
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49d8270617712ac4c874ecfb6869045c
+      internalID: 267225695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +153,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Char Top Down Lagi Mancing_0: 267225695
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

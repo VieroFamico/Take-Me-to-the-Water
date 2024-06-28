@@ -21,9 +21,11 @@ public class InitializeFishing : MonoBehaviour
     private float currTime = 0f;
     private bool isPausing = false;
     private bool isOutOfFuel = false;
+    private int flag = 0;
     private void Start()
     {
         finishFishingPanel.SetActive(false);
+        pausePanel.SetActive(false);
         playerInventory = FindAnyObjectByType<PlayerInventory>();
         playerLoadout  = playerInventory.GetPlayerLoadout();
 
@@ -37,6 +39,16 @@ public class InitializeFishing : MonoBehaviour
 
     private void Update()
     {
+        if(flag == 1)
+        {
+            
+        }
+        else
+        {
+            playerInventory = FindAnyObjectByType<PlayerInventory>();
+            playerLoadout = playerInventory.GetPlayerLoadout();
+            flag = 1;
+        }
         if(currTime >= fishingLenght && !isOutOfFuel)
         {
             EndFishing();
@@ -44,7 +56,7 @@ public class InitializeFishing : MonoBehaviour
         }
         else
         {
-            currTime += Time.deltaTime;
+            currTime += Time.deltaTime/60f;
             playerLoadout.SetCurrentShipFuel(fishingLenght - currTime);
         }
 
