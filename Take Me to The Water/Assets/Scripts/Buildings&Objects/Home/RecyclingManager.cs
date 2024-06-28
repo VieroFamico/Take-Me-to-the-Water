@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class RecyclingManager : BuildingManager
 {
+    public TrashSO temp;
     [Header("UI References")]
     public GameObject trashButtonPrefab;
     public Transform trashButtonContainer;
@@ -14,24 +15,42 @@ public class RecyclingManager : BuildingManager
     public Button recycleButton;
     public Button recycleAllButton;
 
+    [Header("Materials UI")]
+    public Image plasticImage;
+    public Image metalImage;
+    public Image woodImage;
+    public Image rubberImage;
+    public TextMeshProUGUI plasticAmountText;
+    public TextMeshProUGUI metalAmountText;
+    public TextMeshProUGUI woodAmountText;
+    public TextMeshProUGUI rubberAmountText;
+
     [Header("Player Inventory")]
     public PlayerInventory inventory;
 
     private List<TrashSO> playerTrashInventory = new List<TrashSO>(); // Populate this in the inspector or through another script
     private TrashSO selectedTrash;
     private Button selectedButton;
+    private int flag = 0;
 
-    void Start()
+    private void Update()
     {
+        if(flag > 0)
+        {
+            return;
+        }
         inventory = FindAnyObjectByType<PlayerInventory>();
         Debug.Log(inventory);
         Debug.Log(inventory.GetPlayerTrashInventory());
         playerTrashInventory = inventory.GetPlayerTrashInventory().GetTrashList();
+
         PopulateTrashButtons();
+        DeactivateImage();
 
         recycleButton.onClick.AddListener(RecycleSelectedTrash);
         recycleAllButton.onClick.AddListener(RecycleAllTrash);
         closeButton.onClick.AddListener(CloseDisplay);
+        flag++;
     }
 
     void PopulateTrashButtons()
@@ -41,7 +60,7 @@ public class RecyclingManager : BuildingManager
             GameObject buttonObj = Instantiate(trashButtonPrefab, trashButtonContainer);
             Button button = buttonObj.GetComponent<Button>();
             button.image.sprite = trash.trashImage;
-            button.GetComponentInChildren<TextMeshProUGUI>().text = trash.name; // Assuming there is a Text component to display the name
+            button.GetComponentInChildren<TextMeshProUGUI>().text = trash.trashName; // Assuming there is a Text component to display the name
             button.onClick.AddListener(() => SelectTrash(trash, button));
         }
     }
@@ -63,9 +82,25 @@ public class RecyclingManager : BuildingManager
 
     void DisplaySelectedTrash()
     {
+        selectedTrashImage.gameObject.SetActive(true);
         selectedTrashImage.sprite = selectedTrash.trashImage; // Assuming your TrashSO has an image to display
         selectedTrashName.text = selectedTrash.trashName;
+
+        DisplayMaterialInfo();
     }
+    void DisplayMaterialInfo()
+    {
+        plasticAmountText.text = selectedTrash.plasticAmount.ToString();
+        metalAmountText.text = selectedTrash.metalAmount.ToString();
+        woodAmountText.text = selectedTrash.woodAmount.ToString();
+        rubberAmountText.text = selectedTrash.rubberAmount.ToString();
+
+        plasticImage.color = selectedTrash.plasticAmount > 0 ? Color.white : Color.gray;
+        metalImage.color = selectedTrash.metalAmount > 0 ? Color.white : Color.gray;
+        woodImage.color = selectedTrash.woodAmount > 0 ? Color.white : Color.gray;
+        rubberImage.color = selectedTrash.rubberAmount > 0 ? Color.white : Color.gray;
+    }
+
 
     string FormatMaterialsText(Dictionary<string, int> materials)
     {
@@ -87,16 +122,26 @@ public class RecyclingManager : BuildingManager
 
             selectedTrash = null;
             selectedButton = null;
-            selectedTrashImage.sprite = null;
+            selectedTrashImage.gameObject.SetActive(false);
             selectedTrashName.text = "";
+
+            ClearMaterialInfo();
         }
+    }
+
+    private void DeactivateImage()
+    {
+        selectedTrashImage.gameObject.SetActive(false);
+        selectedTrashName.text = "";
     }
 
     void RecycleAllTrash()
     {
-        foreach (TrashSO trash in playerTrashInventory)
+        int temp = playerTrashInventory.Count - 1;
+        while(temp >=0)
         {
-            RecycleTrash(trash);
+            RecycleTrash(playerTrashInventory[temp]);
+            temp --;
         }
 
         playerTrashInventory.Clear();
@@ -107,7 +152,7 @@ public class RecyclingManager : BuildingManager
 
         selectedTrash = null;
         selectedButton = null;
-        selectedTrashImage.sprite = null;
+        selectedTrashImage.gameObject.SetActive(false);
         selectedTrashName.text = "";
     }
 
@@ -120,4 +165,18 @@ public class RecyclingManager : BuildingManager
     {
         button.interactable = !isSelected;
     }
+
+    void ClearMaterialInfo()
+    {
+        plasticAmountText.text = "";
+        metalAmountText.text = "";
+        woodAmountText.text = "";
+        rubberAmountText.text = "";
+
+        plasticImage.color = Color.gray;
+        metalImage.color = Color.gray;
+        woodImage.color = Color.gray;
+        rubberImage.color = Color.gray;
+    }
+
 }

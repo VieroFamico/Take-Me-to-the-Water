@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,6 +15,7 @@ public class MapMenuManager : MonoBehaviour
     public Button LoadoutButton;
     public Button nextButton;
     public Image NextButtonImage;
+    public TextMeshProUGUI warningText;
 
     [Header("Buttons Sprite")]
     public Sprite MapButtonActiveSprite;
@@ -40,6 +43,7 @@ public class MapMenuManager : MonoBehaviour
         MapButton.onClick.AddListener(ShowMapPanel);
         LoadoutButton.onClick.AddListener(ShowLoadoutPanel);
         nextButton.onClick.AddListener(ChangePanel);
+        warningText.enabled = false;
         UpdateButtonSprites();
     }
 
@@ -84,11 +88,28 @@ public class MapMenuManager : MonoBehaviour
     }
     public void ChangeScene()
     {
+        if (FindAnyObjectByType<PlayerLoadout>().GetCurrentShipFuel() <= 1)
+        {
+            StartCoroutine(ShowWarning("Not Enough Fuel, \n Refuel and Then Cobe Back"));
+            return;
+        }
+        
         int currentBuildIndex = SceneManager.GetActiveScene().buildIndex;
         if (currentBuildIndex + choosenIndex == currentBuildIndex || choosenIndex <= 0)
         {
             return;
         }
         SceneTransitionManager.Instance.TransitionToScene(currentBuildIndex + choosenIndex);
+    }
+    IEnumerator ShowWarning(string message)
+    {
+        // Enable the text and set properties
+        warningText.enabled = true;
+        warningText.text = message;
+        warningText.fontSize = 80;
+        warningText.fontStyle = FontStyles.Bold;
+        yield return new WaitForSeconds(2);
+
+        warningText.gameObject.SetActive(false);
     }
 }

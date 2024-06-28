@@ -75,6 +75,11 @@ public class PlayerLoadout : MonoBehaviour
     }
     public void SetCurrentShipFuel(float fuel)
     {
+        if(fuel < 0)
+        {
+            currentShipFuel = 0;
+            return;
+        }
         currentShipFuel = fuel;
     }
     public void Refuel(float fuelPercentage)

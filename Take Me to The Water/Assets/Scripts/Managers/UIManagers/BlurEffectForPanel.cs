@@ -15,9 +15,6 @@ public class BlurEffectForPanel : MonoBehaviour
     private void Awake()
     {
         _instance = this;
-    }
-    void Start()
-    {
         profile = GetComponent<Volume>().profile;
     }
     public static void ToggleBlur()

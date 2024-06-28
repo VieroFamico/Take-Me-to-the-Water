@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: MediumWood 2
   m_EditorClassIdentifier: 
   trashName: Wood
+  trashImage: {fileID: 2082622803, guid: ddde6846ca1e27f4e8e9511a2b846759, type: 3}
+  dirtinessValue: 0
   plasticAmount: 0
   metalAmount: 0
   woodAmount: 2
   rubberAmount: 0
-  trashImage: {fileID: 21300000, guid: 57e30f438c829f14d90802c94595ca5a, type: 3}

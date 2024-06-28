@@ -11,7 +11,6 @@ public class RefuelShipManager : MonoBehaviour
 
     // UI Elements
     public Slider fuelAmountSlider; // Slider for selecting fuel amount
-    public TextMeshProUGUI fuelPercentageText; // Text to display the current value of the slider
     public TextMeshProUGUI minFuelText; // Text to display the minimum fuel percentage
     public TextMeshProUGUI maxFuelText; // Text to display the maximum fuel percentage
     public TextMeshProUGUI feedbackText; // Optional: To show feedback messages
@@ -111,21 +110,22 @@ public class RefuelShipManager : MonoBehaviour
     private void UpdateSliderUI()
     {
         int fuelPercentage = Mathf.RoundToInt(fuelAmountSlider.value);
-        fuelPercentageText.text = $"{fuelPercentage}%";
 
         ShipBodySO currentShip = playerLoadout.GetCurrentShipBody();
         float currentFuel = playerLoadout.GetCurrentShipFuel();
 
         float currentFuelPercentage = currentFuel / currentShip.shipTimeLimit * 100;
         float fuelCost = fuelPercentage - currentFuelPercentage;
-        refuelButton.interactable = playerInventory.money > fuelCost;
+        refuelButton.interactable = playerInventory.money >= fuelCost && playerInventory.money > 0;
+
+        refuelPriceText.text = $"${fuelCost}%";
 
         fuelCost = 100f - currentFuelPercentage;
         fullRefuelButton.interactable = playerInventory.money > 0 && currentFuelPercentage < 100;
 
         float temp = fullRefuelButton.interactable ? playerInventory.money : 0f;
         temp = playerInventory.money > fuelCost ? fuelCost : temp;
-        refuelPriceText.text = $"${fuelCost}%";
+        
         fullRefuelPriceText.text = $"${temp}%";
     }
 

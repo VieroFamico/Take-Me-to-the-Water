@@ -18,6 +18,6 @@ MonoBehaviour:
   maxTension: 100
   price: 250
   plasticNeeded: 2
-  metalNeeded: 2
-  woodNeeded: 1
+  metalNeeded: 1
+  woodNeeded: 2
   rubberNeeded: 2

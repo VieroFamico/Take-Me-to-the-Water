@@ -8,6 +8,6 @@ public class FishSO : ScriptableObject
 {
     public string fishName;
     public Sprite fishSprite;
-    public Sprite cardSprite;
+    public bool isSick;
     public int price;
 }

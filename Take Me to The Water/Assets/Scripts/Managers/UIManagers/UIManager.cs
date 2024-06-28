@@ -26,9 +26,7 @@ public class UIManager : MonoBehaviour
     public GameObject[] cardOrder;
     public GameObject baitPanel;
     public GameObject worm;
-    public GameObject caterpillar;
     public GameObject cricket;
-    public GameObject shrimp;
     public GameObject pellet;
     public float transitionDuration = 0.5f;
 
@@ -46,7 +44,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         playerLoadout = FindAnyObjectByType<PlayerLoadout>();
-        fishingMechanic = playerLoadout.GetComponent<FishingMechanic>();
+        fishingMechanic = FindAnyObjectByType<FishingMechanic>();
 
         // Ensure the UI is disabled at start
         fishCaughtAnimator = fishCatchUI.GetComponent<Animator>();
@@ -59,6 +57,10 @@ public class UIManager : MonoBehaviour
         currentIndex = 1;
         UpdateCardOrder();
         UpdateBaitButtons();
+
+        cardOrder[0].GetComponentInChildren<Button>().onClick.AddListener(() => SelectBait(baits[0]));
+        cardOrder[1].GetComponentInChildren<Button>().onClick.AddListener(() => SelectBait(baits[1]));
+        cardOrder[2].GetComponentInChildren<Button>().onClick.AddListener(() => SelectBait(baits[2]));
 
         pausePanelAnimator = pausePanel.GetComponent<Animator>();
         dayHasEndedAnimator = dayHasEndedPanel.GetComponent<Animator>();
@@ -101,11 +103,11 @@ public class UIManager : MonoBehaviour
             OpenBaitPanel();
         }
 
-        if (Input.GetKeyUp(KeyCode.Escape)){
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
             OpenPauseMenu();
         }
     }
-
 
     private void OpenBaitPanel()
     {
@@ -133,6 +135,7 @@ public class UIManager : MonoBehaviour
         }
         pausePanelIsOpen = !pausePanelIsOpen;
     }
+
     public void SelectBait(GameObject selectedBait)
     {
         int selectedIndex = System.Array.IndexOf(baits, selectedBait);
@@ -154,7 +157,7 @@ public class UIManager : MonoBehaviour
         int length = baits.Length;
         for (int i = 0; i < length; i++)
         {
-            int index = (currentIndex + i - 2 + length) % length;
+            int index = (currentIndex + i - 1 + length) % length;
             baits[index].transform.SetParent(cardOrder[i].transform, false);
             baits[index].transform.localPosition = Vector3.zero; // Ensure they are centered
         }
@@ -168,7 +171,7 @@ public class UIManager : MonoBehaviour
 
         for (int i = 0; i < length; i++)
         {
-            int index = (currentIndex + i - 2 + length) % length;
+            int index = (currentIndex + i - 1 + length) % length;
             startPositions[index] = baits[index].transform.position;
             targetPositions[index] = cardOrder[i].transform.position;
         }
@@ -182,7 +185,7 @@ public class UIManager : MonoBehaviour
 
             for (int i = 0; i < length; i++)
             {
-                int index = (currentIndex + i - 2 + length) % length;
+                int index = (currentIndex + i - 1 + length) % length;
                 baits[index].transform.position = Vector3.Lerp(startPositions[index], targetPositions[index], t);
             }
 
@@ -195,9 +198,7 @@ public class UIManager : MonoBehaviour
     private void UpdateBaitButtons()
     {
         UpdateButton(worm);
-        UpdateButton(caterpillar);
         UpdateButton(cricket);
-        UpdateButton(shrimp);
         UpdateButton(pellet);
     }
 
@@ -236,4 +237,5 @@ public class UIManager : MonoBehaviour
         // Disable the UI
         fishCatchUI.SetActive(false);
     }
+
 }

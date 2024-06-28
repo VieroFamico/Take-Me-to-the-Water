@@ -17,6 +17,7 @@ public class RainManagers : MonoBehaviour
     private float rainEndTime;
     private bool isRaining = false;
     private float emissionRateIncrement;
+    private float currentTime;
 
     void Awake()
     {
@@ -47,6 +48,7 @@ public class RainManagers : MonoBehaviour
     private void FindRainParticleSystems()
     {
         GameObject[] rainObjects = GameObject.FindGameObjectsWithTag("Rain");
+        Debug.Log(rainObjects.Length);
         rainParticleSystems = new ParticleSystem[rainObjects.Length];
         for (int i = 0; i < rainObjects.Length; i++)
         {
@@ -56,59 +58,62 @@ public class RainManagers : MonoBehaviour
 
     void Update()
     {
-        float currentTime = dayNightManager.GetCurrentTime();
+        currentTime += Time.deltaTime/60f;
 
         if (!isRaining && currentTime >= rainStartTime)
         {
-            StartCoroutine(StartRain());
+            foreach(ParticleSystem rain in rainParticleSystems)
+            {
+                StartCoroutine(StartRain(rain));
+            }
+            
         }
         else if (isRaining && currentTime >= rainEndTime)
         {
-            StartCoroutine(StopRain());
+            foreach (ParticleSystem rain in rainParticleSystems)
+            {
+                StartCoroutine(StopRain(rain));
+            }
         }
     }
 
     private void ScheduleNextRain()
     {
         float nextRainInterval = Random.Range(minRainInterval, maxRainInterval);
-        rainStartTime = dayNightManager.GetCurrentTime() + nextRainInterval;
+        rainStartTime = currentTime + nextRainInterval;
         float rainDuration = Random.Range(minRainDuration, maxRainDuration);
         rainEndTime = rainStartTime + rainDuration;
         emissionRateIncrement = maxEmissionRate / (rainDuration / 2f); // Duration to ramp up and down
     }
 
-    private IEnumerator StartRain()
+    private IEnumerator StartRain(ParticleSystem rain)
     {
         isRaining = true;
-        foreach (ParticleSystem rain in rainParticleSystems)
+        var emission = rain.emission;
+        emission.enabled = true;
+        float currentRate = 0f;
+        rain.Play();
+        while (currentRate < maxEmissionRate)
         {
-            var emission = rain.emission;
-            emission.enabled = true;
-            float currentRate = 0f;
-            while (currentRate < maxEmissionRate)
-            {
-                currentRate += emissionRateIncrement * Time.deltaTime;
-                emission.rateOverTime = currentRate;
-                yield return null;
-            }
-            emission.rateOverTime = maxEmissionRate;
+            currentRate += emissionRateIncrement * Time.deltaTime / 60f;
+            emission.rateOverTime = currentRate;
+            yield return null;
         }
+        emission.rateOverTime = maxEmissionRate;
     }
 
-    private IEnumerator StopRain()
+    private IEnumerator StopRain(ParticleSystem rain)
     {
-        foreach (ParticleSystem rain in rainParticleSystems)
+        var emission = rain.emission;
+        float currentRate = maxEmissionRate;
+        while (currentRate > 0f)
         {
-            var emission = rain.emission;
-            float currentRate = maxEmissionRate;
-            while (currentRate > 0f)
-            {
-                currentRate -= emissionRateIncrement * Time.deltaTime;
-                emission.rateOverTime = currentRate;
-                yield return null;
-            }
-            emission.enabled = false;
+            currentRate -= emissionRateIncrement * Time.deltaTime;
+            emission.rateOverTime = currentRate;
+            yield return null;
         }
+        emission.enabled = false;
+        rain.Stop();
         isRaining = false;
         ScheduleNextRain();
     }

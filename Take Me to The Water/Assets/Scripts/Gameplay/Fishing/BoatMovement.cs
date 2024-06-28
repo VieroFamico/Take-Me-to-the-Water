@@ -12,6 +12,7 @@ public class BoatMovement : MonoBehaviour
     [SerializeField] float drag = 1f;
     [SerializeField] float angularDrag = 2f;
 
+    private float speed = 1;
     private Rigidbody rb;
     bool ableToMove;
     void Start()
@@ -38,9 +39,9 @@ public class BoatMovement : MonoBehaviour
             float maxSpeed = moveInput >= 0 ? forwardMaxSpeed : backwardMaxSpeed;
 
             rb.AddRelativeForce(Vector3.right * moveInput * acceleration * Time.fixedDeltaTime, ForceMode.Impulse);
-            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed); // Clamp the ship's velocity to the maximum speed
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed) * speed; // Clamp the ship's velocity to the maximum speed
 
-            rb.AddTorque(Vector3.up * turnInput * turnTorque * Time.fixedDeltaTime); // Apply torque for turning
+            rb.AddTorque(Vector3.up * turnInput * turnTorque * Time.fixedDeltaTime * turnInput * 2); // Apply torque for turning
         }
     }
 
@@ -64,5 +65,10 @@ public class BoatMovement : MonoBehaviour
         {
             rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, Time.deltaTime * decelerationRate);
         }
+    }
+
+    public void SetSpeed(float newSpeed)
+    {
+        speed = newSpeed;
     }
 }

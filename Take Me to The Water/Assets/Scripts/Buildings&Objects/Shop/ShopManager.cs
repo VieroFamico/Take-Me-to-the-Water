@@ -11,8 +11,6 @@ public class ShopManager : BuildingManager
     public FishSO empty;
 
     public Transform showFishPanel;
-    public Button buyPanelButton;
-    public Button sellPanelButton;
     public Button buyButton;
     public TextMeshProUGUI selectedFishName;
     public Image selectedFishImage;
@@ -22,36 +20,12 @@ public class ShopManager : BuildingManager
     public FishInventory shopFishInventory; // Separate inventory for the shop
 
     private FishSO selectedFish;
-    private bool isBuying;
 
     void Start()
     {
         playerInventory = GameManager.Instance.playerInventory;
-        buyPanelButton.onClick.AddListener(OpenBuyPanel);
-        sellPanelButton.onClick.AddListener(OpenSellPanel);
         closeButton.onClick.AddListener(CloseDisplay);
         buyButton.onClick.AddListener(BuyOrSellSelectedFish);
-    }
-
-    void OpenBuyPanel()
-    {
-        shopFishInventory.GetFishList().Add(temp);
-        isBuying = true;
-        ChangeBuySellText();
-        PopulateInventory();
-    }
-
-    void OpenSellPanel()
-    {
-        playerInventory.CatchFish(temp);
-        isBuying = false;
-        ChangeBuySellText();
-        PopulateInventory();
-    }
-
-    private void ChangeBuySellText()
-    {
-        buyButton.transform.GetComponentInChildren<TextMeshProUGUI>().text = isBuying ? "Buy" : "Sell";
     }
 
     void PopulateInventory()
@@ -61,7 +35,7 @@ public class ShopManager : BuildingManager
             Destroy(child.gameObject);
         }
 
-        List<FishSO> fishInventory = isBuying ? shopFishInventory.GetFishList() : playerInventory.GetPlayerFishInventory().GetFishList();
+        List<FishSO> fishInventory = playerInventory.GetPlayerFishInventory().GetFishList();
 
         foreach (var fish in fishInventory)
         {
@@ -84,29 +58,28 @@ public class ShopManager : BuildingManager
         selectedFish = fish;
         selectedFishName.text = fish.fishName;
         selectedFishImage.sprite = fish.fishSprite;
-        selectedFishPrice.text = isBuying ? $"BUY ${fish.price}" : $"SELL ${fish.price}";
+        selectedFishPrice.text = $"${fish.price}";
+
+        if(fish == empty)
+        {
+            selectedFishImage.enabled = false;
+            selectedFishPrice.text = "";
+        }
+        else
+        {
+            selectedFishImage.enabled = true;
+        }
     }
 
     public void BuyOrSellSelectedFish()
     {
         if (selectedFish != null && selectedFish != empty)
         {
-            if (isBuying)
-            {
-                if (playerInventory.SpendMoney(selectedFish.price))
-                {
-                    playerInventory.GetPlayerFishInventory().AddFish(selectedFish);
-                    shopFishInventory.RemoveFish(selectedFish);
-                    SelectFish(empty);
-                }
-            }
-            else
-            {
-                playerInventory.AddMoney(selectedFish.price);
-                playerInventory.GetPlayerFishInventory().RemoveFish(selectedFish);
-                shopFishInventory.AddFish(selectedFish);
-                SelectFish(empty);
-            }
+            playerInventory.AddMoney(selectedFish.price);
+            playerInventory.GetPlayerFishInventory().RemoveFish(selectedFish);
+            shopFishInventory.AddFish(selectedFish);
+            SelectFish(empty);
+
             //SaveManager.SaveFishInventory(playerInventory.GetPlayerFishInventory(), "PlayerInventory.json"); // Save the player's inventory
             SaveManager.SavePlayerInventory(playerInventory); // Save the player's inventory
             SaveManager.SaveFishInventory(shopFishInventory, "ShopInventory.json"); // Save the shop's inventory
@@ -118,12 +91,12 @@ public class ShopManager : BuildingManager
     public override void OpenDisplay()
     {
         base.OpenDisplay();
-        isBuying = true;
         PopulateInventory();
     }
     public override void CloseDisplay()
     {
         base.CloseDisplay();
+        playerInventory.GetPlayerFishInventory().AddFish(temp);
         SaveManager.SavePlayerInventory(playerInventory); // Save the player's inventory
         SaveManager.SaveFishInventory(shopFishInventory, "ShopInventory.json"); // Save the shop's inventory
     }

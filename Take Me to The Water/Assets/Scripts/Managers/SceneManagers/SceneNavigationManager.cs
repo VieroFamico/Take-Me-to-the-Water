@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,8 +10,10 @@ public class SceneNavigationManager : MonoBehaviour
 {
     public Button[] navigationButtons;
     public Button choosePlaceButton;
+    public PlayerLoadout playerLoadout;
 
     private int choosenIndex;
+
     void Start()
     {
         if (SceneManager.GetActiveScene().buildIndex == 1)

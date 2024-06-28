@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140c4240eb52f9546a5b1c627cf460b1, type: 3}
   m_Name: FishingRod T3
   m_EditorClassIdentifier: 
-  toolsName: 
+  toolsName: Senar Sutera
   tier: 3
   sprite: {fileID: 21300000, guid: 98ae4a510370afd41aada8104f7b8add, type: 3}
   maxTension: 90

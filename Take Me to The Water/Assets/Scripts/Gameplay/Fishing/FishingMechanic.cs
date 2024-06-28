@@ -375,4 +375,10 @@ public class FishingMechanic : MonoBehaviour
 
         isThrowing = false;
     }
+
+    public void SetMaxTension(float newMaxTension)
+    {
+        maxTension = newMaxTension;
+        tensionSlider.maxValue = maxTension;
+    }
 }

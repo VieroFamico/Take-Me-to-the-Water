@@ -9,7 +9,7 @@ public class HomePlayerMovement : MonoBehaviour
     private Animator animator;
     private Rigidbody2D rb2d;
     private bool couldMove = true;
-    void Start()
+    void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
