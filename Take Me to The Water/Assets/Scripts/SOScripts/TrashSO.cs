@@ -6,9 +6,10 @@ using UnityEngine;
 public class TrashSO : ScriptableObject
 {
     public string trashName;
+    public Sprite trashImage;
+    public int dirtinessValue;
     public int plasticAmount;
     public int metalAmount;
     public int woodAmount;
     public int rubberAmount;
-    public Sprite trashImage;
 }
