@@ -13,6 +13,9 @@ public class InitializeFishing : MonoBehaviour
     public GameObject finishFishingPanel;
     public GameObject pausePanel;
 
+    [Header("Sprites")]
+    public Sprite shipSprite;
+
     public Button returnHomeButton;
     public Button abortFishingButton;
     private PlayerLoadout playerLoadout;
@@ -29,7 +32,7 @@ public class InitializeFishing : MonoBehaviour
 
         boatMovement.SetSpeed(playerLoadout.GetCurrentShipEngine().movementSpeed);
         fishingMechanic.SetMaxTension(playerLoadout.GetCurrentFishingRod().maxTension);
-        fishingLenght = playerLoadout.GetCurrentShipFuel();
+        fishingLenght = playerLoadout.GetCurrentShipFuel() * 60f;
 
         returnHomeButton.onClick.AddListener(ReturnToHome);
         abortFishingButton.onClick.AddListener(ReturnToHome);

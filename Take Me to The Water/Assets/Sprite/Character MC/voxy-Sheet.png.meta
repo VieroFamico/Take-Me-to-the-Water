@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,7 +121,259 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: voxy-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09572bc4cbf0c9e408406edbd6c7144c
+      internalID: 786417697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voxy-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2e6e909b192dde4caf1d61fa1bb8fc8
+      internalID: -1708924332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voxy-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88f10d627db1fbb4a9c76ae1222dd43c
+      internalID: 1907846327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voxy-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f41ab7c01e0ac824286555db3df944f6
+      internalID: 128881099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voxy-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 2480
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c94efc61d44ef8468fef79e6d02f056
+      internalID: -1327272541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voxy-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 3100
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7c7323e18e70d04891ab5b0b5521bfa
+      internalID: -1981914371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voxy-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 3720
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeb68e3f8c3d2bb4bbb2793b6f020c75
+      internalID: 644439215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voxy-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 4340
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 807c35b6e25f7484998e428f83fbf458
+      internalID: -1969670509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voxy-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 4960
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1073306a84b0d794eb9f86e4618ce250
+      internalID: 271833765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voxy-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 5580
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f122164d20bb3a04da543166272f9e46
+      internalID: -2117776318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voxy-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 6200
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 528794188cce9244ca3fbdbdf31e1d75
+      internalID: -1698432038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voxy-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 6820
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e2be0bb30af64e4a885e2f771bc6a68
+      internalID: -1168446732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +384,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      voxy-Sheet_0: 786417697
+      voxy-Sheet_1: -1708924332
+      voxy-Sheet_10: -1698432038
+      voxy-Sheet_11: -1168446732
+      voxy-Sheet_2: 1907846327
+      voxy-Sheet_3: 128881099
+      voxy-Sheet_4: -1327272541
+      voxy-Sheet_5: -1981914371
+      voxy-Sheet_6: 644439215
+      voxy-Sheet_7: -1969670509
+      voxy-Sheet_8: 271833765
+      voxy-Sheet_9: -2117776318
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

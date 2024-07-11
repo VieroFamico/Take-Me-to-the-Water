@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,7 +121,385 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Chester-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e2d3b29d8089a5408eee73d60c72edc
+      internalID: 1293678087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chester-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e963f19d66bff84b94f0b1fe4f8c6e9
+      internalID: 291829137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chester-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b2c5abc7886284e922d3689d7eea95
+      internalID: -286514305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chester-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d0bdaabc268b61438499b21e0ffa35d
+      internalID: 1643812752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chester-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 2480
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a26b81e577020d469d8ae43c74f7bd0
+      internalID: 2038064999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chester-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 3100
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef196b769cad93a4494b510f47735d65
+      internalID: -650399745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chester-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 3720
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7567de9efbc9b7c40acfdfedb527bf18
+      internalID: -1047945777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chester-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 4340
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c1007761b26eb542810efef1875c7a6
+      internalID: -1594889050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chester-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 4960
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beebf648fd22b4f4eb4583a6ec58bfce
+      internalID: 1398520120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chester-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 5580
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7910a0c9f6643604597dc35563bb3b09
+      internalID: 60908251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chester-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 6200
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 796e5afa61265384db1b4ace5dc76840
+      internalID: 1751816193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chester-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 6820
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4474e970210bd8f409bce1dcd9c465f0
+      internalID: -1790191813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chester-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 7440
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b02ef9eac2e91224ca91c29f1a9716de
+      internalID: 1378143182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chester-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 8060
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 862e8ab77a06aff498ea3874fb5e6990
+      internalID: -1870777955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chester-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 8680
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fdc100e72c8fa147aff9a773b8a54f8
+      internalID: -1351156493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chester-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 9300
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4667050cdc47e1140bfd6d31d9751783
+      internalID: -1558054996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chester-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 9920
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37766f21dab81a7448033da3135c47d0
+      internalID: 1035412879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chester-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 10540
+        y: 0
+        width: 620
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da6ea20246c17e948b86099958ff1e59
+      internalID: 2087760312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +510,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Chester-Sheet_0: 1293678087
+      Chester-Sheet_1: 291829137
+      Chester-Sheet_10: 1751816193
+      Chester-Sheet_11: -1790191813
+      Chester-Sheet_12: 1378143182
+      Chester-Sheet_13: -1870777955
+      Chester-Sheet_14: -1351156493
+      Chester-Sheet_15: -1558054996
+      Chester-Sheet_16: 1035412879
+      Chester-Sheet_17: 2087760312
+      Chester-Sheet_2: -286514305
+      Chester-Sheet_3: 1643812752
+      Chester-Sheet_4: 2038064999
+      Chester-Sheet_5: -650399745
+      Chester-Sheet_6: -1047945777
+      Chester-Sheet_7: -1594889050
+      Chester-Sheet_8: 1398520120
+      Chester-Sheet_9: 60908251
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
