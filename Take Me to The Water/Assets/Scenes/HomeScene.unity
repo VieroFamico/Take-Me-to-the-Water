@@ -512,6 +512,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 645a11af7b8747e0a436cd353263b8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderer: {fileID: 0}
+  sortingLayer: 0
+  displacementScale: 1
+  foamAmount: 1
+  normalStrength: 1
 --- !u!1 &53545598
 GameObject:
   m_ObjectHideFlags: 0
@@ -4760,7 +4765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 1123709639}
-  playerLoadout: {fileID: 1123709641}
+  playerLoadout: {fileID: 0}
   craftButton: {fileID: 1707100962}
   priceText: {fileID: 1013598821}
   nameText: {fileID: 391394362}
@@ -11212,6 +11217,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52480f6baf9b7b0428c75481cb3d5a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  material: {fileID: 0}
+  meshFilter: {fileID: 0}
+  meshRenderer: {fileID: 0}
 --- !u!61 &723414446
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23683,6 +23691,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4e5449ad953eb419c2156862ea63d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  money: 100
+  playerLoadout: {fileID: 1123709641}
 --- !u!4 &1123709640
 Transform:
   m_ObjectHideFlags: 0
@@ -24010,7 +24020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 1123709639}
-  playerLoadout: {fileID: 1123709641}
+  playerLoadout: {fileID: 0}
   craftButton: {fileID: 839554960}
   priceText: {fileID: 1316152682}
   nameText: {fileID: 1970925935}
@@ -32290,7 +32300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1373549091
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32307,8 +32317,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16.52, y: 219}
-  m_SizeDelta: {x: 204.544, y: 508.42}
+  m_AnchoredPosition: {x: 18.698, y: 185}
+  m_SizeDelta: {x: 647.106, y: 424.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1373549092
 MonoBehaviour:
@@ -32330,7 +32340,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 198473472, guid: 873b731b34d9f204c903ac772fad284d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dadcb4e12bbb86940b0e81c4a1ff4251, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -38911,6 +38921,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52480f6baf9b7b0428c75481cb3d5a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  material: {fileID: 0}
+  meshFilter: {fileID: 0}
+  meshRenderer: {fileID: 0}
 --- !u!1 &1478160108
 GameObject:
   m_ObjectHideFlags: 0
@@ -40238,6 +40251,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52480f6baf9b7b0428c75481cb3d5a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: eb07dd84adf822c43a66b49eb976fe9c, type: 2}
+  meshFilter: {fileID: 1533826746}
+  meshRenderer: {fileID: 1533826745}
 --- !u!1 &1534674761
 GameObject:
   m_ObjectHideFlags: 0
@@ -40535,7 +40551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 1123709639}
-  playerLoadout: {fileID: 1123709641}
+  playerLoadout: {fileID: 0}
   craftButton: {fileID: 816359434}
   priceText: {fileID: 1969534975}
   nameText: {fileID: 1789056194}
@@ -53705,6 +53721,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52480f6baf9b7b0428c75481cb3d5a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  material: {fileID: 0}
+  meshFilter: {fileID: 0}
+  meshRenderer: {fileID: 0}
 --- !u!61 &2058948791
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -54119,7 +54138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2084717262
 MonoBehaviour:
   m_ObjectHideFlags: 0

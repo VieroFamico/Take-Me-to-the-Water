@@ -22,7 +22,6 @@ public class PlayerInventory : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            playerLoadout = GetComponent<PlayerLoadout>(); // Initialize playerLoadout
         }
         else
         {

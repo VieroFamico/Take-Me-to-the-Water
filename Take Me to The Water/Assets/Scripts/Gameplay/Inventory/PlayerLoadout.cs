@@ -15,7 +15,7 @@ public class PlayerLoadout : MonoBehaviour
     public ShipBodySO currentShip;
     public FishingRodSO currentFishingRod;
     public ShipEngineSO currentShipEngine;
-    private float currentShipFuel = 0;
+    private float currentShipFuel = 0; // In Minutes
 
     void Start()
     {

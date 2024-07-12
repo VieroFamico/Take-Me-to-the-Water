@@ -11,13 +11,13 @@ public class ReturnHomeManager : MonoBehaviour
 
     void Start()
     {
-        originalSceneIndex = 1;
+        originalSceneIndex = 0;
         returnHomeButton.onClick.AddListener(ReturnHome);
     }
 
     public void ReturnHome()
     {
-        SceneTransitionManager.Instance.TransitionToScene(1);
+        SceneTransitionManager.Instance.TransitionToScene(0);
     }
 
 }

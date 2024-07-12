@@ -67,34 +67,32 @@ public class GameManager : MonoBehaviour
 
             if (loadedPlayerLoadout == null)
             {   
-                PlayerLoadout newPlayerLoadOut = new PlayerLoadout();
                 // If loadedPlayerLoadout is null, initialize with basic data
-                newPlayerLoadOut.SetCurrentBait(PlayerLoadout.Bait.Worm);
+                playerLoadout.SetCurrentBait(PlayerLoadout.Bait.Worm);
 
                 Dictionary<PlayerLoadout.Bait, int> baitAmounts = new Dictionary<PlayerLoadout.Bait, int>();
                 foreach (var bait in System.Enum.GetValues(typeof(PlayerLoadout.Bait)))
                 {
                     baitAmounts[(PlayerLoadout.Bait)bait] = 0;
                 }
-                newPlayerLoadOut.SetBaitAmounts(baitAmounts);
+                playerLoadout.SetBaitAmounts(baitAmounts);
 
                 ShipBodySO ship = baseShipBodySO;
-                newPlayerLoadOut.SetCurrentShipBody(ship);
-                newPlayerLoadOut.SetCurrentShipFuel(ship.shipTimeLimit);
+                playerLoadout.SetCurrentShipBody(ship);
+                playerLoadout.SetCurrentShipFuel(ship.shipTimeLimit);
 
                 ShipEngineSO shipEngine = baseShipEngineSO;
-                newPlayerLoadOut.SetCurrentShipEngine(shipEngine);
+                playerLoadout.SetCurrentShipEngine(shipEngine);
 
                 FishingRodSO fishingRodSO = baseFishingRodSO;
-                newPlayerLoadOut.SetCurrentFishingRod(fishingRodSO);
+                playerLoadout.SetCurrentFishingRod(fishingRodSO);
 
-                playerInventory.SetPlayerLoadout(newPlayerLoadOut);
+                playerInventory.SetPlayerLoadout(playerLoadout);
             }
             else
             {
-                PlayerLoadout newPlayerLoadOut = new PlayerLoadout();
                 // If loadedPlayerLoadout is not null, load its values
-                newPlayerLoadOut.SetCurrentBait(loadedPlayerLoadout.currentBait);
+                playerLoadout.SetCurrentBait(loadedPlayerLoadout.currentBait);
 
                 Dictionary<PlayerLoadout.Bait, int> baitAmounts = new Dictionary<PlayerLoadout.Bait, int>();
                 if (loadedPlayerLoadout.baitAmounts != null)
@@ -112,29 +110,29 @@ public class GameManager : MonoBehaviour
                         baitAmounts[(PlayerLoadout.Bait)bait] = 0;
                     }
                 }
-                newPlayerLoadOut.SetBaitAmounts(baitAmounts);
+                playerLoadout.SetBaitAmounts(baitAmounts);
 
                 ShipBodySO ship = loadedPlayerLoadout.currentShip;
                 if (!ship)
                 {
                     ShipBodySO emptyShip = baseShipBodySO;
-                    newPlayerLoadOut.SetCurrentShipBody(emptyShip);
-                    newPlayerLoadOut.SetCurrentShipFuel(emptyShip.shipTimeLimit);
+                    playerLoadout.SetCurrentShipBody(emptyShip);
+                    playerLoadout.SetCurrentShipFuel(emptyShip.shipTimeLimit);
                 }
                 else
                 {
-                    newPlayerLoadOut.SetCurrentShipBody(ship);
-                    newPlayerLoadOut.SetCurrentShipFuel(loadedPlayerLoadout.currentShipCurrentFuel);
+                    playerLoadout.SetCurrentShipBody(ship);
+                    playerLoadout.SetCurrentShipFuel(loadedPlayerLoadout.currentShipCurrentFuel);
                 }
                 
 
                 ShipEngineSO shipEngine = loadedPlayerLoadout.currentShipEngine;
-                newPlayerLoadOut.SetCurrentShipEngine(shipEngine);
+                playerLoadout.SetCurrentShipEngine(shipEngine);
 
                 FishingRodSO fishingRodSO = loadedPlayerLoadout.currentFishingRod;
-                newPlayerLoadOut.SetCurrentFishingRod(fishingRodSO);
+                playerLoadout.SetCurrentFishingRod(fishingRodSO);
 
-                playerInventory.SetPlayerLoadout(newPlayerLoadOut);
+                playerInventory.SetPlayerLoadout(playerLoadout);
             }
 
             SaveManager.SavePlayerInventory(playerInventory);
@@ -142,6 +140,36 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            playerInventory.money = 100f;
+            FishInventory fishInventory = new FishInventory();
+            playerInventory.SetPlayerFishInventory(fishInventory);
+
+            TrashInventory trashInventory = new TrashInventory();
+            playerInventory.SetPlayerTrashInventory(trashInventory);
+
+            PlayerLoadout newPlayerLoadOut = gameObject.AddComponent<PlayerLoadout>();
+            // If loadedPlayerLoadout is null, initialize with basic data
+            newPlayerLoadOut.SetCurrentBait(PlayerLoadout.Bait.Worm);
+
+            Dictionary<PlayerLoadout.Bait, int> baitAmounts = new Dictionary<PlayerLoadout.Bait, int>();
+            foreach (var bait in System.Enum.GetValues(typeof(PlayerLoadout.Bait)))
+            {
+                baitAmounts[(PlayerLoadout.Bait)bait] = 0;
+            }
+            newPlayerLoadOut.SetBaitAmounts(baitAmounts);
+
+            ShipBodySO ship = baseShipBodySO;
+            newPlayerLoadOut.SetCurrentShipBody(ship);
+            newPlayerLoadOut.SetCurrentShipFuel(ship.shipTimeLimit);
+
+            ShipEngineSO shipEngine = baseShipEngineSO;
+            newPlayerLoadOut.SetCurrentShipEngine(shipEngine);
+
+            FishingRodSO fishingRodSO = baseFishingRodSO;
+            newPlayerLoadOut.SetCurrentFishingRod(fishingRodSO);
+
+            playerInventory.SetPlayerLoadout(newPlayerLoadOut);
+
             SaveManager.SavePlayerInventory(playerInventory);
             Debug.Log("Save And Is Null");
         }

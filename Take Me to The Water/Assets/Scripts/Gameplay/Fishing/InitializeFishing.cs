@@ -14,7 +14,7 @@ public class InitializeFishing : MonoBehaviour
     public GameObject pausePanel;
 
     [Header("Sprites")]
-    public Sprite shipSprite;
+    public SpriteRenderer shipSprite;
 
     public Button returnHomeButton;
     public Button abortFishingButton;

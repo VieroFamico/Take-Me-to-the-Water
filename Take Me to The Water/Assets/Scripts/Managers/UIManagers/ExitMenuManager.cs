@@ -48,6 +48,7 @@ public class ExitMenuManager : MonoBehaviour
     private Transform cameraTarget;
     private Transform currentTarget;
     private bool isMoving = true;
+    private bool mainPanelIsActive = false;
 
     private void Start()
     {
@@ -117,6 +118,10 @@ public class ExitMenuManager : MonoBehaviour
 
     public void OpenSettingsPanel()
     {
+        if (mainPanelIsActive)
+        {
+            return;
+        }
         // Enable the settings panel
         settingsPanel.SetActive(true);
 
@@ -127,6 +132,7 @@ public class ExitMenuManager : MonoBehaviour
         // Show the settings panel
         settingsPanelAnimator.SetTrigger("Show");
         BlurEffectForPanel.ToggleBlur();
+        mainPanelIsActive = true;
     }
 
     public void CloseSettingsPanel()
@@ -139,6 +145,7 @@ public class ExitMenuManager : MonoBehaviour
         settingsPanelAnimator.SetTrigger("Hide");
         StartCoroutine(DisablePanelAfterAnimation(settingsPanelAnimator, settingsPanel));
         BlurEffectForPanel.ToggleBlur();
+        mainPanelIsActive = false;
     }
 
     public void OpenStartMenuPanel()

@@ -1079,6 +1079,7 @@ MonoBehaviour:
   fishingMechanic: {fileID: 1047941877}
   finishFishingPanel: {fileID: 129693314}
   pausePanel: {fileID: 51306818}
+  shipSprite: {fileID: 0}
   returnHomeButton: {fileID: 195643926}
   abortFishingButton: {fileID: 642128254}
 --- !u!1001 &105480902
@@ -29279,7 +29280,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1859578868}
-  - component: {fileID: 1859578867}
   - component: {fileID: 1859578866}
   m_Layer: 0
   m_Name: SceneNavManager
@@ -29301,21 +29301,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   returnHomeButton: {fileID: 642128254}
---- !u!114 &1859578867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859578865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d66768620e891194e99a3ebbb7660ea1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  navigationButtons: []
-  choosePlaceButton: {fileID: 0}
-  playerLoadout: {fileID: 0}
 --- !u!4 &1859578868
 Transform:
   m_ObjectHideFlags: 0
