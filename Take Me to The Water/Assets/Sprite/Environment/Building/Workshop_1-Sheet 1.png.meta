@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: abaf150504d0cfc4cacd9b23c55ec3fd
+guid: 9fd7b4884174c37448a68c208a719a50
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,127 +123,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: top_down_pancingan_0
+      name: Workshop_1-Sheet 1_0
       rect:
         serializedVersion: 2
-        x: 9
+        x: 0
         y: 0
-        width: 22
-        height: 64
+        width: 608
+        height: 352
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 266ee61451f7982449b077784dc8cfaf
-      internalID: -1456802657
+      spriteID: a606a41671441cd46a703fe1a10b29c3
+      internalID: -1532778639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: top_down_pancingan_1
+      name: Workshop_1-Sheet 1_1
       rect:
         serializedVersion: 2
-        x: 40
+        x: 608
         y: 0
-        width: 24
-        height: 64
+        width: 608
+        height: 352
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56864a9ae24a3b647a34edf3a5f690b2
-      internalID: 1975979598
+      spriteID: 63bb943dc708c714f899d9ab79fa57dc
+      internalID: -743003834
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: top_down_pancingan_2
+      name: Workshop_1-Sheet 1_2
       rect:
         serializedVersion: 2
-        x: 73
+        x: 1216
         y: 0
-        width: 22
-        height: 64
+        width: 608
+        height: 352
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92e9c2edacdd4e54890a684365533ab0
-      internalID: 533699737
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: top_down_pancingan_3
-      rect:
-        serializedVersion: 2
-        x: 106
-        y: 0
-        width: 20
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d287486c19a13b42ab056c3309d23fa
-      internalID: 906064076
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: top_down_pancingan_4
-      rect:
-        serializedVersion: 2
-        x: 137
-        y: 0
-        width: 22
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 708c76964d1fc5948b38e3bf1b3c8202
-      internalID: -862577266
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: top_down_pancingan_5
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 51
-        width: 8
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2671e781eddeacb4a99844370fd5e542
-      internalID: -1468878330
+      spriteID: 371b9d176b6ce8a48828098b95da80d0
+      internalID: -2054217992
       vertices: []
       indices: 
       edges: []
@@ -259,12 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      top_down_pancingan_0: -1456802657
-      top_down_pancingan_1: 1975979598
-      top_down_pancingan_2: 533699737
-      top_down_pancingan_3: 906064076
-      top_down_pancingan_4: -862577266
-      top_down_pancingan_5: -1468878330
+      Workshop_1-Sheet 1_0: -1532778639
+      Workshop_1-Sheet 1_1: -743003834
+      Workshop_1-Sheet 1_2: -2054217992
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

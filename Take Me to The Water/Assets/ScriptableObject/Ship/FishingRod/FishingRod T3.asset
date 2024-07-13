@@ -15,6 +15,7 @@ MonoBehaviour:
   toolsName: Senar Sutera
   tier: 3
   sprite: {fileID: 21300000, guid: 98ae4a510370afd41aada8104f7b8add, type: 3}
+  topDownSprite: {fileID: 533699737, guid: abaf150504d0cfc4cacd9b23c55ec3fd, type: 3}
   maxTension: 90
   price: 200
   plasticNeeded: 2

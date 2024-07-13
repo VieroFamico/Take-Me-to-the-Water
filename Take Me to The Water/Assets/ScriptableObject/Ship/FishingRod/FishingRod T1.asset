@@ -15,6 +15,7 @@ MonoBehaviour:
   toolsName: Kail Pemangsa
   tier: 1
   sprite: {fileID: 21300000, guid: 1f5e300c2a411a846969f85efaca63a5, type: 3}
+  topDownSprite: {fileID: -1456802657, guid: abaf150504d0cfc4cacd9b23c55ec3fd, type: 3}
   maxTension: 70
   price: 0
   plasticNeeded: 0

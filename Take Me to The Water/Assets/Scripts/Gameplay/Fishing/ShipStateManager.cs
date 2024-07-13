@@ -5,6 +5,8 @@ using UnityEngine;
 public class ShipStateManager : MonoBehaviour
 {
     public BoatMovement boatMovement;
+    public SpriteRenderer fishingRodSpriteRenderer;
+    public Sprite trashCatchingToolSprite;
 
     public enum Modes
     {
@@ -67,6 +69,7 @@ public class ShipStateManager : MonoBehaviour
             if (mode == Modes.Fishing)
             {
                 fishingMechanic.EnterFishingMode();
+                fishingRodSpriteRenderer.sprite = FindAnyObjectByType<PlayerLoadout>().GetCurrentFishingRod().topDownSprite;
                 StopBoat();
             }
             else
@@ -81,6 +84,7 @@ public class ShipStateManager : MonoBehaviour
             if (mode == Modes.TrashCollecting)
             {
                 trashCollectingMechanic.StartTrashCollecting();
+                fishingRodSpriteRenderer.sprite = trashCatchingToolSprite;
                 StopBoat();
             }
             else

@@ -21,9 +21,9 @@ public class PlayerLoadoutDisplayManager : MonoBehaviour
 
     public void UpdateSprites()
     {
-        if (playerLoadout.currentShip != null)
+        if (playerLoadout.currentShipBody != null)
         {
-            shipImage.sprite = playerLoadout.currentShip.sprite;
+            shipImage.sprite = playerLoadout.currentShipBody.sprite;
         }
 
         if (playerLoadout.currentFishingRod != null)

@@ -765,6 +765,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 990772070}
+  baseShipBodySO: {fileID: 0}
+  baseShipEngineSO: {fileID: 0}
+  baseFishingRodSO: {fileID: 0}
 --- !u!4 &330726030
 Transform:
   m_ObjectHideFlags: 0
@@ -2050,12 +2053,21 @@ MonoBehaviour:
   buildingDisplay: {fileID: 0}
   animationDuration: 0.2
   closeButton: {fileID: 0}
+  temp: {fileID: 0}
   trashButtonPrefab: {fileID: 8267730219057520662, guid: 51f1ab452ee4d1340a17f5ee40847702, type: 3}
   trashButtonContainer: {fileID: 0}
   selectedTrashImage: {fileID: 0}
   selectedTrashName: {fileID: 0}
   recycleButton: {fileID: 0}
   recycleAllButton: {fileID: 0}
+  plasticImage: {fileID: 0}
+  metalImage: {fileID: 0}
+  woodImage: {fileID: 0}
+  rubberImage: {fileID: 0}
+  plasticAmountText: {fileID: 0}
+  metalAmountText: {fileID: 0}
+  woodAmountText: {fileID: 0}
+  rubberAmountText: {fileID: 0}
   inventory: {fileID: 0}
 --- !u!95 &585225948
 Animator:
@@ -2176,6 +2188,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navigationButtons:
   - {fileID: 857122585}
+  choosePlaceButton: {fileID: 0}
+  playerLoadout: {fileID: 0}
 --- !u!4 &630119695
 Transform:
   m_ObjectHideFlags: 0
@@ -3009,8 +3023,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da27ee8d89b12849998a4267bdb0fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildingDisplay: {fileID: 0}
+  animationDuration: 0.2
+  closeButton: {fileID: 0}
   mapMenuAnimator: {fileID: 401264762}
-  proximityDistance: 5
 --- !u!1 &825242127
 GameObject:
   m_ObjectHideFlags: 0
@@ -9307,8 +9323,6 @@ MonoBehaviour:
   temp: {fileID: 11400000, guid: 48d05e438298eea40a0b4ca46844aa86, type: 2}
   empty: {fileID: 0}
   showFishPanel: {fileID: 1018142681}
-  buyPanelButton: {fileID: 1512933725}
-  sellPanelButton: {fileID: 1540344644}
   buyButton: {fileID: 991102119}
   selectedFishName: {fileID: 1437464315}
   selectedFishImage: {fileID: 224732951}
@@ -9473,8 +9487,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136587677}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.76, y: 1.49, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -15.440001, y: -1.8799999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9483,7 +9497,7 @@ Transform:
   - {fileID: 1462303842}
   - {fileID: 1067744207}
   - {fileID: 804507637}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1158570548}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1158570547
 GameObject:
@@ -9515,6 +9529,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 860589365}
+  - {fileID: 1136587678}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1168669600
@@ -27371,7 +27386,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca533eb980202234483d219ffa1209bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentShip: {fileID: 0}
+  currentShipBody: {fileID: 0}
+  currentFishingRod: {fileID: 0}
+  currentShipEngine: {fileID: 0}
 --- !u!114 &1990789165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27900,7 +27917,6 @@ SceneRoots:
   - {fileID: 1233846686}
   - {fileID: 1168669604}
   - {fileID: 316704178}
-  - {fileID: 1136587678}
   - {fileID: 1158570548}
   - {fileID: 1268907095}
   - {fileID: 330726030}

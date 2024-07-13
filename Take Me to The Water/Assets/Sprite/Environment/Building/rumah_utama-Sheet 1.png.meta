@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: abaf150504d0cfc4cacd9b23c55ec3fd
+guid: a6154cd971465d547b83019107daf7fe
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: top_down_pancingan_0
+      name: rumah_utama-Sheet 1_0
       rect:
         serializedVersion: 2
-        x: 9
+        x: 0
         y: 0
-        width: 22
-        height: 64
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 266ee61451f7982449b077784dc8cfaf
-      internalID: -1456802657
+      spriteID: e73f24e76e7f9b34c90d932bfc73f147
+      internalID: 1453656483
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: top_down_pancingan_1
+      name: rumah_utama-Sheet 1_1
       rect:
         serializedVersion: 2
-        x: 40
+        x: 500
         y: 0
-        width: 24
-        height: 64
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56864a9ae24a3b647a34edf3a5f690b2
-      internalID: 1975979598
+      spriteID: c13cab41fd3ab94449d08beba5a62bc8
+      internalID: 1051098621
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: top_down_pancingan_2
+      name: rumah_utama-Sheet 1_2
       rect:
         serializedVersion: 2
-        x: 73
+        x: 1000
         y: 0
-        width: 22
-        height: 64
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92e9c2edacdd4e54890a684365533ab0
-      internalID: 533699737
+      spriteID: d23e9d295a4f7504494679f5da4bf0bf
+      internalID: -605130139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: top_down_pancingan_3
+      name: rumah_utama-Sheet 1_3
       rect:
         serializedVersion: 2
-        x: 106
+        x: 1500
         y: 0
-        width: 20
-        height: 64
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d287486c19a13b42ab056c3309d23fa
-      internalID: 906064076
+      spriteID: 960003b51a859ab4b98947acf8a3e84a
+      internalID: 1978410876
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: top_down_pancingan_4
+      name: rumah_utama-Sheet 1_4
       rect:
         serializedVersion: 2
-        x: 137
+        x: 2000
         y: 0
-        width: 22
-        height: 64
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,29 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 708c76964d1fc5948b38e3bf1b3c8202
-      internalID: -862577266
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: top_down_pancingan_5
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 51
-        width: 8
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2671e781eddeacb4a99844370fd5e542
-      internalID: -1468878330
+      spriteID: 2c0a65c85173e9d488ce83b8f0a67334
+      internalID: -874464896
       vertices: []
       indices: 
       edges: []
@@ -259,12 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      top_down_pancingan_0: -1456802657
-      top_down_pancingan_1: 1975979598
-      top_down_pancingan_2: 533699737
-      top_down_pancingan_3: 906064076
-      top_down_pancingan_4: -862577266
-      top_down_pancingan_5: -1468878330
+      rumah_utama-Sheet 1_0: 1453656483
+      rumah_utama-Sheet 1_1: 1051098621
+      rumah_utama-Sheet 1_2: -605130139
+      rumah_utama-Sheet 1_3: 1978410876
+      rumah_utama-Sheet 1_4: -874464896
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

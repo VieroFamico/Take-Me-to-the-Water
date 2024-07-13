@@ -12,7 +12,7 @@ public class PlayerLoadout : MonoBehaviour
 
     private Bait currentBait = Bait.Worm;
     public Dictionary<Bait, int> baitAmounts = new();
-    public ShipBodySO currentShip;
+    public ShipBodySO currentShipBody;
     public FishingRodSO currentFishingRod;
     public ShipEngineSO currentShipEngine;
     private float currentShipFuel = 0; // In Minutes
@@ -78,30 +78,39 @@ public class PlayerLoadout : MonoBehaviour
         if(fuel < 0)
         {
             currentShipFuel = 0;
+            SaveManager.SavePlayerInventory(GetComponent<PlayerInventory>());
             return;
         }
+        else if(fuel > currentShipBody.shipTimeLimit)
+        {
+            currentShipFuel = currentShipBody.shipTimeLimit;
+            SaveManager.SavePlayerInventory(GetComponent<PlayerInventory>());
+            return;
+
+        }
         currentShipFuel = fuel;
+        SaveManager.SavePlayerInventory(GetComponent<PlayerInventory>());
     }
     public void Refuel(float fuelPercentage)
     {
-        currentShipFuel = currentShip.shipTimeLimit * (fuelPercentage / 100);
+        currentShipFuel = currentShipBody.shipTimeLimit * (fuelPercentage / 100);
     }
     public float GetFuelPercentage()
     {
-        Debug.Log(currentShip);
-        Debug.Log(currentShip.shipTimeLimit);
-        return (currentShipFuel / currentShip.shipTimeLimit) * 100;
+        Debug.Log(currentShipBody);
+        Debug.Log(currentShipBody.shipTimeLimit);
+        return (currentShipFuel / currentShipBody.shipTimeLimit) * 100;
     }
 
     // Ship management methods
     public void SetCurrentShipBody(ShipBodySO ship)
     {
-        currentShip = ship;
+        currentShipBody = ship;
     }
 
     public ShipBodySO GetCurrentShipBody()
     {
-        return currentShip;
+        return currentShipBody;
     }
 
     // Fishing rod management methods

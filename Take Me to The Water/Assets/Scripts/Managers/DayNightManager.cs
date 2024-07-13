@@ -72,7 +72,7 @@ public class DayNightManager : MonoBehaviour
     private void UpdateDayCycle()
     {
         currentTime += Time.deltaTime;
-        if (currentTime < playerLoadout.currentShip.shipTimeLimit && currentTime <= dayLength)
+        if (currentTime < playerLoadout.currentShipBody.shipTimeLimit && currentTime <= dayLength)
         {
             currentTime += Time.deltaTime;
             

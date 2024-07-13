@@ -8,6 +8,7 @@ public class FishingRodSO : ScriptableObject
     public string toolsName;
     public int tier;
     public Sprite sprite;
+    public Sprite topDownSprite;
     public float maxTension;
     public int price;
     [Header("MaterialNeeded")]

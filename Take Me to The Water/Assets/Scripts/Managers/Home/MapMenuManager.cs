@@ -29,6 +29,7 @@ public class MapMenuManager : MonoBehaviour
 
     private bool isMapPanelActive = true;
     private int choosenIndex = 0;
+    private int warningFlag = 0;
 
     void Start()
     {
@@ -51,6 +52,7 @@ public class MapMenuManager : MonoBehaviour
         MapPanel.SetActive(true);
         LoadoutPanel.SetActive(false);
         isMapPanelActive = true;
+        warningFlag = 0;
         UpdateButtonSprites();
         NextButtonImage.sprite = NextButtonSprite;
     }
@@ -87,17 +89,26 @@ public class MapMenuManager : MonoBehaviour
     }
     public void ChangeScene()
     {
-        if (FindAnyObjectByType<PlayerLoadout>().GetCurrentShipFuel() <= 1)
+        if (FindAnyObjectByType<PlayerLoadout>().GetCurrentShipFuel() <= 
+            FindAnyObjectByType<PlayerLoadout>().GetCurrentShipBody().shipTimeLimit *1f/5f && warningFlag == 0)
         {
-            StartCoroutine(ShowWarning("Not Enough Fuel, \n Refuel and Then Cobe Back"));
+            StartCoroutine(ShowWarning("Less Than 20% Fuel,\nAre You Sure You Want To Go?"));
+            warningFlag = 1;
             return;
         }
+        else if (FindAnyObjectByType<PlayerLoadout>().GetCurrentShipFuel() <= 0f)
+        {
+            StartCoroutine(ShowWarning("Not Enough Fuel,\nRefuel and Then Cobe Back"));
+            return;
+        }
+        Debug.Log(warningFlag);
         
         int currentBuildIndex = SceneManager.GetActiveScene().buildIndex;
         if (currentBuildIndex + choosenIndex == currentBuildIndex || choosenIndex <= 0)
         {
             return;
         }
+        BlurEffectForPanel.ToggleBlur();
         SceneTransitionManager.Instance.TransitionToScene(currentBuildIndex + choosenIndex);
     }
     IEnumerator ShowWarning(string message)

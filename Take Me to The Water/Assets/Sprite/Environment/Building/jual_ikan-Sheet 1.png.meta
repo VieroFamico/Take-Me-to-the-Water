@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: abaf150504d0cfc4cacd9b23c55ec3fd
+guid: 994a6c75ff8777f42af9176eceebf142
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: top_down_pancingan_0
+      name: jual_ikan-Sheet 1_0
       rect:
         serializedVersion: 2
-        x: 9
+        x: 0
         y: 0
-        width: 22
-        height: 64
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 266ee61451f7982449b077784dc8cfaf
-      internalID: -1456802657
+      spriteID: 37dc62a422f7f3044ac0c16d9a8da318
+      internalID: -1697147912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: top_down_pancingan_1
+      name: jual_ikan-Sheet 1_1
       rect:
         serializedVersion: 2
-        x: 40
+        x: 500
         y: 0
-        width: 24
-        height: 64
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56864a9ae24a3b647a34edf3a5f690b2
-      internalID: 1975979598
+      spriteID: a0fe6038edbbdf346808902cfb813653
+      internalID: -625348451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: top_down_pancingan_2
+      name: jual_ikan-Sheet 1_2
       rect:
         serializedVersion: 2
-        x: 73
+        x: 1000
         y: 0
-        width: 22
-        height: 64
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92e9c2edacdd4e54890a684365533ab0
-      internalID: 533699737
+      spriteID: e6baf5dbc6ecc3949bb4173fc0f06fd6
+      internalID: -1418281725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: top_down_pancingan_3
+      name: jual_ikan-Sheet 1_3
       rect:
         serializedVersion: 2
-        x: 106
+        x: 1500
         y: 0
-        width: 20
-        height: 64
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d287486c19a13b42ab056c3309d23fa
-      internalID: 906064076
+      spriteID: 193501ef881957249ba0b3a9ff1d8a62
+      internalID: -1901424201
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: top_down_pancingan_4
+      name: jual_ikan-Sheet 1_4
       rect:
         serializedVersion: 2
-        x: 137
+        x: 2000
         y: 0
-        width: 22
-        height: 64
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 708c76964d1fc5948b38e3bf1b3c8202
-      internalID: -862577266
+      spriteID: 1d4538be6f796f640977726a029c5632
+      internalID: -321242541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: top_down_pancingan_5
+      name: jual_ikan-Sheet 1_5
       rect:
         serializedVersion: 2
-        x: 176
-        y: 51
-        width: 8
-        height: 13
+        x: 2500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,8 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2671e781eddeacb4a99844370fd5e542
-      internalID: -1468878330
+      spriteID: 9f06f723ed804c44e9cb5555d43257c6
+      internalID: 1540897760
       vertices: []
       indices: 
       edges: []
@@ -259,12 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      top_down_pancingan_0: -1456802657
-      top_down_pancingan_1: 1975979598
-      top_down_pancingan_2: 533699737
-      top_down_pancingan_3: 906064076
-      top_down_pancingan_4: -862577266
-      top_down_pancingan_5: -1468878330
+      jual_ikan-Sheet 1_0: -1697147912
+      jual_ikan-Sheet 1_1: -625348451
+      jual_ikan-Sheet 1_2: -1418281725
+      jual_ikan-Sheet 1_3: -1901424201
+      jual_ikan-Sheet 1_4: -321242541
+      jual_ikan-Sheet 1_5: 1540897760
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

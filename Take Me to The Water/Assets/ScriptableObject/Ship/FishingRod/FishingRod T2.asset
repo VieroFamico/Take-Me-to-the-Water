@@ -15,6 +15,7 @@ MonoBehaviour:
   toolsName: Umpan Raja
   tier: 2
   sprite: {fileID: 21300000, guid: b09635306214a114e9687e75269fcfd0, type: 3}
+  topDownSprite: {fileID: 1975979598, guid: abaf150504d0cfc4cacd9b23c55ec3fd, type: 3}
   maxTension: 80
   price: 150
   plasticNeeded: 1

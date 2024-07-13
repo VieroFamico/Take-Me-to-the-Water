@@ -1,38 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static ShipStateManager;
 
 public class InitializeFishing : MonoBehaviour
 {
+    [Header("References")]
     public PlayerInventory playerInventory;
     public ShipStateManager shipStateManager;
     public BoatMovement boatMovement;
     public FishingMechanic fishingMechanic;
     public GameObject finishFishingPanel;
     public GameObject pausePanel;
+    public TextMeshProUGUI timeLeft;
 
     [Header("Sprites")]
-    public SpriteRenderer shipSprite;
+    public SpriteRenderer shipBodySprite;
+    public SpriteRenderer shipEngineSprite;
+    public SpriteRenderer fishingRodSprite;
 
+    [Header("References")]
     public Button returnHomeButton;
     public Button abortFishingButton;
+
+
     private PlayerLoadout playerLoadout;
 
-    private float fishingLenght = 5f;
+    private bool findPlayerInventoryFlag = false;
+    private float originalShipFuel = 5f;
     private float currTime = 0f;
     private bool isPausing = false;
     private bool isOutOfFuel = false;
     private void Start()
     {
         finishFishingPanel.SetActive(false);
-        playerInventory = FindAnyObjectByType<PlayerInventory>();
-        playerLoadout  = playerInventory.GetPlayerLoadout();
-
-        boatMovement.SetSpeed(playerLoadout.GetCurrentShipEngine().movementSpeed);
-        fishingMechanic.SetMaxTension(playerLoadout.GetCurrentFishingRod().maxTension);
-        fishingLenght = playerLoadout.GetCurrentShipFuel() * 60f;
 
         returnHomeButton.onClick.AddListener(ReturnToHome);
         abortFishingButton.onClick.AddListener(ReturnToHome);
@@ -40,15 +43,34 @@ public class InitializeFishing : MonoBehaviour
 
     private void Update()
     {
-        if(currTime >= fishingLenght && !isOutOfFuel)
+        if (!findPlayerInventoryFlag)
         {
+            playerInventory = FindAnyObjectByType<PlayerInventory>();
+            playerLoadout = playerInventory.GetPlayerLoadout();
+
+            shipBodySprite.sprite = playerLoadout.GetCurrentShipBody().sprite;
+            shipEngineSprite.sprite = playerLoadout.GetCurrentShipEngine().sprite;
+            fishingRodSprite.sprite = playerLoadout.GetCurrentFishingRod().topDownSprite;
+
+            boatMovement.SetSpeed(playerLoadout.GetCurrentShipEngine().movementSpeed);
+            fishingMechanic.SetMaxTension(playerLoadout.GetCurrentFishingRod().maxTension);
+            originalShipFuel = playerLoadout.GetCurrentShipFuel();
+
+            findPlayerInventoryFlag = true;
+        }
+
+        if (currTime >= originalShipFuel && !isOutOfFuel)
+        {
+            timeLeft.text = 0f.ToString();
             EndFishing();
             isOutOfFuel = true;
         }
         else
         {
-            currTime += Time.deltaTime;
-            playerLoadout.SetCurrentShipFuel(fishingLenght - currTime);
+            if (isOutOfFuel) return;
+            currTime += Time.deltaTime / 60f;
+            timeLeft.text = ((int)((originalShipFuel - currTime) * 60f)).ToString();
+            playerLoadout.SetCurrentShipFuel(originalShipFuel - currTime);
         }
 
         if(!isOutOfFuel && Input.GetKeyUp(KeyCode.Escape))

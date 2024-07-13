@@ -80,11 +80,12 @@ public class TrashCollectingMechanic : MonoBehaviour
         Vector3 direction = (worldPosition - playerPosition).normalized;
         Vector3 targetPosition = playerPosition + (direction * fixedDistance);
 
+        Quaternion rot = Quaternion.LookRotation(targetPosition);
         GameObject hook = Instantiate(trashCatchingHookPrefab, playerPosition, Quaternion.identity);
         trashCatchingHookGO = hook.GetComponent<TrashCatchingHook>();
-        trashCatchingHookGO.Initialize(targetPosition, hookSpeed);
+        trashCatchingHookGO.Initialize(targetPosition * 1.2f, hookSpeed);
         trashCatchingHookGO.transform.parent = this.transform;
-        trashCatchingHookGO.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        trashCatchingHookGO.transform.rotation = Quaternion.Euler(90f, 0f, rot.y);
         ExitTrashCollectingMode();
     }
 

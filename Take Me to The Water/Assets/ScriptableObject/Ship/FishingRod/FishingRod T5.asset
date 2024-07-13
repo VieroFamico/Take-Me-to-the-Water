@@ -15,6 +15,7 @@ MonoBehaviour:
   toolsName: 
   tier: 5
   sprite: {fileID: 21300000, guid: 66d9bbadbf8485e4586e5202072832fb, type: 3}
+  topDownSprite: {fileID: -862577266, guid: abaf150504d0cfc4cacd9b23c55ec3fd, type: 3}
   maxTension: 110
   price: 300
   plasticNeeded: 3
