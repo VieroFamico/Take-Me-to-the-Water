@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2c4587ea6816e1b41a9361db96abdac8
+guid: d76cf88c210f4ed4e902c840cc9bf9ca
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,24 +106,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jual_ikan-Sheet_0
+      name: rumah_utama-Sheet-bru_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3bb7cea4084a7448b95fec1270c6756
-      internalID: -730323905
+      spriteID: 666fbc48c6e7e3545980a7f8f0274d3e
+      internalID: 6814476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jual_ikan-Sheet_1
+      name: rumah_utama-Sheet-bru_1
       rect:
         serializedVersion: 2
         x: 500
@@ -158,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1a3422bd6c05234085ae9ccec34ed5a
-      internalID: -427086854
+      spriteID: 56ff39549667cd0448440b4b80a67d43
+      internalID: 1409152948
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jual_ikan-Sheet_2
+      name: rumah_utama-Sheet-bru_2
       rect:
         serializedVersion: 2
         x: 1000
@@ -179,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2216cf94abb8ff1409541be24f2ea91d
-      internalID: -634029916
+      spriteID: 437dd184002a5924893505d8c4b92fab
+      internalID: 509875984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jual_ikan-Sheet_3
+      name: rumah_utama-Sheet-bru_3
       rect:
         serializedVersion: 2
         x: 1500
@@ -200,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c905bc23e26421744830f06017da3863
-      internalID: 1256171703
+      spriteID: cbd251d1fa609dd4bb79056a95b49d7a
+      internalID: -1362820459
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jual_ikan-Sheet_4
+      name: rumah_utama-Sheet-bru_4
       rect:
         serializedVersion: 2
         x: 2000
@@ -221,29 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 502c13eb6ce54124e833e4ea212815f9
-      internalID: 948485059
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jual_ikan-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 2500
-        y: 0
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 811333c9428a01e49a8dc4bc0012f661
-      internalID: 746914689
+      spriteID: d6d9ba193a5c15a44bdb11b11b8a8322
+      internalID: -1324139089
       vertices: []
       indices: 
       edges: []
@@ -259,12 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      jual_ikan-Sheet_0: -730323905
-      jual_ikan-Sheet_1: -427086854
-      jual_ikan-Sheet_2: -634029916
-      jual_ikan-Sheet_3: 1256171703
-      jual_ikan-Sheet_4: 948485059
-      jual_ikan-Sheet_5: 746914689
+      rumah_utama-Sheet-bru_0: 6814476
+      rumah_utama-Sheet-bru_1: 1409152948
+      rumah_utama-Sheet-bru_2: 509875984
+      rumah_utama-Sheet-bru_3: -1362820459
+      rumah_utama-Sheet-bru_4: -1324139089
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
